@@ -91,6 +91,21 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		233A5D2D2443FE97001A9B97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		233A5D2E2443FF72001A9B97 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2391C1FB2404263E0073AA31 /* Main.storyboard */,
+			);
+			name = MainViewController;
+			sourceTree = "<group>";
+		};
 		2360EE3C2443E2DB00271EA6 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,10 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				233A5D242443EDF8001A9B97 /* Utils */,
+				233A5D2D2443FE97001A9B97 /* Model */,
 				2391C200240426AC0073AA31 /* Views */,
 				2391C1FF240426A70073AA31 /* Controllers */,
 				2391C1D1240423FE0073AA31 /* AppDelegate.swift */,
-				2391C1FB2404263E0073AA31 /* Main.storyboard */,
 				2391C1D3240423FE0073AA31 /* SceneDelegate.swift */,
 				2391C1DA240424010073AA31 /* Assets.xcassets */,
 				2391C1DC240424010073AA31 /* LaunchScreen.storyboard */,
@@ -153,6 +168,7 @@
 		2391C200240426AC0073AA31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				233A5D2E2443FF72001A9B97 /* MainViewController */,
 				233A5D282443F31A001A9B97 /* Components */,
 				233A5D252443F09F001A9B97 /* Camera */,
 			);
