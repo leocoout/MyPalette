@@ -39,7 +39,7 @@ class CameraView: UIView {
     private let captureSession = AVCaptureSession()
     private let photoOutput = AVCapturePhotoOutput()
     private lazy var photoImageView = UIImageView()
-    private lazy var alert = ColorAlert()
+    internal lazy var alert = ColorAlert()
     private lazy var disabledView = CameraDisabledView()
 
     private var captureDevice: AVCaptureDevice?
@@ -95,7 +95,6 @@ extension CameraView {
 // MARK: - Private methods
 extension CameraView {
 
-    
     private func setupGetAccessView() {
         addSubview(disabledView)
         disabledView.frame = bounds
@@ -104,6 +103,7 @@ extension CameraView {
     private func setupAlertLayout() {
         addSubview(alert)
         alert.frame = bounds
+        alert.delegate = self
     }
     
     private func removeAlert() {

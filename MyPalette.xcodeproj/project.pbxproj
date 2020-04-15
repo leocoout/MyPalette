@@ -14,6 +14,7 @@
 		233A5D302444097C001A9B97 /* ColorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D2F2444097C001A9B97 /* ColorAlert.swift */; };
 		23721D3F2446818E00371B08 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D3E2446818E00371B08 /* LoadingView.swift */; };
 		23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */; };
+		23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D422446B62C00371B08 /* CameraViewDelegates.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D3240423FE0073AA31 /* SceneDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		233A5D2F2444097C001A9B97 /* ColorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlert.swift; sourceTree = "<group>"; };
 		23721D3E2446818E00371B08 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegates.swift; sourceTree = "<group>"; };
+		23721D422446B62C00371B08 /* CameraViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewDelegates.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2391C1D3240423FE0073AA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				233A5D222443E4AA001A9B97 /* CameraView.swift */,
 				233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */,
+				23721D422446B62C00371B08 /* CameraViewDelegates.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */,
 				2391C202240426B90073AA31 /* HomeViewController.swift in Sources */,
 				233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */,
+				23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */,
 				23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

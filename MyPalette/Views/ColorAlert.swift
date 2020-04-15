@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol ColorAlertDelegate: class {
+    func alertDidClose()
+}
+
 class ColorAlert: UIView {
     
     // MARK: Properties
@@ -16,6 +20,7 @@ class ColorAlert: UIView {
         let view = UIView()
         view.backgroundColor = .black
         view.alpha = 0
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeAlertGesture(_:))))
         
         return view
     }()
@@ -47,6 +52,8 @@ class ColorAlert: UIView {
         return stack
     }()
     
+    weak var delegate: ColorAlertDelegate?
+    private let titleLabel = UILabel()
     var colorViewBackground: CALayer?
     var colorPicked: UIColor = .black  {
         didSet {
@@ -87,13 +94,13 @@ class ColorAlert: UIView {
         stackView.leftAnchor.constraint(equalTo: colorView.rightAnchor, constant: 16).isActive = true
         stackView.rightAnchor.constraint(equalTo: alertView.rightAnchor, constant: -16).isActive = true
         
-        let titleLabel = UILabel()
-        titleLabel.text = "#FFFFF"
-        titleLabel.textColor = .customBlack
-        
         let tipLabel = UILabel()
         tipLabel.text = "Toque para salvar"
         tipLabel.textColor = .customBlack
+        tipLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        
+        titleLabel.textColor = .customBlack
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(tipLabel)
@@ -101,19 +108,31 @@ class ColorAlert: UIView {
     
     private func updateColorView() {
         colorView.backgroundColor = colorPicked
+        titleLabel.text = colorView.backgroundColor?.hexString()
     }
     
     func showAlert() {
-        UIView.animate(withDuration: 0.35, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: { [weak self] in
-            self?.background.alpha = 0.8
-            self?.alertView.transform = CGAffineTransform(translationX: 0, y: -(64 + 32 + 8))
-        }, completion: nil)
+        isUserInteractionEnabled = true
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.3, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 20, options: .curveEaseInOut, animations: { [weak self] in
+                self?.background.alpha = 0.8
+                self?.alertView.transform = CGAffineTransform(translationX: 0, y: -(64 + 32 + 8))
+                }, completion: nil)
+        }
     }
     
-    func hideAlert() {
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
+    private func hideAlert() {
+        isUserInteractionEnabled = false
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
             self?.background.alpha = 0
             self?.alertView.transform = .identity
         }, completion: nil)
+    }
+    
+    @objc private func closeAlertGesture(_ gesture: UITapGestureRecognizer) {
+        delegate?.alertDidClose()
+        hideAlert()
     }
 }
