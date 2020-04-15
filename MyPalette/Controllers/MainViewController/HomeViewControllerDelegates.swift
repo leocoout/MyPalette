@@ -14,6 +14,7 @@ extension HomeViewController: CameraViewDelegate {
     func updateInterfaceState(state: CameraInterfaceState) {
         switch state {
         case .hide:
+            captureButton.isUserInteractionEnabled = false
             hideInterface()
         case .show:
             showInterface()
@@ -21,16 +22,13 @@ extension HomeViewController: CameraViewDelegate {
     }
     
     private func hideInterface() {
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
-                self.captureButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            }) { _ in
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.captureButton.transform = CGAffineTransform(scaleX: 0, y: 0)
-                }) { _ in
-                    self.captureButton.alpha = 0
-                }
-            }
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.captureButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }) { _ in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.captureButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                self.captureButton.alpha = 0
+            })
         }
     }
     

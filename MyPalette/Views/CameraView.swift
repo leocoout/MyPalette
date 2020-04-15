@@ -170,12 +170,14 @@ extension CameraView {
     }
     
     private func updateCameraState() {
-        switch cameraViewState {
-        case .loading:
-            LoadingView.shared.startLoadingAt(self)
-            delegate?.updateInterfaceState(state: .hide)
-        case .loaded:
-            LoadingView.shared.removeFromView(self)
+        DispatchQueue.main.async {
+            switch self.cameraViewState {
+            case .loading:
+                LoadingView.shared.startLoadingAt(self)
+                self.delegate?.updateInterfaceState(state: .hide)
+            case .loaded:
+                LoadingView.shared.removeFromView(self)
+            }
         }
     }
 }
@@ -191,7 +193,10 @@ extension CameraView: AVCapturePhotoCaptureDelegate {
             let pngImage = UIImage(data: png)
             photoImageView.image = image
             alert.colorPicked = pngImage?.getPixelColor() ?? .black
+        
             alert.showAlert()
         }
+        
+        photoImageView.removeFromSuperview()
     }
 }

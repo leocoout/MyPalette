@@ -12,6 +12,14 @@ import UIKit
 class ColorAlert: UIView {
     
     // MARK: Properties
+    private lazy var background: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0
+        
+        return view
+    }()
+    
     private lazy var alertView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -39,7 +47,6 @@ class ColorAlert: UIView {
         return stack
     }()
     
-    
     var colorViewBackground: CALayer?
     var colorPicked: UIColor = .black  {
         didSet {
@@ -49,6 +56,9 @@ class ColorAlert: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        addSubview(background)
+        background.frame = bounds
+        
         setupAlertViewLayout()
         setupAlertViewContent()
     }
@@ -94,13 +104,15 @@ class ColorAlert: UIView {
     }
     
     func showAlert() {
-        UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: { [weak self] in
+        UIView.animate(withDuration: 0.35, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: { [weak self] in
+            self?.background.alpha = 0.8
             self?.alertView.transform = CGAffineTransform(translationX: 0, y: -(64 + 32 + 8))
         }, completion: nil)
     }
     
     func hideAlert() {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
+            self?.background.alpha = 0
             self?.alertView.transform = .identity
         }, completion: nil)
     }
