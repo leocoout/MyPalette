@@ -48,12 +48,14 @@ class CameraDisabledView: UIView {
         button.style = .normal
         button.setTitle("ME LEVA LÁ", for: .normal)
         button.addTarget(self, action: #selector(goToPreferencesAction), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        layer.cornerRadius = 16
         setupStack()
     }
     
@@ -67,6 +69,8 @@ class CameraDisabledView: UIView {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(bodyLabel)
         stackView.addArrangedSubview(preferencesButton)
+    
+        preferencesButton.widthAnchor.constraint(equalToConstant: 142).isActive = true
     }
     
     @objc private func goToPreferencesAction() {
