@@ -16,10 +16,21 @@ enum CameraAuthorizationStatus {
 
 enum CameraViewState {
     case loading, loaded
+    
+    func updateInterface() -> CameraInterfaceState {
+        switch self {
+        case .loaded: return .show
+        case .loading: return .hide
+        }
+    }
+}
+
+enum CameraInterfaceState {
+    case show, hide
 }
 
 protocol CameraViewDelegate: class {
-    func updateCameraState(state: CameraViewState)
+    func updateInterfaceState(state: CameraInterfaceState)
 }
 
 class CameraView: UIView {
@@ -50,22 +61,21 @@ class CameraView: UIView {
         super.layoutSubviews()
         setupImageView()
         setupAlertLayout()
-    
     }
 
 }
 
 // MARK: - Public methods
 extension CameraView {
-    public func checkCameraAuthorization() {
-        requestCameraPermission()
+    func configureCamera() {
+        self.sessionQueue.async { [unowned self] in
+            self.configureSession()
+        }
     }
 
     public func stopSessionRunning() {
-        sessionQueue.async { [unowned self] in
-            if self.sessionStatus == .authorized {
-                self.captureSession.stopRunning()
-            }
+        if self.sessionStatus == .authorized {
+            self.captureSession.stopRunning()
         }
     }
     
@@ -84,20 +94,7 @@ extension CameraView {
 
 // MARK: - Private methods
 extension CameraView {
-    
-    private func requestCameraPermission() {
-        AVCaptureDevice.requestAccess(for: .video) { response in
-            if response {
-                self.sessionQueue.async { [unowned self] in
-                    self.sessionStatus = .authorized
-                    self.configureSession()
-                }
-            } else {
-                self.sessionStatus = .unauthorized
-                self.setupGetAccessView()
-            }
-        }
-    }
+
     
     private func setupGetAccessView() {
         addSubview(disabledView)
@@ -107,6 +104,10 @@ extension CameraView {
     private func setupAlertLayout() {
         addSubview(alert)
         alert.frame = bounds
+    }
+    
+    private func removeAlert() {
+        alert.removeFromSuperview()
     }
     
     private func setupImageView() {
@@ -172,11 +173,10 @@ extension CameraView {
         switch cameraViewState {
         case .loading:
             LoadingView.shared.startLoadingAt(self)
+            delegate?.updateInterfaceState(state: .hide)
         case .loaded:
             LoadingView.shared.removeFromView(self)
         }
-        
-        delegate?.updateCameraState(state: cameraViewState)
     }
 }
 

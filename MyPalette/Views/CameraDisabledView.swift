@@ -55,6 +55,7 @@ class CameraDisabledView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        layer.cornerRadius = 16
         setupStack()
     }
     

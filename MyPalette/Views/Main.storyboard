@@ -39,20 +39,26 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a62-6F-aBV">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a62-6F-aBV">
                                 <rect key="frame" x="203" y="449" width="8" height="8"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="VLs-ke-86f"/>
                                     <constraint firstAttribute="width" constant="8" id="XFt-UU-4Ei"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wym-AR-gvd">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icC-wy-dJu">
                                 <rect key="frame" x="175" y="782" width="64" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="iIH-i6-xRa"/>
-                                    <constraint firstAttribute="height" constant="64" id="mQl-lX-w2d"/>
+                                    <constraint firstAttribute="width" constant="64" id="MLW-x4-flr"/>
+                                    <constraint firstAttribute="height" constant="64" id="kvf-sb-4P1"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -60,30 +66,36 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="didTapCaptureButton:" destination="a8Z-is-XDq" eventType="touchUpInside" id="9M7-CJ-Yf4"/>
+                                    <outletCollection property="gestureRecognizers" destination="f08-F4-tQf" appends="YES" id="p6d-2u-ibh"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wym-AR-gvd" firstAttribute="centerX" secondItem="3a0-wX-7NR" secondAttribute="centerX" id="DNU-dZ-C8O"/>
+                            <constraint firstItem="icC-wy-dJu" firstAttribute="centerX" secondItem="3a0-wX-7NR" secondAttribute="centerX" id="9hv-FW-Wkt"/>
                             <constraint firstItem="a62-6F-aBV" firstAttribute="centerX" secondItem="3a0-wX-7NR" secondAttribute="centerX" id="Mpf-hB-xBi"/>
                             <constraint firstItem="3a0-wX-7NR" firstAttribute="trailing" secondItem="cTh-eQ-kcP" secondAttribute="trailing" id="ZkD-nX-Va0"/>
                             <constraint firstItem="a62-6F-aBV" firstAttribute="centerY" secondItem="3a0-wX-7NR" secondAttribute="centerY" id="a0i-Nq-m8H"/>
                             <constraint firstItem="cTh-eQ-kcP" firstAttribute="leading" secondItem="3a0-wX-7NR" secondAttribute="leading" id="glh-Ts-TL4"/>
                             <constraint firstItem="3a0-wX-7NR" firstAttribute="bottom" secondItem="cTh-eQ-kcP" secondAttribute="bottom" id="kg8-KK-7Pw"/>
                             <constraint firstItem="cTh-eQ-kcP" firstAttribute="top" secondItem="3a0-wX-7NR" secondAttribute="top" id="qiI-sc-zGi"/>
-                            <constraint firstItem="3a0-wX-7NR" firstAttribute="bottom" secondItem="wym-AR-gvd" secondAttribute="bottom" constant="16" id="vIu-dp-3Xp"/>
+                            <constraint firstItem="3a0-wX-7NR" firstAttribute="bottom" secondItem="icC-wy-dJu" secondAttribute="bottom" constant="16" id="zf1-oB-i3u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3a0-wX-7NR"/>
                     </view>
                     <navigationItem key="navigationItem" id="j6g-PD-73f"/>
                     <connections>
-                        <outlet property="cameraContent" destination="cTh-eQ-kcP" id="xcn-CI-gbg"/>
-                        <outlet property="captureButton" destination="wym-AR-gvd" id="2wj-Rm-4sI"/>
+                        <outlet property="aimView" destination="a62-6F-aBV" id="TgR-RH-1Yv"/>
+                        <outlet property="captureButton" destination="icC-wy-dJu" id="5le-PA-ZIn"/>
+                        <outlet property="content" destination="cTh-eQ-kcP" id="3n7-f9-eqi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwG-xx-2zb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="f08-F4-tQf">
+                    <connections>
+                        <action selector="didTapCaptureButton:" destination="a8Z-is-XDq" id="JrH-ey-StY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="325" y="115"/>
         </scene>
