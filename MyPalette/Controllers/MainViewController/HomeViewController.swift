@@ -14,11 +14,16 @@ class HomeViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var cameraContent: UIView!
+    @IBOutlet weak var captureButton: UIButton!
     
     // MARK: Properties
-    var cameraView = CameraView()
+    private var cameraView = CameraView()
     
     // MARK: View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cameraView.delegate = self
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -27,12 +32,20 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        cameraView.checkCameraAuthorization()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        cameraView.checkCameraAuthorization()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cameraView.stopSessionRunning()
+    }
+}
+
+// MARK: - Actions
+extension HomeViewController {
+    @IBAction func didTapCaptureButton(_ sender: Any) {
+        cameraView.didCapture()
     }
 }
 
