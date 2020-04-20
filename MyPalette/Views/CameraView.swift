@@ -68,6 +68,7 @@ class CameraView: UIView {
 // MARK: - Public methods
 extension CameraView {
     func configureCamera() {
+        cameraViewState = .loading
         self.sessionQueue.async { [unowned self] in
             self.configureSession()
         }
@@ -88,6 +89,7 @@ extension CameraView {
         }
         
         cameraViewState = .loading
+        delegate?.updateInterfaceState(state: .hide)
         photoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
 }
@@ -166,6 +168,8 @@ extension CameraView {
             previewLayer.frame = self.bounds
         
             self.captureSession.startRunning()
+            self.cameraViewState = .loaded
+            self.delegate?.updateInterfaceState(state: .show)
         }
     }
     
@@ -174,7 +178,6 @@ extension CameraView {
             switch self.cameraViewState {
             case .loading:
                 LoadingView.shared.startLoadingAt(self)
-                self.delegate?.updateInterfaceState(state: .hide)
             case .loaded:
                 LoadingView.shared.removeFromView(self)
             }
