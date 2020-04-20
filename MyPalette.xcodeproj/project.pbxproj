@@ -86,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2329F796244D679800552BB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2391C1DA240424010073AA31 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		233A5D242443EDF8001A9B97 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +171,7 @@
 		2391C1D0240423FE0073AA31 /* MyPalette */ = {
 			isa = PBXGroup;
 			children = (
+				2329F796244D679800552BB2 /* Supporting Files */,
 				233A5D242443EDF8001A9B97 /* Utils */,
 				233A5D2D2443FE97001A9B97 /* Model */,
 				2391C200240426AC0073AA31 /* Views */,
@@ -170,7 +179,6 @@
 				2391C1FF240426A70073AA31 /* Controllers */,
 				2391C1D1240423FE0073AA31 /* AppDelegate.swift */,
 				2391C1D3240423FE0073AA31 /* SceneDelegate.swift */,
-				2391C1DA240424010073AA31 /* Assets.xcassets */,
 				2391C1DC240424010073AA31 /* LaunchScreen.storyboard */,
 				2391C1DF240424010073AA31 /* Info.plist */,
 			);
