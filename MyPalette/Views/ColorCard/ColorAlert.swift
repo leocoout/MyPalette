@@ -41,6 +41,7 @@ class ColorAlert: UIView {
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.distribution = .fill
+        stack.spacing = 16
         
         return stack
     }()
@@ -117,8 +118,15 @@ class ColorAlert: UIView {
         return view
     }()
     
+    private lazy var subAlertView = ColorSubAlert()
+    
     weak var delegate: ColorAlertDelegate?
+    
+    private var colorAlertCardHeight: CGFloat = 100
+    private var colorSubAlertHeight: CGFloat = 48
     private var colorViewHeight = NSLayoutConstraint()
+    private var stackViewBottomConstraint = NSLayoutConstraint()
+    
     private var colorCardState: (state: ColorCardState, animated: Bool) = (.collapse, animated: false) {
         didSet {
             updateAlertHeight(animated: colorCardState.animated)
@@ -144,28 +152,7 @@ class ColorAlert: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         background.frame = bounds
-    }
-}
-
-// MARK: - 
-extension ColorAlert {
-    func showAlert() {
-        colorCardState = (state: .collapse, animated: false)
-        isHidden = false
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-            self.background.alpha = 0.8
-            self.stackView.transform = CGAffineTransform(translationX: 0, y: -(100 + 32))
-        }, completion: nil)
-    }
-    
-    func hideAlert() {
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [unowned self] in
-            self.background.alpha = 0
-            self.stackView.transform = CGAffineTransform(translationX: 0, y: 100)
-        }, completion: { _ in
-            self.isHidden = true
-        })
+        setupSubAlert()
     }
 }
 
@@ -182,17 +169,19 @@ extension ColorAlert {
     private func setupStackView() {
         addSubview(stackView)
         
+        stackViewBottomConstraint = stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
+                                                                      constant: (32 + colorAlertCardHeight + colorSubAlertHeight))
+        
         NSLayoutConstraint.activate([
             stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
             stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                              constant: (16 + 100)),
+            stackViewBottomConstraint
         ])
     }
     
     private func setupColorCardView() {
         stackView.addArrangedSubview(colorCardView)
-        colorViewHeight = colorCardView.heightAnchor.constraint(equalToConstant: 100)
+        colorViewHeight = colorCardView.heightAnchor.constraint(equalToConstant: colorAlertCardHeight)
         colorViewHeight.isActive = true
         
         colorCardView.addSubview(colorPickedView)
@@ -207,7 +196,6 @@ extension ColorAlert {
             colorPickedView.widthAnchor.constraint(equalToConstant: 48),
             
             colorCardStackView.leftAnchor.constraint(equalTo: colorPickedView.rightAnchor, constant: 16),
-            colorCardStackView.rightAnchor.constraint(equalTo: closeButton.leftAnchor, constant: 0),
             colorCardStackView.centerYAnchor.constraint(equalTo: colorPickedView.centerYAnchor),
             
             closeButton.rightAnchor.constraint(equalTo: colorCardView.rightAnchor, constant: -16),
@@ -226,6 +214,11 @@ extension ColorAlert {
         colorCardStackView.addArrangedSubview(bodyLabel)
     }
     
+    private func setupSubAlert() {
+        stackView.addArrangedSubview(subAlertView)
+        subAlertView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+    }
+    
     private func setupColorCopiedMaskLayout() {
         colorCopiedImage.removeFromSuperview()
         colorPickedView.addSubview(colorCopiedImage)
@@ -238,7 +231,7 @@ extension ColorAlert {
     }
     
     private func animateColorCopiedImage() {
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 50, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 50, options: .curveEaseInOut, animations: {
             self.colorCopiedImage.alpha = 1
             self.colorCopiedImage.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { _ in
@@ -253,7 +246,6 @@ extension ColorAlert {
         switch colorCardState.state {
         case .expand:
             colorViewHeight.constant = 166
-            
             colorCardStackView.removeArrangedSubview(bodyLabel)
         case .collapse:
             colorViewHeight.constant = 100
@@ -272,6 +264,20 @@ extension ColorAlert {
         colorPickedView.backgroundColor = colorPicked
         titleLabel.text = colorPicked.hexString()
     }
+    
+    private func animateSubAlert() {
+        stackViewBottomConstraint.constant -= colorSubAlertHeight
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.layoutIfNeeded()
+        }) { _ in
+            
+            self.stackViewBottomConstraint.constant += self.colorSubAlertHeight
+            UIView.animate(withDuration: 0.3, delay: 2, options: .curveEaseInOut, animations: {
+                self.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
 }
 
 // MARK: - Actions
@@ -287,9 +293,32 @@ extension ColorAlert {
         pasteboard.string = titleLabel.text
         
         setupColorCopiedMaskLayout()
+        animateSubAlert()
     }
     
     @objc private func changeColorCardState(_ gesture: UITapGestureRecognizer) {
         colorCardState = (state: colorCardState.0.toggle(), animated: true)
+    }
+}
+
+// MARK: - Public Methods
+extension ColorAlert {
+    func showAlert() {
+        colorCardState = (state: .collapse, animated: false)
+        isHidden = false
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.background.alpha = 0.8
+            self.stackView.transform = CGAffineTransform(translationX: 0, y: -(self.colorAlertCardHeight + 32))
+        }, completion: nil)
+    }
+    
+    func hideAlert() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: { [unowned self] in
+            self.background.alpha = 0
+            self.stackView.transform = CGAffineTransform(translationX: 0, y: self.colorAlertCardHeight)
+        }, completion: { _ in
+            self.isHidden = true
+        })
     }
 }

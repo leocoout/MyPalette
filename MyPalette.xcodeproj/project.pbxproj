@@ -27,6 +27,7 @@
 		2391C1FC2404263E0073AA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1FB2404263E0073AA31 /* Main.storyboard */; };
 		2391C202240426B90073AA31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C201240426B90073AA31 /* HomeViewController.swift */; };
 		23956125244547160041E56E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23956124244547160041E56E /* UIImageExtension.swift */; };
+		23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A799CE244E43130024E24D /* ColorSubAlert.swift */; };
 		23F6904E2447FA4000CAF7A4 /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		2391C1FB2404263E0073AA31 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2391C201240426B90073AA31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23956124244547160041E56E /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		23A799CE244E43130024E24D /* ColorSubAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSubAlert.swift; sourceTree = "<group>"; };
 		23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,9 +118,9 @@
 		233A5D282443F31A001A9B97 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				23A799CD244E42940024E24D /* ColorCard */,
 				2329F794244AA68200552BB2 /* AlertButton.swift */,
 				233A5D292443F35B001A9B97 /* CustomButton.swift */,
-				233A5D2F2444097C001A9B97 /* ColorAlert.swift */,
 				23721D3E2446818E00371B08 /* LoadingView.swift */,
 			);
 			name = Components;
@@ -209,6 +211,15 @@
 				233A5D252443F09F001A9B97 /* Camera */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		23A799CD244E42940024E24D /* ColorCard */ = {
+			isa = PBXGroup;
+			children = (
+				233A5D2F2444097C001A9B97 /* ColorAlert.swift */,
+				23A799CE244E43130024E24D /* ColorSubAlert.swift */,
+			);
+			path = ColorCard;
 			sourceTree = "<group>";
 		};
 		23F6904C2447FA2A00CAF7A4 /* SavedColorsView */ = {
@@ -332,6 +343,7 @@
 				233A5D2C2443F3D8001A9B97 /* CustomColors.swift in Sources */,
 				233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */,
 				23956125244547160041E56E /* UIImageExtension.swift in Sources */,
+				23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */,
 				2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */,
 				2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */,
 				2391C202240426B90073AA31 /* HomeViewController.swift in Sources */,

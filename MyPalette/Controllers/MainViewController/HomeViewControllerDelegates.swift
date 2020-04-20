@@ -33,7 +33,6 @@ extension HomeViewController: CameraViewDelegate {
                 self.captureButton.alpha = 0
                 self.aimView.alpha = 0
                 self.savedColorsButton.alpha = 0
-                self.savedColorsButton.isHidden = true
             })
         }
     }
