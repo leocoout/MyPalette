@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F790244A950200552BB2 /* SavedColorsListView.swift */; };
+		2329F793244A9BE100552BB2 /* SavedColorsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */; };
+		2329F795244AA68200552BB2 /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F794244AA68200552BB2 /* AlertButton.swift */; };
 		233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D222443E4AA001A9B97 /* CameraView.swift */; };
 		233A5D272443F0BB001A9B97 /* CameraDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */; };
 		233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D292443F35B001A9B97 /* CustomButton.swift */; };
@@ -15,6 +18,7 @@
 		23721D3F2446818E00371B08 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D3E2446818E00371B08 /* LoadingView.swift */; };
 		23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */; };
 		23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D422446B62C00371B08 /* CameraViewDelegates.swift */; };
+		238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D3240423FE0073AA31 /* SceneDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
@@ -23,6 +27,7 @@
 		2391C1FC2404263E0073AA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1FB2404263E0073AA31 /* Main.storyboard */; };
 		2391C202240426B90073AA31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C201240426B90073AA31 /* HomeViewController.swift */; };
 		23956125244547160041E56E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23956124244547160041E56E /* UIImageExtension.swift */; };
+		23F6904E2447FA4000CAF7A4 /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2329F790244A950200552BB2 /* SavedColorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListView.swift; sourceTree = "<group>"; };
+		2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListCell.swift; sourceTree = "<group>"; };
+		2329F794244AA68200552BB2 /* AlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		233A5D222443E4AA001A9B97 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDisabledView.swift; sourceTree = "<group>"; };
 		233A5D292443F35B001A9B97 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 		23721D3E2446818E00371B08 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegates.swift; sourceTree = "<group>"; };
 		23721D422446B62C00371B08 /* CameraViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewDelegates.swift; sourceTree = "<group>"; };
+		238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsEmptyView.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2391C1D3240423FE0073AA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 		2391C1FB2404263E0073AA31 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2391C201240426B90073AA31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23956124244547160041E56E /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +108,13 @@
 		233A5D282443F31A001A9B97 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2329F794244AA68200552BB2 /* AlertButton.swift */,
 				233A5D292443F35B001A9B97 /* CustomButton.swift */,
 				233A5D2F2444097C001A9B97 /* ColorAlert.swift */,
 				23721D3E2446818E00371B08 /* LoadingView.swift */,
 			);
 			name = Components;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		233A5D2D2443FE97001A9B97 /* Model */ = {
@@ -115,6 +127,7 @@
 		233A5D2E2443FF72001A9B97 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
+				23F6904C2447FA2A00CAF7A4 /* SavedColorsView */,
 				2391C1FB2404263E0073AA31 /* Main.storyboard */,
 			);
 			name = MainViewController;
@@ -153,6 +166,7 @@
 				233A5D242443EDF8001A9B97 /* Utils */,
 				233A5D2D2443FE97001A9B97 /* Model */,
 				2391C200240426AC0073AA31 /* Views */,
+				233A5D282443F31A001A9B97 /* Components */,
 				2391C1FF240426A70073AA31 /* Controllers */,
 				2391C1D1240423FE0073AA31 /* AppDelegate.swift */,
 				2391C1D3240423FE0073AA31 /* SceneDelegate.swift */,
@@ -184,10 +198,20 @@
 			isa = PBXGroup;
 			children = (
 				233A5D2E2443FF72001A9B97 /* MainViewController */,
-				233A5D282443F31A001A9B97 /* Components */,
 				233A5D252443F09F001A9B97 /* Camera */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		23F6904C2447FA2A00CAF7A4 /* SavedColorsView */ = {
+			isa = PBXGroup;
+			children = (
+				23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */,
+				238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */,
+				2329F790244A950200552BB2 /* SavedColorsListView.swift */,
+				2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */,
+			);
+			name = SavedColorsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,15 +315,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F6904E2447FA4000CAF7A4 /* SavedColorsView.swift in Sources */,
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
 				233A5D272443F0BB001A9B97 /* CameraDisabledView.swift in Sources */,
 				233A5D302444097C001A9B97 /* ColorAlert.swift in Sources */,
 				23721D3F2446818E00371B08 /* LoadingView.swift in Sources */,
+				2329F793244A9BE100552BB2 /* SavedColorsListCell.swift in Sources */,
 				233A5D2C2443F3D8001A9B97 /* CustomColors.swift in Sources */,
 				233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */,
 				23956125244547160041E56E /* UIImageExtension.swift in Sources */,
+				2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */,
 				2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */,
 				2391C202240426B90073AA31 /* HomeViewController.swift in Sources */,
+				238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */,
+				2329F795244AA68200552BB2 /* AlertButton.swift in Sources */,
 				233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */,
 				23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */,
 				23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */,
@@ -496,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34HR7YPNJ4;
 				INFOPLIST_FILE = MyPaletteTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,7 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34HR7YPNJ4;
 				INFOPLIST_FILE = MyPaletteTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

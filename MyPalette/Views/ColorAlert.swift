@@ -20,7 +20,7 @@ class ColorAlert: UIView {
         let view = UIView()
         view.backgroundColor = .black
         view.alpha = 0
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeAlertGesture(_:))))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeAlertGesture(_:))))
         
         return view
     }()
@@ -30,6 +30,7 @@ class ColorAlert: UIView {
         view.backgroundColor = .white
         view.layer.cornerRadius = 16
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(expandAlert(_:))))
         
         return view
     }()
@@ -39,6 +40,7 @@ class ColorAlert: UIView {
         view.backgroundColor = .red
         view.layer.cornerRadius = 16
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(copyColorToClipboard(_:))))
         
         return view
     }()
@@ -52,19 +54,70 @@ class ColorAlert: UIView {
         return stack
     }()
     
+    private lazy var closeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.contentMode = .scaleAspectFill
+        button.tintColor = .myPalleteGray
+        button.addTarget(self, action: #selector(closeAlertGesture(_:)), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var expandButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "arrow.down.circle.fill"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageView?.contentMode = .scaleAspectFill
+        button.tintColor = .myPalleteGray
+        button.addTarget(self, action: #selector(expandAlert), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var saveButton: AlertButton = {
+        let button = AlertButton()
+        button.setTitle("Save", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
+    
     weak var delegate: ColorAlertDelegate?
+    private var colorViewHeight = NSLayoutConstraint()
     private let titleLabel = UILabel()
-    var colorViewBackground: CALayer?
+    private let tipLabel = UILabel()
+    private var alertHeightConstraint = NSLayoutConstraint()
+    
     var colorPicked: UIColor = .black  {
         didSet {
             updateColorView()
         }
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        addSubview(background)
         background.frame = bounds
+    }
+}
+
+// MARK: - Private methods
+extension ColorAlert {
+    
+    private func setup() {
+        isHidden = true
+        addSubview(background)
         
         setupAlertViewLayout()
         setupAlertViewContent()
@@ -72,30 +125,48 @@ class ColorAlert: UIView {
     
     private func setupAlertViewLayout() {
         addSubview(alertView)
+    
+        colorViewHeight = alertView.heightAnchor.constraint(equalToConstant: 100)
         
-        alertView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                          constant: 64 + 16 + 8).isActive = true
-        alertView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        alertView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
-        alertView.heightAnchor.constraint(equalToConstant: 86).isActive = true
+        NSLayoutConstraint.activate([
+            colorViewHeight,
+            alertView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
+            alertView.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+            alertView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
+                                              constant: 64 + 16 + 8),
+        ])
+        
     }
     
     private func setupAlertViewContent() {
         alertView.addSubview(colorView)
-        
-        colorView.centerYAnchor.constraint(equalTo: alertView.centerYAnchor, constant: 0).isActive = true
-        colorView.leftAnchor.constraint(equalTo: alertView.leftAnchor, constant: 16).isActive = true
-        colorView.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        colorView.widthAnchor.constraint(equalToConstant: 48).isActive = true
-        
         alertView.addSubview(stackView)
-    
-        stackView.centerYAnchor.constraint(equalTo: alertView.centerYAnchor, constant: 0).isActive = true
-        stackView.leftAnchor.constraint(equalTo: colorView.rightAnchor, constant: 16).isActive = true
-        stackView.rightAnchor.constraint(equalTo: alertView.rightAnchor, constant: -16).isActive = true
+        alertView.addSubview(closeButton)
+        alertView.addSubview(expandButton)
         
-        let tipLabel = UILabel()
-        tipLabel.text = "Toque para salvar"
+        NSLayoutConstraint.activate([
+            colorView.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 16),
+            colorView.leftAnchor.constraint(equalTo: alertView.leftAnchor, constant: 16),
+            colorView.heightAnchor.constraint(equalToConstant: 48),
+            colorView.widthAnchor.constraint(equalToConstant: 48),
+        
+            stackView.centerYAnchor.constraint(equalTo: colorView.centerYAnchor, constant: 0),
+            stackView.leftAnchor.constraint(equalTo: colorView.rightAnchor, constant: 16),
+            stackView.rightAnchor.constraint(equalTo: closeButton.leftAnchor, constant: 0),
+            
+            closeButton.topAnchor.constraint(equalTo: alertView.topAnchor, constant: 16),
+            closeButton.leftAnchor.constraint(equalTo: stackView.rightAnchor, constant: 0),
+            closeButton.rightAnchor.constraint(equalTo: alertView.rightAnchor, constant: -16),
+            closeButton.heightAnchor.constraint(equalToConstant: 20),
+            closeButton.widthAnchor.constraint(equalToConstant: 20),
+            
+            expandButton.centerXAnchor.constraint(equalTo: alertView.centerXAnchor),
+            expandButton.bottomAnchor.constraint(equalTo: alertView.bottomAnchor, constant: -8),
+            expandButton.heightAnchor.constraint(equalToConstant: 20),
+            expandButton.widthAnchor.constraint(equalToConstant: 18),
+        ])
+        
+        tipLabel.text = "Tap to more actions"
         tipLabel.textColor = .customBlack
         tipLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         
@@ -112,7 +183,8 @@ class ColorAlert: UIView {
     }
     
     func showAlert() {
-        isUserInteractionEnabled = true
+        background.isUserInteractionEnabled = true
+        isHidden = false
         
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.3, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 20, options: .curveEaseInOut, animations: { [weak self] in
@@ -123,16 +195,41 @@ class ColorAlert: UIView {
     }
     
     private func hideAlert() {
-        isUserInteractionEnabled = false
+        background.isUserInteractionEnabled = false
         
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
-            self?.background.alpha = 0
-            self?.alertView.transform = .identity
-        }, completion: nil)
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: { [weak self] in
+                self?.background.alpha = 0
+                self?.alertView.transform = .identity
+                }, completion: { _ in
+                    self.isHidden = true
+            })
+        }
     }
+    
+    
+    private func updateAlertHeightAnimated() {
+        colorViewHeight.constant = 166
+        UIView.animate(withDuration: 0.2) {
+            self.layoutIfNeeded()
+        }
+    }
+}
+
+// MARK: - Actions
+extension ColorAlert {
     
     @objc private func closeAlertGesture(_ gesture: UITapGestureRecognizer) {
         delegate?.alertDidClose()
         hideAlert()
+    }
+    
+    @objc private func copyColorToClipboard(_ gesture: UITapGestureRecognizer) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = titleLabel.text
+    }
+    
+    @objc private func expandAlert(_ gesture: UITapGestureRecognizer) {
+        updateAlertHeightAnimated()
     }
 }

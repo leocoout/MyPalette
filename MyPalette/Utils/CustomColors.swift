@@ -11,7 +11,8 @@ import UIKit
 
 extension UIColor {
     static let customBlack = #colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1)
-
+    static let myPalleteGray = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    
     func hexString() -> String {
         guard let colorRef = self.cgColor.components else { return "Não foi possível detectar a cor" }
         
