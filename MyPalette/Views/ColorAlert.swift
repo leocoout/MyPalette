@@ -110,6 +110,13 @@ class ColorAlert: UIView {
         return button
     }()
     
+    private lazy var colorCopiedImage: UIImageView = {
+        let view = UIImageView(image: UIImage(named: "icon_check"))
+        view.alpha = 0
+        
+        return view
+    }()
+    
     weak var delegate: ColorAlertDelegate?
     private var colorViewHeight = NSLayoutConstraint()
     private var colorCardState: (state: ColorCardState, animated: Bool) = (.collapse, animated: false) {
@@ -137,13 +144,13 @@ class ColorAlert: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         background.frame = bounds
-//        colorCardState = (state: .collapse, animated: false)
     }
 }
 
 // MARK: - 
 extension ColorAlert {
     func showAlert() {
+        colorCardState = (state: .collapse, animated: false)
         isHidden = false
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
@@ -218,10 +225,44 @@ extension ColorAlert {
         colorCardStackView.addArrangedSubview(titleLabel)
         colorCardStackView.addArrangedSubview(bodyLabel)
     }
+    
+    private func setupColorCopiedMaskLayout() {
+        colorCopiedImage.removeFromSuperview()
+        colorPickedView.addSubview(colorCopiedImage)
+        colorCopiedImage.frame.size = CGSize(width: 18, height: 18)
+        colorCopiedImage.center = CGPoint(x: colorPickedView.frame.width / 2,
+                                         y: colorPickedView.frame.height / 2)
+        colorCopiedImage.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        animateColorCopiedImage()
+    }
+    
+    private func animateColorCopiedImage() {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 50, options: .curveEaseInOut, animations: {
+            self.colorCopiedImage.alpha = 1
+            self.colorCopiedImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { _ in
+            UIView.animate(withDuration: 0.3, delay: 2, options: .curveEaseInOut, animations: {
+                self.colorCopiedImage.alpha = 0
+            }, completion: nil)
+        }
+    }
 
     private func updateAlertHeight(animated: Bool) {
-        colorViewHeight.constant = colorCardState.state == .expand ? 166 : 100
+        
+        switch colorCardState.state {
+        case .expand:
+            colorViewHeight.constant = 166
+            
+            colorCardStackView.removeArrangedSubview(bodyLabel)
+        case .collapse:
+            colorViewHeight.constant = 100
+            colorCardStackView.addArrangedSubview(bodyLabel)
+        }
+        
         UIView.animate(withDuration: 0.2) {
+            self.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+            self.bodyLabel.alpha = self.colorCardState.state == .expand ? 0 : 1
             self.expandButton.transform = self.expandButton.transform.rotated(by: .pi)
             self.layoutIfNeeded()
         }
@@ -229,6 +270,7 @@ extension ColorAlert {
     
     private func updateColorView() {
         colorPickedView.backgroundColor = colorPicked
+        titleLabel.text = colorPicked.hexString()
     }
 }
 
@@ -242,7 +284,9 @@ extension ColorAlert {
     
     @objc private func copyColorToClipboard(_ gesture: UITapGestureRecognizer) {
         let pasteboard = UIPasteboard.general
-//        pasteboard.string = titleLabel.text
+        pasteboard.string = titleLabel.text
+        
+        setupColorCopiedMaskLayout()
     }
     
     @objc private func changeColorCardState(_ gesture: UITapGestureRecognizer) {
