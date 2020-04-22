@@ -118,6 +118,7 @@ class ColorAlert: UIView {
         return view
     }()
     
+    private lazy var menuList = ColorAlertMenuList()
     private lazy var subAlertView = ColorSubAlert()
     
     weak var delegate: ColorAlertDelegate?
@@ -151,6 +152,7 @@ class ColorAlert: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        menuList.delegate = self
         background.frame = bounds
         setupSubAlert()
     }
@@ -250,14 +252,38 @@ extension ColorAlert {
         case .collapse:
             colorViewHeight.constant = 100
             colorCardStackView.addArrangedSubview(bodyLabel)
+            self.removeMenuListView()
         }
         
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.2, animations: {
             self.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
             self.bodyLabel.alpha = self.colorCardState.state == .expand ? 0 : 1
             self.expandButton.transform = self.expandButton.transform.rotated(by: .pi)
             self.layoutIfNeeded()
-        }
+        }, completion: { _ in
+            if self.colorCardState.state == .expand {
+                self.insertMenuListView()
+            }
+        })
+    }
+    
+    private func insertMenuListView() {
+        colorCardView.addSubview(menuList)
+        menuList.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuList.topAnchor.constraint(equalTo: colorPickedView.bottomAnchor, constant: 16),
+            menuList.leftAnchor.constraint(equalTo: colorCardView.leftAnchor, constant: 16),
+            menuList.rightAnchor.constraint(equalTo: colorCardView.rightAnchor, constant: -16),
+            menuList.bottomAnchor.constraint(equalTo: expandButton.topAnchor, constant: -8)
+        ])
+        
+        menuList.showItens()
+    }
+    
+    private func removeMenuListView() {
+        menuList.hideItens()
+        menuList.removeFromSuperview()
     }
     
     private func updateColorView() {
@@ -266,17 +292,47 @@ extension ColorAlert {
     }
     
     private func animateSubAlert() {
-        stackViewBottomConstraint.constant -= colorSubAlertHeight
+        stackViewBottomConstraint.constant -= colorSubAlertHeight + 16
         
         UIView.animate(withDuration: 0.3, animations: {
             self.layoutIfNeeded()
         }) { _ in
             
-            self.stackViewBottomConstraint.constant += self.colorSubAlertHeight
+            self.stackViewBottomConstraint.constant += 16 + self.colorSubAlertHeight
             UIView.animate(withDuration: 0.3, delay: 2, options: .curveEaseInOut, animations: {
                 self.layoutIfNeeded()
             }, completion: nil)
         }
+    }
+    
+    private func performSaveAnimation() {
+        let path = UIBezierPath()
+        let viewCenter = colorPickedView.center
+        let screenSize = UIScreen.main.bounds
+        
+        CATransaction.begin()
+    
+        path.move(to: CGPoint(x: viewCenter.x, y: viewCenter.y))
+        path.addQuadCurve(to: CGPoint(x: screenSize.width / 2, y: screenSize.height),
+                          controlPoint: CGPoint(x: screenSize.width / 2,
+                                                y: -300))
+        
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.path = path.cgPath
+        
+        animation.repeatCount = 0
+        animation.duration = 1
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        animation.duration = 0.8
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        
+        CATransaction.setCompletionBlock {
+            self.closeAlertGesture(UITapGestureRecognizer())
+        }
+        
+        colorPickedView.layer.add(animation, forKey: "animate along path")
+        CATransaction.commit()
     }
 }
 
@@ -304,6 +360,7 @@ extension ColorAlert {
 // MARK: - Public Methods
 extension ColorAlert {
     func showAlert() {
+        colorPickedView.layer.removeAllAnimations()
         colorCardState = (state: .collapse, animated: false)
         isHidden = false
         
@@ -320,5 +377,15 @@ extension ColorAlert {
         }, completion: { _ in
             self.isHidden = true
         })
+    }
+}
+
+extension ColorAlert: ColorAlertMenuListDelegate {
+    func didTapCopyItem() {
+        copyColorToClipboard(UITapGestureRecognizer())
+    }
+    
+    func didTapSaveItem() {
+        performSaveAnimation()
     }
 }
