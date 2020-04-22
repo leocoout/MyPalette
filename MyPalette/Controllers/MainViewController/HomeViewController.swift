@@ -30,6 +30,7 @@ enum HomeContentState {
 
 class HomeViewController: UIViewController {
     
+ 
     // MARK: Outlets
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var cameraContent: UIView!
@@ -52,6 +53,7 @@ class HomeViewController: UIViewController {
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        savedColorsButton.transform = savedColorsButton.transform.rotated(by: .pi)
         requestCameraPermission()
     }
     

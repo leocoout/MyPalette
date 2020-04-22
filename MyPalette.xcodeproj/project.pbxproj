@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F790244A950200552BB2 /* SavedColorsListView.swift */; };
 		2329F793244A9BE100552BB2 /* SavedColorsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */; };
-		2329F795244AA68200552BB2 /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F794244AA68200552BB2 /* AlertButton.swift */; };
 		233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D222443E4AA001A9B97 /* CameraView.swift */; };
 		233A5D272443F0BB001A9B97 /* CameraDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */; };
 		233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D292443F35B001A9B97 /* CustomButton.swift */; };
@@ -27,6 +26,9 @@
 		2391C1FC2404263E0073AA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1FB2404263E0073AA31 /* Main.storyboard */; };
 		2391C202240426B90073AA31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C201240426B90073AA31 /* HomeViewController.swift */; };
 		23956125244547160041E56E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23956124244547160041E56E /* UIImageExtension.swift */; };
+		23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A799CE244E43130024E24D /* ColorSubAlert.swift */; };
+		23AB73BC244E877C00EF45A8 /* ColorAlertMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73BB244E877C00EF45A8 /* ColorAlertMenuList.swift */; };
+		23AB73BF244FEE7F00EF45A8 /* MyPalette.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73BD244FEE7F00EF45A8 /* MyPalette.xcdatamodeld */; };
 		23F6904E2447FA4000CAF7A4 /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +45,6 @@
 /* Begin PBXFileReference section */
 		2329F790244A950200552BB2 /* SavedColorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListView.swift; sourceTree = "<group>"; };
 		2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListCell.swift; sourceTree = "<group>"; };
-		2329F794244AA68200552BB2 /* AlertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		233A5D222443E4AA001A9B97 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDisabledView.swift; sourceTree = "<group>"; };
 		233A5D292443F35B001A9B97 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -65,6 +66,9 @@
 		2391C1FB2404263E0073AA31 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2391C201240426B90073AA31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23956124244547160041E56E /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		23A799CE244E43130024E24D /* ColorSubAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSubAlert.swift; sourceTree = "<group>"; };
+		23AB73BB244E877C00EF45A8 /* ColorAlertMenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuList.swift; sourceTree = "<group>"; };
+		23AB73BE244FEE7F00EF45A8 /* MyPalette.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyPalette.xcdatamodel; sourceTree = "<group>"; };
 		23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,9 +120,8 @@
 		233A5D282443F31A001A9B97 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2329F794244AA68200552BB2 /* AlertButton.swift */,
+				23A799CD244E42940024E24D /* ColorCard */,
 				233A5D292443F35B001A9B97 /* CustomButton.swift */,
-				233A5D2F2444097C001A9B97 /* ColorAlert.swift */,
 				23721D3E2446818E00371B08 /* LoadingView.swift */,
 			);
 			name = Components;
@@ -128,6 +131,7 @@
 		233A5D2D2443FE97001A9B97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23AB73BD244FEE7F00EF45A8 /* MyPalette.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +213,16 @@
 				233A5D252443F09F001A9B97 /* Camera */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		23A799CD244E42940024E24D /* ColorCard */ = {
+			isa = PBXGroup;
+			children = (
+				233A5D2F2444097C001A9B97 /* ColorAlert.swift */,
+				23A799CE244E43130024E24D /* ColorSubAlert.swift */,
+				23AB73BB244E877C00EF45A8 /* ColorAlertMenuList.swift */,
+			);
+			path = ColorCard;
 			sourceTree = "<group>";
 		};
 		23F6904C2447FA2A00CAF7A4 /* SavedColorsView */ = {
@@ -328,15 +342,17 @@
 				233A5D272443F0BB001A9B97 /* CameraDisabledView.swift in Sources */,
 				233A5D302444097C001A9B97 /* ColorAlert.swift in Sources */,
 				23721D3F2446818E00371B08 /* LoadingView.swift in Sources */,
+				23AB73BC244E877C00EF45A8 /* ColorAlertMenuList.swift in Sources */,
 				2329F793244A9BE100552BB2 /* SavedColorsListCell.swift in Sources */,
 				233A5D2C2443F3D8001A9B97 /* CustomColors.swift in Sources */,
 				233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */,
 				23956125244547160041E56E /* UIImageExtension.swift in Sources */,
+				23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */,
 				2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */,
 				2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */,
 				2391C202240426B90073AA31 /* HomeViewController.swift in Sources */,
+				23AB73BF244FEE7F00EF45A8 /* MyPalette.xcdatamodeld in Sources */,
 				238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */,
-				2329F795244AA68200552BB2 /* AlertButton.swift in Sources */,
 				233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */,
 				23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */,
 				23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */,
@@ -600,6 +616,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23AB73BD244FEE7F00EF45A8 /* MyPalette.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23AB73BE244FEE7F00EF45A8 /* MyPalette.xcdatamodel */,
+			);
+			currentVersion = 23AB73BE244FEE7F00EF45A8 /* MyPalette.xcdatamodel */;
+			path = MyPalette.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2391C1C6240423FE0073AA31 /* Project object */;
 }
