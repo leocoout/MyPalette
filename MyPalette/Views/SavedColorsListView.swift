@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class SavedColorsListView: UIView {
     
@@ -24,8 +25,14 @@ class SavedColorsListView: UIView {
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
-       
     
+    var colorListItens = [NSManagedObject]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+       
+    // MARK: Object Lifecycle
     override func layoutSubviews() {
         super.layoutSubviews()
         setupLayout()
@@ -59,17 +66,17 @@ extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return colorListItens.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SavedColorsListCell",
                                                       for: indexPath) as! SavedColorsListCell
         
+        cell.colorPicked = colorListItens[indexPath.row].value(forKey: "colorPicked") as? String
+        
         return cell
     }
-    
-    
 }
 
 

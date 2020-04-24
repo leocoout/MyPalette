@@ -11,6 +11,7 @@ import UIKit
 
 protocol ColorAlertDelegate: class {
     func alertDidClose()
+    func colorDidSave(color: UIColor?)
 }
 
 enum ColorCardState {
@@ -387,5 +388,6 @@ extension ColorAlert: ColorAlertMenuListDelegate {
     
     func didTapSaveItem() {
         performSaveAnimation()
+        delegate?.colorDidSave(color: colorPickedView.backgroundColor)
     }
 }

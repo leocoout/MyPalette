@@ -15,21 +15,12 @@ class SavedColorsEmptyView: UIView {
         var stack = UIStackView()
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillProportionally
+        stack.distribution = .fillEqually
         stack.alignment = .leading
         
         return stack
     }()
-    
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .customBlack
-        label.text = "My Colors"
-        
-        return label
-    }()
-    
+
     private lazy var bodyLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
@@ -52,7 +43,7 @@ class SavedColorsEmptyView: UIView {
     public var buttonAction: (() -> Void)?
     
     override func layoutSubviews() {
-        super.layoutSubviews()
+        super.layoutSubviews()        
         setupLayout()
     }
     
@@ -67,7 +58,6 @@ class SavedColorsEmptyView: UIView {
         
         startNowButton.widthAnchor.constraint(equalToConstant: 142).isActive = true
         
-        stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(bodyLabel)
         stackView.addArrangedSubview(startNowButton)
     }
