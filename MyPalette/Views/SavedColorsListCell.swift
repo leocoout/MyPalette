@@ -10,10 +10,22 @@ import Foundation
 import UIKit
 
 class SavedColorsListCell: UICollectionViewCell {
+    
+    var colorPicked: String? = "0 0 0 1" {
+        didSet {
+            updateColorView()
+        }
+    }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = .red
         layer.cornerRadius = 16
+
+    }
+    
+    private func updateColorView() {
+        if let color = colorPicked {
+            backgroundColor = MyPaletteColorAPI.colorSpaceToUIColor(value: color)
+        }
     }
 }

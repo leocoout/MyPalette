@@ -30,7 +30,6 @@ enum HomeContentState {
 
 class HomeViewController: UIViewController {
     
- 
     // MARK: Outlets
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var cameraContent: UIView!
@@ -45,6 +44,7 @@ class HomeViewController: UIViewController {
     private lazy var cameraView = CameraView()
     private lazy var disabledCamera = CameraDisabledView()
     private var contentState: HomeContentState = .enabled
+    private var isSavedColorsViewOpen: Bool = false
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -84,12 +84,23 @@ extension HomeViewController {
 
     @IBAction func didTapOpenSavedButton(_ sender: Any) {
         animateContentView()
-        savedColorsView.setupWith(state: .loaded)
+        
+        if !isSavedColorsViewOpen {
+            fetchColorData()
+        }
     }
 }
 
 // MARK: - Private methods
 extension HomeViewController {
+    
+    private func fetchColorData() {
+        HomeViewControllerServiceManager.recoverdata { (response) in
+            self.savedColorsView.itens = response
+            self.savedColorsView.setupWith(state: response.isEmpty ? .empty : .loaded)
+        }
+    }
+    
     private func requestCameraPermission() {
         AVCaptureDevice.requestAccess(for: .video) { response in
             DispatchQueue.main.async {
@@ -121,6 +132,7 @@ extension HomeViewController {
     }
     
     private func animateContentView() {
+        isSavedColorsViewOpen = contentState == .disabled
         contentState = contentState.toggle()
         contentState == .enabled ? showInterface() : hideInterface()
         

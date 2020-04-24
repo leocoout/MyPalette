@@ -31,6 +31,7 @@ enum CameraInterfaceState {
 
 protocol CameraViewDelegate: class {
     func updateInterfaceState(state: CameraInterfaceState)
+    func userSavedColor(color: UIColor?)
 }
 
 class CameraView: UIView {

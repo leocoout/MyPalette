@@ -11,13 +11,23 @@ import UIKit
 
 extension HomeViewController: CameraViewDelegate {
     
+    func userSavedColor(color: UIColor?) {
+        
+        guard let modelColor = color else { return }
+        
+        let model = ColorModel(color: modelColor)
+        HomeViewControllerServiceManager.saveData(model: model)
+    }
+
     func updateInterfaceState(state: CameraInterfaceState) {
         DispatchQueue.main.async {
             switch state {
             case .hide:
                 self.hideInterface()
+                self.hideSavedColorsButton()
             case .show:
                 self.showInterface()
+                self.showSavedColorsButton()
             }
         }
     
@@ -32,7 +42,6 @@ extension HomeViewController: CameraViewDelegate {
                 self.captureButton.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                 self.captureButton.alpha = 0
                 self.aimView.alpha = 0
-                self.savedColorsButton.alpha = 0
             })
         }
     }
@@ -42,12 +51,24 @@ extension HomeViewController: CameraViewDelegate {
             self.aimView.alpha = 0.5
             self.captureButton.alpha = 1
             self.captureButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            self.savedColorsButton.alpha = 1
+
         }) { _ in
             UIView.animate(withDuration: 0.2, animations: {
                 self.captureButton.transform = .identity
             })
         }
+    }
+    
+    private func hideSavedColorsButton() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.savedColorsButton.alpha = 0
+        })
+    }
+    
+    private func showSavedColorsButton() {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.savedColorsButton.alpha = 1
+        })
     }
 }
 

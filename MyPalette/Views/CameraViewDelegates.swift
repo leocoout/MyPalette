@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 extension CameraView: ColorAlertDelegate {
     func alertDidClose() {
         self.delegate?.updateInterfaceState(state: .show)
+    }
+    
+    func colorDidSave(color: UIColor?) {
+        delegate?.userSavedColor(color: color)
     }
 }

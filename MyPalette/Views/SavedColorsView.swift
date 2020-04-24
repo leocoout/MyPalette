@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 enum SavedColorsViewState {
     case empty, loaded
@@ -23,6 +24,8 @@ class SavedColorsView: UIView {
     weak var delegate: SavedColorsDelegate?
     private lazy var emptyView = SavedColorsEmptyView()
     private lazy var listView = SavedColorsListView()
+    
+    var itens = [NSManagedObject]()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -56,16 +59,27 @@ class SavedColorsView: UIView {
     }
     
     private func setupAndShowEmptyView() {
+        emptyView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emptyView)
-        emptyView.frame = bounds
+        
+        NSLayoutConstraint.activate([
+            emptyView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -16),
+            emptyView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            emptyView.leftAnchor.constraint(equalTo: leftAnchor),
+            emptyView.rightAnchor.constraint(equalTo: rightAnchor)
+        ])
+        
         emptyView.buttonAction = {
             self.delegate?.didTapEmptyStateButton()
         }
     }
     
     private func setupAndShowContentView() {
-        listView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(listView)
+        listView.translatesAutoresizingMaskIntoConstraints = false
+        if let item = itens.last {
+            listView.colorListItens.insert(item, at: 0)
+        }
         
         NSLayoutConstraint.activate([
             listView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
