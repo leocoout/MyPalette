@@ -25,7 +25,11 @@ class SavedColorsView: UIView {
     private lazy var emptyView = SavedColorsEmptyView()
     private lazy var listView = SavedColorsListView()
     
-    var itens = [NSManagedObject]()
+    var itens = [NSManagedObject]() {
+        didSet {
+            updateColorList()
+        }
+    }
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -75,11 +79,9 @@ class SavedColorsView: UIView {
     }
     
     private func setupAndShowContentView() {
+        emptyView.removeFromSuperview()
         addSubview(listView)
         listView.translatesAutoresizingMaskIntoConstraints = false
-        if let item = itens.last {
-            listView.colorListItens.insert(item, at: 0)
-        }
         
         NSLayoutConstraint.activate([
             listView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
@@ -87,5 +89,9 @@ class SavedColorsView: UIView {
             listView.leftAnchor.constraint(equalTo: leftAnchor),
             listView.rightAnchor.constraint(equalTo: rightAnchor)
         ])
+    }
+    
+    private func updateColorList() {
+        listView.colorListItens = itens.reversed()
     }
 }

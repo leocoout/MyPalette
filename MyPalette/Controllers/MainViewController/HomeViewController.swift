@@ -40,11 +40,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var savedColorsView: SavedColorsView!
     @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
     
+    
     // MARK: Properties
     private lazy var cameraView = CameraView()
     private lazy var disabledCamera = CameraDisabledView()
     private var contentState: HomeContentState = .enabled
     private var isSavedColorsViewOpen: Bool = false
+    private var savedColorsViewNeedSetup: Bool = true
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -97,7 +99,11 @@ extension HomeViewController {
     private func fetchColorData() {
         HomeViewControllerServiceManager.recoverdata { (response) in
             self.savedColorsView.itens = response
-            self.savedColorsView.setupWith(state: response.isEmpty ? .empty : .loaded)
+            
+            if self.savedColorsViewNeedSetup {
+                self.savedColorsView.setupWith(state: response.isEmpty ? .empty : .loaded)
+                self.savedColorsViewNeedSetup = response.isEmpty
+            }
         }
     }
     
@@ -135,9 +141,11 @@ extension HomeViewController {
         isSavedColorsViewOpen = contentState == .disabled
         contentState = contentState.toggle()
         contentState == .enabled ? showInterface() : hideInterface()
+       
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.cameraContent.backgroundColor = self.contentState == .disabled ? .white : .black
                 self.containerBottomConstraint.constant = self.contentState == .enabled ? 0 : 200
                 self.cameraView.frame.origin.y = self.contentState == .enabled ? 0 : -200
                 self.disabledMaskView.alpha = self.contentState.changeDisabledMask()
