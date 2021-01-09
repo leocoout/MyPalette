@@ -7,33 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F790244A950200552BB2 /* SavedColorsListView.swift */; };
-		2329F793244A9BE100552BB2 /* SavedColorsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */; };
-		233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D222443E4AA001A9B97 /* CameraView.swift */; };
-		233A5D272443F0BB001A9B97 /* CameraDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */; };
-		233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D292443F35B001A9B97 /* CustomButton.swift */; };
-		233A5D2C2443F3D8001A9B97 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D2B2443F3D8001A9B97 /* CustomColors.swift */; };
-		233A5D302444097C001A9B97 /* ColorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233A5D2F2444097C001A9B97 /* ColorAlert.swift */; };
-		23721D3F2446818E00371B08 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D3E2446818E00371B08 /* LoadingView.swift */; };
-		23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */; };
-		23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D422446B62C00371B08 /* CameraViewDelegates.swift */; };
-		238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
 		2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DC240424010073AA31 /* LaunchScreen.storyboard */; };
 		2391C1E9240424010073AA31 /* MyPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1E8240424010073AA31 /* MyPaletteTests.swift */; };
-		2391C1FC2404263E0073AA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1FB2404263E0073AA31 /* Main.storyboard */; };
-		2391C202240426B90073AA31 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C201240426B90073AA31 /* HomeViewController.swift */; };
 		2394639624514425003ABA84 /* MyPaletteColorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2394639524514425003ABA84 /* MyPaletteColorAPI.swift */; };
-		23956125244547160041E56E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23956124244547160041E56E /* UIImageExtension.swift */; };
-		23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A799CE244E43130024E24D /* ColorSubAlert.swift */; };
-		23AB73BC244E877C00EF45A8 /* ColorAlertMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73BB244E877C00EF45A8 /* ColorAlertMenuList.swift */; };
-		23AB73BF244FEE7F00EF45A8 /* MyPalette.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73BD244FEE7F00EF45A8 /* MyPalette.xcdatamodeld */; };
+		23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB025A9591C0037CE1E /* CustomButton.swift */; };
+		23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */; };
+		23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB325A9591C0037CE1E /* ColorAlert.swift */; };
+		23A62CB925A9591C0037CE1E /* ColorSubAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB425A9591C0037CE1E /* ColorSubAlert.swift */; };
+		23A62CBA25A9591C0037CE1E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB525A9591C0037CE1E /* LoadingView.swift */; };
+		23A62CDC25A9596C0037CE1E /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CD925A9596C0037CE1E /* ColorModel.swift */; };
+		23A62CDD25A9596C0037CE1E /* MyPalette.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CDA25A9596C0037CE1E /* MyPalette.xcdatamodeld */; };
+		23A62CE425A959940037CE1E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CE225A959940037CE1E /* CustomColors.swift */; };
+		23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CE325A959940037CE1E /* UIImageExtension.swift */; };
+		23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CEA25A95A040037CE1E /* HomeViewController.swift */; };
+		23A62CF125A95A1D0037CE1E /* HomeCameraViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CF025A95A1D0037CE1E /* HomeCameraViewDelegate.swift */; };
+		23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CF625A95A350037CE1E /* HomeSavedColorsDelegate.swift */; };
+		23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D1525A95B5B0037CE1E /* HomeBuilder.swift */; };
+		23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D1925A95B920037CE1E /* HomePresenter.swift */; };
+		23A62D1E25A95B9F0037CE1E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D1D25A95B9F0037CE1E /* HomeInteractor.swift */; };
+		23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D2325A95C380037CE1E /* HomeRepository.swift */; };
+		23A62D2E25A95D520037CE1E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A62D2D25A95D520037CE1E /* HomeViewController.xib */; };
+		23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D3D25A962730037CE1E /* CameraDisabledView.swift */; };
+		23A62D4125A962730037CE1E /* CameraViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D3E25A962730037CE1E /* CameraViewDelegates.swift */; };
+		23A62D4225A962730037CE1E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D3F25A962730037CE1E /* CameraView.swift */; };
+		23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4525A9627A0037CE1E /* SavedColorsListCell.swift */; };
+		23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */; };
+		23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4725A9627A0037CE1E /* SavedColorsEmptyView.swift */; };
+		23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4825A9627A0037CE1E /* SavedColorsView.swift */; };
 		23AB73E5244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */; };
 		23AB73E8244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */; };
-		23AB73EA244FFD5300EF45A8 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E9244FFD5300EF45A8 /* ColorModel.swift */; };
 		23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */; };
-		23F6904E2447FA4000CAF7A4 /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,17 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2329F790244A950200552BB2 /* SavedColorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListView.swift; sourceTree = "<group>"; };
-		2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListCell.swift; sourceTree = "<group>"; };
-		233A5D222443E4AA001A9B97 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDisabledView.swift; sourceTree = "<group>"; };
-		233A5D292443F35B001A9B97 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		233A5D2B2443F3D8001A9B97 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
-		233A5D2F2444097C001A9B97 /* ColorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlert.swift; sourceTree = "<group>"; };
-		23721D3E2446818E00371B08 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerDelegates.swift; sourceTree = "<group>"; };
-		23721D422446B62C00371B08 /* CameraViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewDelegates.swift; sourceTree = "<group>"; };
-		238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsEmptyView.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2391C1DA240424010073AA31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,18 +60,34 @@
 		2391C1E4240424010073AA31 /* MyPaletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPaletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1E8240424010073AA31 /* MyPaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaletteTests.swift; sourceTree = "<group>"; };
 		2391C1EA240424010073AA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2391C1FB2404263E0073AA31 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2391C201240426B90073AA31 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2394639524514425003ABA84 /* MyPaletteColorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaletteColorAPI.swift; sourceTree = "<group>"; };
-		23956124244547160041E56E /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		23A799CE244E43130024E24D /* ColorSubAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSubAlert.swift; sourceTree = "<group>"; };
-		23AB73BB244E877C00EF45A8 /* ColorAlertMenuList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuList.swift; sourceTree = "<group>"; };
-		23AB73BE244FEE7F00EF45A8 /* MyPalette.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyPalette.xcdatamodel; sourceTree = "<group>"; };
+		23A62CB025A9591C0037CE1E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuList.swift; sourceTree = "<group>"; };
+		23A62CB325A9591C0037CE1E /* ColorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAlert.swift; sourceTree = "<group>"; };
+		23A62CB425A9591C0037CE1E /* ColorSubAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSubAlert.swift; sourceTree = "<group>"; };
+		23A62CB525A9591C0037CE1E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		23A62CD925A9596C0037CE1E /* ColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		23A62CDB25A9596C0037CE1E /* MyPalette.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyPalette.xcdatamodel; sourceTree = "<group>"; };
+		23A62CE225A959940037CE1E /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		23A62CE325A959940037CE1E /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		23A62CEA25A95A040037CE1E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		23A62CF025A95A1D0037CE1E /* HomeCameraViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCameraViewDelegate.swift; sourceTree = "<group>"; };
+		23A62CF625A95A350037CE1E /* HomeSavedColorsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSavedColorsDelegate.swift; sourceTree = "<group>"; };
+		23A62D1525A95B5B0037CE1E /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		23A62D1925A95B920037CE1E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		23A62D1D25A95B9F0037CE1E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		23A62D2325A95C380037CE1E /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		23A62D2D25A95D520037CE1E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		23A62D3D25A962730037CE1E /* CameraDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraDisabledView.swift; sourceTree = "<group>"; };
+		23A62D3E25A962730037CE1E /* CameraViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewDelegates.swift; sourceTree = "<group>"; };
+		23A62D3F25A962730037CE1E /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		23A62D4525A9627A0037CE1E /* SavedColorsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsListCell.swift; sourceTree = "<group>"; };
+		23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsListView.swift; sourceTree = "<group>"; };
+		23A62D4725A9627A0037CE1E /* SavedColorsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsEmptyView.swift; sourceTree = "<group>"; };
+		23A62D4825A9627A0037CE1E /* SavedColorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 		23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPalleteServiceAPI.swift; sourceTree = "<group>"; };
 		23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBaseData.swift; sourceTree = "<group>"; };
-		23AB73E9244FFD5300EF45A8 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerServiceManager.swift; sourceTree = "<group>"; };
-		23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,71 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2329F796244D679800552BB2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2391C1DA240424010073AA31 /* Assets.xcassets */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		233A5D242443EDF8001A9B97 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				233A5D2B2443F3D8001A9B97 /* CustomColors.swift */,
-				23956124244547160041E56E /* UIImageExtension.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		233A5D252443F09F001A9B97 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				233A5D222443E4AA001A9B97 /* CameraView.swift */,
-				233A5D262443F0BB001A9B97 /* CameraDisabledView.swift */,
-				23721D422446B62C00371B08 /* CameraViewDelegates.swift */,
-			);
-			name = Camera;
-			sourceTree = "<group>";
-		};
-		233A5D282443F31A001A9B97 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				23A799CD244E42940024E24D /* ColorCard */,
-				233A5D292443F35B001A9B97 /* CustomButton.swift */,
-				23721D3E2446818E00371B08 /* LoadingView.swift */,
-			);
-			name = Components;
-			path = Views;
-			sourceTree = "<group>";
-		};
-		233A5D2D2443FE97001A9B97 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				23AB73BD244FEE7F00EF45A8 /* MyPalette.xcdatamodeld */,
-				23AB73E9244FFD5300EF45A8 /* ColorModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		233A5D2E2443FF72001A9B97 /* MainViewController */ = {
-			isa = PBXGroup;
-			children = (
-				23F6904C2447FA2A00CAF7A4 /* SavedColorsView */,
-				2391C1FB2404263E0073AA31 /* Main.storyboard */,
-			);
-			name = MainViewController;
-			sourceTree = "<group>";
-		};
-		2360EE3C2443E2DB00271EA6 /* MainViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2391C201240426B90073AA31 /* HomeViewController.swift */,
-				23721D4024468DCF00371B08 /* HomeViewControllerDelegates.swift */,
-			);
-			path = MainViewController;
-			sourceTree = "<group>";
-		};
 		2391C1C5240423FE0073AA31 = {
 			isa = PBXGroup;
 			children = (
@@ -184,16 +129,9 @@
 		2391C1D0240423FE0073AA31 /* MyPalette */ = {
 			isa = PBXGroup;
 			children = (
-				2329F796244D679800552BB2 /* Supporting Files */,
-				233A5D242443EDF8001A9B97 /* Utils */,
-				233A5D2D2443FE97001A9B97 /* Model */,
-				2391C200240426AC0073AA31 /* Views */,
-				233A5D282443F31A001A9B97 /* Components */,
-				2391C1FF240426A70073AA31 /* Controllers */,
+				23A62CA025A957FE0037CE1E /* Resources */,
+				23A62CA925A9589E0037CE1E /* Sources */,
 				23AB73E3244FF77400EF45A8 /* Services */,
-				2391C1D1240423FE0073AA31 /* AppDelegate.swift */,
-				2391C1DC240424010073AA31 /* LaunchScreen.storyboard */,
-				2391C1DF240424010073AA31 /* Info.plist */,
 			);
 			path = MyPalette;
 			sourceTree = "<group>";
@@ -207,31 +145,142 @@
 			path = MyPaletteTests;
 			sourceTree = "<group>";
 		};
-		2391C1FF240426A70073AA31 /* Controllers */ = {
+		23A62CA025A957FE0037CE1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2360EE3C2443E2DB00271EA6 /* MainViewController */,
+				2391C1DA240424010073AA31 /* Assets.xcassets */,
+				2391C1DC240424010073AA31 /* LaunchScreen.storyboard */,
+				2391C1DF240424010073AA31 /* Info.plist */,
 			);
-			path = Controllers;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		2391C200240426AC0073AA31 /* Views */ = {
+		23A62CA925A9589E0037CE1E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				233A5D2E2443FF72001A9B97 /* MainViewController */,
-				233A5D252443F09F001A9B97 /* Camera */,
+				23A62CD825A9596C0037CE1E /* BusinessModel */,
+				23A62CAF25A9591C0037CE1E /* Components */,
+				23A62CAA25A958AE0037CE1E /* Application */,
+				23A62CE025A959800037CE1E /* Modules */,
+				23A62CE125A959940037CE1E /* Utils */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		23A62CAA25A958AE0037CE1E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2391C1D1240423FE0073AA31 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		23A62CAF25A9591C0037CE1E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CB125A9591C0037CE1E /* ColorCard */,
+				23A62CB025A9591C0037CE1E /* CustomButton.swift */,
+				23A62CB525A9591C0037CE1E /* LoadingView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		23A62CB125A9591C0037CE1E /* ColorCard */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */,
+				23A62CB325A9591C0037CE1E /* ColorAlert.swift */,
+				23A62CB425A9591C0037CE1E /* ColorSubAlert.swift */,
+			);
+			path = ColorCard;
+			sourceTree = "<group>";
+		};
+		23A62CD825A9596C0037CE1E /* BusinessModel */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CD925A9596C0037CE1E /* ColorModel.swift */,
+				23A62CDA25A9596C0037CE1E /* MyPalette.xcdatamodeld */,
+			);
+			path = BusinessModel;
+			sourceTree = "<group>";
+		};
+		23A62CE025A959800037CE1E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CE825A959CA0037CE1E /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		23A62CE125A959940037CE1E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CE225A959940037CE1E /* CustomColors.swift */,
+				23A62CE325A959940037CE1E /* UIImageExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		23A62CE825A959CA0037CE1E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CEF25A95A0C0037CE1E /* Delegates+Protocols */,
+				23A62D1325A95B360037CE1E /* Repository */,
+				23A62D1425A95B410037CE1E /* Views */,
+				23A62CEA25A95A040037CE1E /* HomeViewController.swift */,
+				23A62D1D25A95B9F0037CE1E /* HomeInteractor.swift */,
+				23A62D1925A95B920037CE1E /* HomePresenter.swift */,
+				23A62D1525A95B5B0037CE1E /* HomeBuilder.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		23A62CEF25A95A0C0037CE1E /* Delegates+Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CF025A95A1D0037CE1E /* HomeCameraViewDelegate.swift */,
+				23A62CF625A95A350037CE1E /* HomeSavedColorsDelegate.swift */,
+			);
+			path = "Delegates+Protocols";
+			sourceTree = "<group>";
+		};
+		23A62D1325A95B360037CE1E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				23A62D2325A95C380037CE1E /* HomeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		23A62D1425A95B410037CE1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23A62D3A25A9623A0037CE1E /* CameraView */,
+				23A62D3925A962030037CE1E /* SavedColorsView */,
+				23A62D2D25A95D520037CE1E /* HomeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		23A799CD244E42940024E24D /* ColorCard */ = {
+		23A62D3925A962030037CE1E /* SavedColorsView */ = {
 			isa = PBXGroup;
 			children = (
-				233A5D2F2444097C001A9B97 /* ColorAlert.swift */,
-				23A799CE244E43130024E24D /* ColorSubAlert.swift */,
-				23AB73BB244E877C00EF45A8 /* ColorAlertMenuList.swift */,
+				23A62D4725A9627A0037CE1E /* SavedColorsEmptyView.swift */,
+				23A62D4525A9627A0037CE1E /* SavedColorsListCell.swift */,
+				23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */,
+				23A62D4825A9627A0037CE1E /* SavedColorsView.swift */,
 			);
-			path = ColorCard;
+			path = SavedColorsView;
+			sourceTree = "<group>";
+		};
+		23A62D3A25A9623A0037CE1E /* CameraView */ = {
+			isa = PBXGroup;
+			children = (
+				23A62D3D25A962730037CE1E /* CameraDisabledView.swift */,
+				23A62D3F25A962730037CE1E /* CameraView.swift */,
+				23A62D3E25A962730037CE1E /* CameraViewDelegates.swift */,
+			);
+			path = CameraView;
 			sourceTree = "<group>";
 		};
 		23AB73E3244FF77400EF45A8 /* Services */ = {
@@ -251,17 +300,6 @@
 				23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */,
 			);
 			path = MainController;
-			sourceTree = "<group>";
-		};
-		23F6904C2447FA2A00CAF7A4 /* SavedColorsView */ = {
-			isa = PBXGroup;
-			children = (
-				23F6904D2447FA4000CAF7A4 /* SavedColorsView.swift */,
-				238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */,
-				2329F790244A950200552BB2 /* SavedColorsListView.swift */,
-				2329F792244A9BE100552BB2 /* SavedColorsListCell.swift */,
-			);
-			name = SavedColorsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,7 +385,7 @@
 			files = (
 				2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */,
 				2391C1DB240424010073AA31 /* Assets.xcassets in Resources */,
-				2391C1FC2404263E0073AA31 /* Main.storyboard in Resources */,
+				23A62D2E25A95D520037CE1E /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,29 +403,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A62CDD25A9596C0037CE1E /* MyPalette.xcdatamodeld in Sources */,
+				23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */,
+				23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */,
+				23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */,
+				23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */,
+				23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */,
+				23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */,
 				2394639624514425003ABA84 /* MyPaletteColorAPI.swift in Sources */,
-				23F6904E2447FA4000CAF7A4 /* SavedColorsView.swift in Sources */,
+				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
+				23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */,
+				23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */,
+				23A62D1E25A95B9F0037CE1E /* HomeInteractor.swift in Sources */,
+				23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */,
+				23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */,
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
+				23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */,
 				23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */,
-				233A5D272443F0BB001A9B97 /* CameraDisabledView.swift in Sources */,
-				233A5D302444097C001A9B97 /* ColorAlert.swift in Sources */,
 				23AB73E5244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift in Sources */,
+				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
+				23A62D4225A962730037CE1E /* CameraView.swift in Sources */,
+				23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */,
+				23A62CDC25A9596C0037CE1E /* ColorModel.swift in Sources */,
 				23AB73E8244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift in Sources */,
-				23721D3F2446818E00371B08 /* LoadingView.swift in Sources */,
-				23AB73BC244E877C00EF45A8 /* ColorAlertMenuList.swift in Sources */,
-				2329F793244A9BE100552BB2 /* SavedColorsListCell.swift in Sources */,
-				23AB73EA244FFD5300EF45A8 /* ColorModel.swift in Sources */,
-				233A5D2C2443F3D8001A9B97 /* CustomColors.swift in Sources */,
-				233A5D2A2443F35B001A9B97 /* CustomButton.swift in Sources */,
-				23956125244547160041E56E /* UIImageExtension.swift in Sources */,
-				23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */,
-				2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */,
-				2391C202240426B90073AA31 /* HomeViewController.swift in Sources */,
-				23AB73BF244FEE7F00EF45A8 /* MyPalette.xcdatamodeld in Sources */,
-				238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */,
-				233A5D232443E4AA001A9B97 /* CameraView.swift in Sources */,
-				23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */,
-				23721D4124468DCF00371B08 /* HomeViewControllerDelegates.swift in Sources */,
+				23A62CF125A95A1D0037CE1E /* HomeCameraViewDelegate.swift in Sources */,
+				23A62D4125A962730037CE1E /* CameraViewDelegates.swift in Sources */,
+				23A62CB925A9591C0037CE1E /* ColorSubAlert.swift in Sources */,
+				23A62CE425A959940037CE1E /* CustomColors.swift in Sources */,
+				23A62CBA25A9591C0037CE1E /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,8 +584,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34HR7YPNJ4;
-				INFOPLIST_FILE = MyPalette/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = MyPalette/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,7 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = leocoout.dev.MyPalette;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -560,8 +603,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34HR7YPNJ4;
-				INFOPLIST_FILE = MyPalette/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				INFOPLIST_FILE = MyPalette/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,7 +612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = leocoout.dev.MyPalette;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -650,12 +693,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		23AB73BD244FEE7F00EF45A8 /* MyPalette.xcdatamodeld */ = {
+		23A62CDA25A9596C0037CE1E /* MyPalette.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				23AB73BE244FEE7F00EF45A8 /* MyPalette.xcdatamodel */,
+				23A62CDB25A9596C0037CE1E /* MyPalette.xcdatamodel */,
 			);
-			currentVersion = 23AB73BE244FEE7F00EF45A8 /* MyPalette.xcdatamodel */;
+			currentVersion = 23A62CDB25A9596C0037CE1E /* MyPalette.xcdatamodel */;
 			path = MyPalette.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

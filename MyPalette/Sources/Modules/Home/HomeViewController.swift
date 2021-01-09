@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 import AVFoundation
 
+protocol HomeViewControllerProtocol: class {
+    var interactor: HomeInteractorProtocol? { get set }
+    var presenter: HomePresenterProtocol? { get set }
+
+}
+
 enum HomeContentState {
     case enabled, disabled
     
@@ -28,7 +34,7 @@ enum HomeContentState {
     }
 }
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, HomeViewControllerProtocol {
     
     // MARK: Outlets
     @IBOutlet weak var content: UIView!
@@ -40,6 +46,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var savedColorsView: SavedColorsView!
     @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
     
+    // MARK: Protocol Properties
+    var interactor: HomeInteractorProtocol?
+    var presenter: HomePresenterProtocol?
     
     // MARK: Properties
     private lazy var cameraView = CameraView()

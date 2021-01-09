@@ -1,9 +1,9 @@
 //
-//  HomeViewControllerDelegates.swift
+//  HomeCameraViewDelegate.swift
 //  MyPalette
 //
-//  Created by Leonardo Santos on 14/04/20.
-//  Copyright © 2020 Leonardo Santos. All rights reserved.
+//  Created by Leonardo Santos on 09/01/21.
+//  Copyright © 2021 Leonardo Santos. All rights reserved.
 //
 
 import Foundation
@@ -69,11 +69,5 @@ extension HomeViewController: CameraViewDelegate {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.savedColorsButton.alpha = 1
         })
-    }
-}
-
-extension HomeViewController: SavedColorsDelegate {
-    func didTapEmptyStateButton() {
-        didTapOpenSavedButton(self)
     }
 }
