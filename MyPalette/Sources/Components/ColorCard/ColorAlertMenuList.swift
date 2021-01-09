@@ -88,12 +88,12 @@ class ColorAlertListItem: UIView {
     
     lazy var button: UIButton = {
         let button = UIButton(type: .custom)
-        button.backgroundColor = .myPalleteGray
+        button.backgroundColor = .myPaletteGray
         button.layer.cornerRadius = 16
         
         let image = UIImage(named: "icon_copy_to_clipboard")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
-        button.imageView?.tintColor = .myPalleteDarkGray
+        button.imageView?.tintColor = .myPaletteDarkGray
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
         

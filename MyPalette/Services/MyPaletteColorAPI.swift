@@ -34,10 +34,10 @@ class MyPaletteColorAPI {
             }
                     
             return UIColor(cgColor: CGColor(colorSpace: colorSpace,
-                                            components: components) ?? UIColor.myPalleteGray.cgColor)
+                                            components: components) ?? UIColor.myPaletteGray.cgColor)
         }
         
-        return .myPalleteGray
+        return .myPaletteGray
     }
 }
 

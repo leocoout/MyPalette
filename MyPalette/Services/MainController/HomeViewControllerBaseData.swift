@@ -17,7 +17,7 @@ class HomeViewControllerBaseData: BaseData {
         self.color = model.color
     }
     
-    var entity: MyPalleteServiceAPIType = .color
+    var entity: MyPaletteServiceAPIType = .color
     
     var data: [String : Any?] {
         return ["colorPicked": MyPaletteColorAPI.uiColorToColorSpace(color: self.color)]

@@ -41,7 +41,7 @@ class ColorSubAlert: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 16
-        backgroundColor = .myPalleteGreen
+        backgroundColor = .myPaletteGreen
         translatesAutoresizingMaskIntoConstraints = false
         
         setupLayout()

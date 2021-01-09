@@ -1,5 +1,5 @@
 //
-//  MyPalleteServiceAPI.swift
+//  MyPaletteServiceAPI.swift
 //  MyPalette
 //
 //  Created by Leonardo Santos on 22/04/20.
@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 import CoreData
 
-enum MyPalleteServiceAPIType: String {
+enum MyPaletteServiceAPIType: String {
     case color = "Color"
 }
 
 protocol BaseData {
-    var entity: MyPalleteServiceAPIType { get }
+    var entity: MyPaletteServiceAPIType { get }
     var `data`: [String: Any?] { get }
 }
 
-class MyPalleteServiceAPI {
+class MyPaletteServiceAPI {
 
     static func saveLocalData(of type: BaseData) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -40,7 +40,7 @@ class MyPalleteServiceAPI {
         }
     }
     
-    static func recoverLocalData(of type: MyPalleteServiceAPIType,
+    static func recoverLocalData(of type: MyPaletteServiceAPIType,
                                  completion: @escaping ([NSManagedObject]) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
