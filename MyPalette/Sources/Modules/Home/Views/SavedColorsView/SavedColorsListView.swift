@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 class SavedColorsListView: UIView {
     
@@ -26,7 +25,7 @@ class SavedColorsListView: UIView {
         return collection
     }()
     
-    var colorListItens = [NSManagedObject]() {
+    var colorListItens = [MPKManagedObject]() {
         didSet {
             collectionView.reloadData()
         }

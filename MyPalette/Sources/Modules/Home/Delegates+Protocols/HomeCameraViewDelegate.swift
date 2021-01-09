@@ -19,7 +19,7 @@ extension HomeViewController: CameraViewDelegate {
         HomeRepository.saveData(model: model)
     }
 
-    func updateInterfaceState(state: CameraInterfaceState) {
+    func updateInterfaceState(state: MPKCameraInterfaceState) {
         DispatchQueue.main.async {
             switch state {
             case .hide:

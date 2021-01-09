@@ -8,9 +8,18 @@
 
 import Foundation
 import UIKit
+
+
+
+public enum MPKColorEngineConvertionType {
+    case uiColor(to: MPKColorSpace), colorSpace(to: UIColor)
+}
     
 public class MPKColorEngine {
     
+    /// Converts UIColor to ColorSpace String
+    /// - Parameter color: color used for convertion
+    /// - Returns: returns the string of the color, for example:
     static func uiColorToColorSpace(color: UIColor) -> String {
         let strColor = color.description
         let components = strColor.components(separatedBy: " ")
@@ -23,7 +32,10 @@ public class MPKColorEngine {
         return String(str.dropLast())
     }
     
-    static func colorSpaceToUIColor(value: String) -> UIColor {
+    /// Converts colorSpace, like    , to UIColor
+    /// - Parameter value: color space string
+    /// - Returns: the UIColor object associated to the value
+    static func colorSpaceToUIColor(value: MPKColorSpace) -> UIColor {
         
         if let colorSpace = CGColorSpace(name: CGColorSpace.sRGB) {
             let strComponents = value.components(separatedBy: " ")
@@ -39,4 +51,6 @@ public class MPKColorEngine {
         
         return .myPaletteGray
     }
+    
+    
 }

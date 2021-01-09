@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 protocol SavedColorsDelegate: class {
     func didTapEmptyStateButton()
@@ -21,7 +20,7 @@ class SavedColorsView: UIView {
     private lazy var emptyView = SavedColorsEmptyView()
     private lazy var listView = SavedColorsListView()
     
-    var itens = [NSManagedObject]() {
+    var itens = [MPKManagedObject]() {
         didSet {
             updateColorList()
         }

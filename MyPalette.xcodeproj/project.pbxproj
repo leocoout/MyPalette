@@ -44,6 +44,7 @@
 		23E4761725A9762A00C61417 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761625A9762A00C61417 /* HomeViewModel.swift */; };
 		23E4761C25A97FD000C61417 /* MPKModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761B25A97FD000C61417 /* MPKModel.swift */; };
 		23E4762425A9874700C61417 /* HomeBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4762325A9874700C61417 /* HomeBaseData.swift */; };
+		23E4762E25AA61A600C61417 /* MPKCameraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4762D25AA61A600C61417 /* MPKCameraEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		23E4761625A9762A00C61417 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		23E4761B25A97FD000C61417 /* MPKModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKModel.swift; sourceTree = "<group>"; };
 		23E4762325A9874700C61417 /* HomeBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseData.swift; sourceTree = "<group>"; };
+		23E4762D25AA61A600C61417 /* MPKCameraEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKCameraEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				23E4760025A96F0400C61417 /* MPKColorEngine.swift */,
+				23E4762D25AA61A600C61417 /* MPKCameraEngine.swift */,
 				23E4760625A96F0E00C61417 /* MPKPermissions.swift */,
 				23E4760C25A9736200C61417 /* MPKLocalService.swift */,
 				23E4761B25A97FD000C61417 /* MPKModel.swift */,
@@ -439,6 +442,7 @@
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
 				23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */,
 				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,
+				23E4762E25AA61A600C61417 /* MPKCameraEngine.swift in Sources */,
 				23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */,
 				23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */,
 				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
