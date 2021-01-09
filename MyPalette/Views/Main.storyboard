@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o9J-Wp-guU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o9J-Wp-guU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,11 +102,6 @@
                                             <action selector="didTapOpenSavedButton:" destination="a8Z-is-XDq" eventType="touchUpInside" id="gN9-gU-qmw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-cs-qxI">
-                                        <rect key="frame" x="182" y="394" width="50" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Nathan"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -131,6 +127,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3a0-wX-7NR"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5bz-Vg-Opz" firstAttribute="bottom" secondItem="qvL-Qh-reV" secondAttribute="top" id="0Hc-JF-uoW"/>
@@ -144,7 +141,6 @@
                             <constraint firstItem="3a0-wX-7NR" firstAttribute="trailing" secondItem="5bz-Vg-Opz" secondAttribute="trailing" id="ouA-Do-jsG"/>
                             <constraint firstItem="cTh-eQ-kcP" firstAttribute="top" secondItem="3a0-wX-7NR" secondAttribute="top" id="qiI-sc-zGi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3a0-wX-7NR"/>
                     </view>
                     <navigationItem key="navigationItem" id="j6g-PD-73f"/>
                     <connections>
@@ -154,7 +150,6 @@
                         <outlet property="containerBottomConstraint" destination="kg8-KK-7Pw" id="jZY-P3-Dl4"/>
                         <outlet property="content" destination="cTh-eQ-kcP" id="gPT-CO-xOs"/>
                         <outlet property="disabledMaskView" destination="qfF-RA-lqv" id="kcz-GA-ceC"/>
-                        <outlet property="nathanLindo" destination="Idh-cs-qxI" id="OZW-YZ-3zA"/>
                         <outlet property="savedColorsButton" destination="2hg-DX-nAr" id="Mcm-G6-Sle"/>
                         <outlet property="savedColorsView" destination="qvL-Qh-reV" id="5Fc-Nr-loH"/>
                     </connections>
