@@ -8,7 +8,11 @@
 
 import Foundation
 
-protocol HomeInteractorProtocol {}
+protocol HomeInteractorProtocol {
+    func requestCameraPermission()
+    func fetchColorData()
+    func didCapture()
+}
 
 class HomeInteractor {
     
@@ -21,4 +25,23 @@ class HomeInteractor {
     }
 }
 
-extension HomeInteractor: HomeInteractorProtocol {}
+extension HomeInteractor: HomeInteractorProtocol {
+    
+    func requestCameraPermission() {
+        MPKPermissions.requestCameraPermission { response in
+            response ?
+                self.presenter?.presentRequestAuthorized() :
+                self.presenter?.presentRequestUnauthorized()
+        }
+    }
+    
+    func fetchColorData() {
+        HomeViewControllerServiceManager.recoverdata { (response) in
+            self.presenter?.presentDataRecovered(response: response)
+        }
+    }
+    
+    func didCapture() {
+        presenter?.presentCapture()
+    }
+}

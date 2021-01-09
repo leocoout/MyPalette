@@ -9,8 +9,6 @@
 import Foundation
 import AVFoundation
 
-public typealias MPKPermissionResponse = Bool
-
 public class MPKPermissions {
     
     /// Request camera permission for usage to detect colors

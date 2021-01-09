@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-enum SavedColorsViewState {
-    case empty, loaded
-}
-
 protocol SavedColorsDelegate: class {
     func didTapEmptyStateButton()
 }
@@ -50,6 +46,7 @@ class SavedColorsView: UIView {
         switch state {
         case .empty: setupAndShowEmptyView()
         case .loaded: setupAndShowContentView()
+        default: break
         }
     }
     

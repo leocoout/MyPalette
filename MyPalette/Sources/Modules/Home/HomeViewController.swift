@@ -8,30 +8,15 @@
 
 import Foundation
 import UIKit
-import AVFoundation
 
 protocol HomeViewControllerProtocol: class {
     var interactor: HomeInteractorProtocol? { get set }
     var presenter: HomePresenterProtocol? { get set }
 
-}
-
-enum HomeContentState {
-    case enabled, disabled
-    
-    func toggle() -> HomeContentState {
-        switch self {
-        case .enabled: return .disabled
-        case .disabled: return .enabled
-        }
-    }
-    
-    func changeDisabledMask() -> CGFloat {
-        switch self {
-        case .enabled: return 0
-        case .disabled: return 0.8
-        }
-    }
+    func handleCameraPermissionAuthorized()
+    func handleCameraPermissionUnauthorized()
+    func handleDataRecovered(response: [MPKManagedObject])
+    func handleCaptureAction()
 }
 
 class HomeViewController: UIViewController, HomeViewControllerProtocol {
@@ -39,7 +24,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     // MARK: Outlets
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var cameraContent: UIView!
-    @IBOutlet weak var captureButton: UIView!
+    @IBOutlet weak var captureButton: UIButton!
     @IBOutlet weak var aimView: UIView!
     @IBOutlet weak var savedColorsButton: UIButton!
     @IBOutlet weak var disabledMaskView: UIView!
@@ -47,15 +32,13 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
     
     // MARK: Protocol Properties
+    lazy var viewModel: HomeViewModelProtocol = HomeViewModel()
     var interactor: HomeInteractorProtocol?
     var presenter: HomePresenterProtocol?
     
     // MARK: Properties
-    private lazy var cameraView = CameraView()
-    private lazy var disabledCamera = CameraDisabledView()
-    private var contentState: HomeContentState = .enabled
-    private var isSavedColorsViewOpen: Bool = false
-    private var savedColorsViewNeedSetup: Bool = true
+    lazy var cameraView = CameraView()
+    lazy var disabledCamera = CameraDisabledView()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -65,7 +48,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         savedColorsButton.transform = savedColorsButton.transform.rotated(by: .pi)
-        requestCameraPermission()
+        interactor?.requestCameraPermission()
     }
     
     override func viewDidLayoutSubviews() {
@@ -78,26 +61,21 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
 }
 
 // MARK: - Actions
 extension HomeViewController {
-    @IBAction func didTapCaptureButton(_ gesture: UITapGestureRecognizer) {
-        cameraView.didCapture()
+
+    @IBAction func didTapCaptureButton(_ sender: UIButton) {
+        interactor?.didCapture()
     }
 
     @IBAction func didTapOpenSavedButton(_ sender: Any) {
         animateContentView()
         
-        if !isSavedColorsViewOpen {
-            fetchColorData()
+        if !viewModel.getSavedColorsViewIsOpen() {
+            interactor?.fetchColorData()
         }
     }
 }
@@ -105,57 +83,17 @@ extension HomeViewController {
 // MARK: - Private methods
 extension HomeViewController {
     
-    private func fetchColorData() {
-        HomeViewControllerServiceManager.recoverdata { (response) in
-            self.savedColorsView.itens = response
-            
-            if self.savedColorsViewNeedSetup {
-                self.savedColorsView.setupWith(state: response.isEmpty ? .empty : .loaded)
-                self.savedColorsViewNeedSetup = response.isEmpty
-            }
-        }
-    }
-    
-    private func requestCameraPermission() {
-        MPKPermissions.requestCameraPermission { response in
-            if response {
-                self.setupSavedColorsView()
-                self.setupCameraScreen()
-                self.cameraView.configureCamera()
-            } else {
-                self.setupDisabledScreen()
-            }
-        }
-    }
-    
-    private func setupCameraScreen() {
-        cameraContent.addSubview(cameraView)
-        cameraView.frame = cameraContent.bounds
-        cameraView.delegate = self
-    }
-    
-    private func setupDisabledScreen() {
-        view.addSubview(disabledCamera)
-        disabledCamera.frame = view.bounds
-        captureButton.isHidden = true
-    }
-    
-    private func setupSavedColorsView() {
-        savedColorsView.delegate = self
-    }
-    
     private func animateContentView() {
-        isSavedColorsViewOpen = contentState == .disabled
-        contentState = contentState.toggle()
-        contentState == .enabled ? showInterface() : hideInterface()
-       
+        viewModel.setSavedColorsViewState(to: viewModel.getContentState() == .disabled)
+        viewModel.toggleContentState()
+        viewModel.getContentState() == .enabled ? showInterface() : hideInterface()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                self.cameraContent.backgroundColor = self.contentState == .disabled ? .white : .black
-                self.containerBottomConstraint.constant = self.contentState == .enabled ? 0 : 200
-                self.cameraView.frame.origin.y = self.contentState == .enabled ? 0 : -200
-                self.disabledMaskView.alpha = self.contentState.changeDisabledMask()
+                self.cameraContent.backgroundColor = self.viewModel.getContentState() == .disabled ? .white : .black
+                self.containerBottomConstraint.constant = self.viewModel.getContentState() == .enabled ? 0 : 200
+                self.cameraView.frame.origin.y = self.viewModel.getContentState() == .enabled ? 0 : -200
+                self.disabledMaskView.alpha = self.viewModel.getContentStateMask()
                 self.view.layoutIfNeeded()
             })
         }

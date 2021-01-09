@@ -42,6 +42,9 @@
 		23E4760125A96F0400C61417 /* MPKColorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760025A96F0400C61417 /* MPKColorEngine.swift */; };
 		23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760625A96F0E00C61417 /* MPKPermissions.swift */; };
 		23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760C25A9736200C61417 /* MPKLocalService.swift */; };
+		23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761225A9746700C61417 /* HomeViewControllerProtocol.swift */; };
+		23E4761725A9762A00C61417 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761625A9762A00C61417 /* HomeViewModel.swift */; };
+		23E4761C25A97FD000C61417 /* MPKModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761B25A97FD000C61417 /* MPKModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		23E4760025A96F0400C61417 /* MPKColorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKColorEngine.swift; sourceTree = "<group>"; };
 		23E4760625A96F0E00C61417 /* MPKPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKPermissions.swift; sourceTree = "<group>"; };
 		23E4760C25A9736200C61417 /* MPKLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKLocalService.swift; sourceTree = "<group>"; };
+		23E4761225A9746700C61417 /* HomeViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerProtocol.swift; sourceTree = "<group>"; };
+		23E4761625A9762A00C61417 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		23E4761B25A97FD000C61417 /* MPKModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 				23A62D1425A95B410037CE1E /* Views */,
 				23A62CEA25A95A040037CE1E /* HomeViewController.swift */,
 				23A62D1D25A95B9F0037CE1E /* HomeInteractor.swift */,
+				23E4761625A9762A00C61417 /* HomeViewModel.swift */,
 				23A62D1925A95B920037CE1E /* HomePresenter.swift */,
 				23A62D1525A95B5B0037CE1E /* HomeBuilder.swift */,
 			);
@@ -248,6 +255,7 @@
 			children = (
 				23A62CF025A95A1D0037CE1E /* HomeCameraViewDelegate.swift */,
 				23A62CF625A95A350037CE1E /* HomeSavedColorsDelegate.swift */,
+				23E4761225A9746700C61417 /* HomeViewControllerProtocol.swift */,
 			);
 			path = "Delegates+Protocols";
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				23E4760025A96F0400C61417 /* MPKColorEngine.swift */,
 				23E4760625A96F0E00C61417 /* MPKPermissions.swift */,
 				23E4760C25A9736200C61417 /* MPKLocalService.swift */,
+				23E4761B25A97FD000C61417 /* MPKModel.swift */,
 			);
 			path = MyPaletteKit;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A62CDD25A9596C0037CE1E /* MyPalette.xcdatamodeld in Sources */,
+				23E4761725A9762A00C61417 /* HomeViewModel.swift in Sources */,
 				23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */,
 				23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */,
 				23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */,
@@ -430,10 +440,12 @@
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
 				23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */,
 				23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */,
+				23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */,
 				23E4760125A96F0400C61417 /* MPKColorEngine.swift in Sources */,
 				23A62D1E25A95B9F0037CE1E /* HomeInteractor.swift in Sources */,
 				23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */,
 				23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */,
+				23E4761C25A97FD000C61417 /* MPKModel.swift in Sources */,
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
 				23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */,
 				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,

@@ -8,7 +8,12 @@
 
 import Foundation
 
-protocol HomePresenterProtocol {}
+protocol HomePresenterProtocol {
+    func presentRequestAuthorized()
+    func presentRequestUnauthorized()
+    func presentDataRecovered(response: [MPKManagedObject])
+    func presentCapture()
+}
 
 class HomePresenter {
     
@@ -17,5 +22,19 @@ class HomePresenter {
 }
 
 extension HomePresenter: HomePresenterProtocol {
+    func presentRequestAuthorized() {
+        view?.handleCameraPermissionAuthorized()
+    }
     
+    func presentRequestUnauthorized() {
+        view?.handleCameraPermissionUnauthorized()
+    }
+    
+    func presentDataRecovered(response: [MPKManagedObject]) {
+        view?.handleDataRecovered(response: response)
+    }
+    
+    func presentCapture() {
+        view?.handleCaptureAction()
+    }
 }

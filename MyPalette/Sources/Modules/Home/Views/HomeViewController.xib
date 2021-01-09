@@ -12,7 +12,7 @@
             <connections>
                 <outlet property="aimView" destination="87O-gT-pkg" id="ocn-yH-hcZ"/>
                 <outlet property="cameraContent" destination="Gcg-4a-ndz" id="3Ou-9o-j1a"/>
-                <outlet property="captureButton" destination="1zQ-VR-mCJ" id="1V0-Pu-5mw"/>
+                <outlet property="captureButton" destination="lnI-BD-hQi" id="f3A-g5-Ytz"/>
                 <outlet property="containerBottomConstraint" destination="mQb-G9-N1o" id="IWg-lu-XlU"/>
                 <outlet property="content" destination="XsU-Wj-AFL" id="91q-5Y-E53"/>
                 <outlet property="disabledMaskView" destination="vic-TJ-Rv2" id="1K9-dv-obj"/>
@@ -60,20 +60,17 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1zQ-VR-mCJ" userLabel="catureButton">
+                        <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnI-BD-hQi">
                             <rect key="frame" x="175" y="690" width="64" height="64"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <gestureRecognizers/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96862745100000003" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="64" id="38L-BN-oB2"/>
-                                <constraint firstAttribute="width" constant="64" id="rtl-j9-RYB"/>
+                                <constraint firstAttribute="width" constant="64" id="UjB-Rd-VJs"/>
+                                <constraint firstAttribute="height" constant="64" id="qmG-05-Y99"/>
                             </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="32"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
+                            <connections>
+                                <action selector="didTapCaptureButton:" destination="-1" eventType="touchUpInside" id="1ZH-Mk-dBw"/>
+                            </connections>
+                        </button>
                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vic-TJ-Rv2" userLabel="disabledMaskview">
                             <rect key="frame" x="0.0" y="-64" width="414" height="882"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,18 +96,18 @@
                     <constraints>
                         <constraint firstItem="Gcg-4a-ndz" firstAttribute="leading" secondItem="XsU-Wj-AFL" secondAttribute="leading" id="3Fe-cY-3Te"/>
                         <constraint firstAttribute="bottom" secondItem="yUa-ws-L1x" secondAttribute="bottom" constant="16" id="67F-5B-qm6"/>
-                        <constraint firstItem="yUa-ws-L1x" firstAttribute="top" secondItem="1zQ-VR-mCJ" secondAttribute="bottom" constant="16" id="Bn8-jg-ATV"/>
                         <constraint firstItem="vic-TJ-Rv2" firstAttribute="leading" secondItem="XsU-Wj-AFL" secondAttribute="leading" id="ErT-9m-A5i"/>
                         <constraint firstAttribute="bottom" secondItem="vic-TJ-Rv2" secondAttribute="bottom" id="HqP-sG-bGo"/>
+                        <constraint firstItem="lnI-BD-hQi" firstAttribute="centerX" secondItem="XsU-Wj-AFL" secondAttribute="centerX" id="K2Q-K8-ch5"/>
                         <constraint firstAttribute="bottom" secondItem="Gcg-4a-ndz" secondAttribute="bottom" id="NRB-2W-B8n"/>
                         <constraint firstItem="87O-gT-pkg" firstAttribute="centerY" secondItem="XsU-Wj-AFL" secondAttribute="centerY" id="NeF-rn-veZ"/>
+                        <constraint firstItem="yUa-ws-L1x" firstAttribute="top" secondItem="lnI-BD-hQi" secondAttribute="bottom" constant="16" id="TDR-7q-yGr"/>
                         <constraint firstAttribute="trailing" secondItem="Gcg-4a-ndz" secondAttribute="trailing" id="Tvv-oe-3hz"/>
                         <constraint firstItem="87O-gT-pkg" firstAttribute="centerX" secondItem="XsU-Wj-AFL" secondAttribute="centerX" id="Xqv-8D-lM2"/>
                         <constraint firstAttribute="top" secondItem="vic-TJ-Rv2" secondAttribute="top" constant="64" id="ZGo-dR-bkV"/>
                         <constraint firstItem="yUa-ws-L1x" firstAttribute="centerX" secondItem="XsU-Wj-AFL" secondAttribute="centerX" id="b3V-i2-Oh0"/>
                         <constraint firstAttribute="trailing" secondItem="vic-TJ-Rv2" secondAttribute="trailing" id="qm2-7j-IEB"/>
                         <constraint firstItem="Gcg-4a-ndz" firstAttribute="top" secondItem="XsU-Wj-AFL" secondAttribute="top" id="qvT-7z-LUD"/>
-                        <constraint firstItem="1zQ-VR-mCJ" firstAttribute="centerX" secondItem="XsU-Wj-AFL" secondAttribute="centerX" id="zg8-wU-yui"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
