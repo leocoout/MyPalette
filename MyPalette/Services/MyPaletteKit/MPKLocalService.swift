@@ -14,14 +14,14 @@ enum MPKLocalServiceType: String {
     case color = "Color"
 }
 
-protocol BaseData {
+protocol MPKBaseData {
     var entity: MPKLocalServiceType { get }
     var `data`: [String: Any?] { get }
 }
 
 class MPKLocalService {
 
-    static func saveLocalData(of type: BaseData) {
+    static func saveLocalData(of type: MPKBaseData) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         

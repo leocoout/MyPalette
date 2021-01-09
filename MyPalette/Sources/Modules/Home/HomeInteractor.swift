@@ -18,7 +18,7 @@ class HomeInteractor {
     
     // MARK: Properties
     var presenter: HomePresenterProtocol?
-    var repository: HomeRepositoryProtocol?
+    var repository: HomeRepositoryProtocol? = HomeRepository()
     
     init(repository: HomeRepositoryProtocol?) {
         self.repository = repository
@@ -36,7 +36,7 @@ extension HomeInteractor: HomeInteractorProtocol {
     }
     
     func fetchColorData() {
-        HomeViewControllerServiceManager.recoverdata { (response) in
+        repository?.recoverdata { (response) in
             self.presenter?.presentDataRecovered(response: response)
         }
     }

@@ -16,7 +16,7 @@ extension HomeViewController: CameraViewDelegate {
         guard let modelColor = color else { return }
         
         let model = ColorModel(color: modelColor)
-        HomeViewControllerServiceManager.saveData(model: model)
+        HomeRepository.saveData(model: model)
     }
 
     func updateInterfaceState(state: CameraInterfaceState) {

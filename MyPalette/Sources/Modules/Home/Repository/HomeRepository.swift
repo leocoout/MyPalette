@@ -8,6 +8,20 @@
 
 import Foundation
 
-protocol HomeRepositoryProtocol {}
+protocol HomeRepositoryProtocol {
+    func recoverdata(completion: @escaping ([MPKManagedObject]) -> ())
+}
 
-class HomeRepository: HomeRepositoryProtocol {}
+class HomeRepository: HomeRepositoryProtocol {
+    
+    static func saveData(model: ColorModel) {
+        let data = HomeViewControllerBaseData(model: model)
+        MPKLocalService.saveLocalData(of: data)
+    }
+    
+    func recoverdata(completion: @escaping ([MPKManagedObject]) -> ()) {
+        MPKLocalService.recoverLocalData(of: .color) { (recoveredData) in
+            completion(recoveredData)
+        }
+    }
+}

@@ -37,14 +37,13 @@
 		23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4825A9627A0037CE1E /* SavedColorsView.swift */; };
 		23A62D5225A9661F0037CE1E /* MPNibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D5125A9661F0037CE1E /* MPNibs.swift */; };
 		23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */; };
-		23AB73E8244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */; };
-		23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */; };
 		23E4760125A96F0400C61417 /* MPKColorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760025A96F0400C61417 /* MPKColorEngine.swift */; };
 		23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760625A96F0E00C61417 /* MPKPermissions.swift */; };
 		23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760C25A9736200C61417 /* MPKLocalService.swift */; };
 		23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761225A9746700C61417 /* HomeViewControllerProtocol.swift */; };
 		23E4761725A9762A00C61417 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761625A9762A00C61417 /* HomeViewModel.swift */; };
 		23E4761C25A97FD000C61417 /* MPKModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4761B25A97FD000C61417 /* MPKModel.swift */; };
+		23E4762425A9874700C61417 /* HomeBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4762325A9874700C61417 /* HomeBaseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,14 +91,13 @@
 		23A62D4825A9627A0037CE1E /* SavedColorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 		23A62D5125A9661F0037CE1E /* MPNibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPNibs.swift; sourceTree = "<group>"; };
 		23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
-		23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBaseData.swift; sourceTree = "<group>"; };
-		23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerServiceManager.swift; sourceTree = "<group>"; };
 		23E4760025A96F0400C61417 /* MPKColorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKColorEngine.swift; sourceTree = "<group>"; };
 		23E4760625A96F0E00C61417 /* MPKPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKPermissions.swift; sourceTree = "<group>"; };
 		23E4760C25A9736200C61417 /* MPKLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKLocalService.swift; sourceTree = "<group>"; };
 		23E4761225A9746700C61417 /* HomeViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerProtocol.swift; sourceTree = "<group>"; };
 		23E4761625A9762A00C61417 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		23E4761B25A97FD000C61417 /* MPKModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKModel.swift; sourceTree = "<group>"; };
+		23E4762325A9874700C61417 /* HomeBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				23A62D2325A95C380037CE1E /* HomeRepository.swift */,
+				23E4762325A9874700C61417 /* HomeBaseData.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -303,18 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				23E475F525A96E2400C61417 /* MyPaletteKit */,
-				23AB73E6244FFC8E00EF45A8 /* MainController */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		23AB73E6244FFC8E00EF45A8 /* MainController */ = {
-			isa = PBXGroup;
-			children = (
-				23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */,
-				23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */,
-			);
-			path = MainController;
 			sourceTree = "<group>";
 		};
 		23E475F525A96E2400C61417 /* MyPaletteKit */ = {
@@ -438,6 +427,7 @@
 				23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */,
 				23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */,
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
+				23E4762425A9874700C61417 /* HomeBaseData.swift in Sources */,
 				23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */,
 				23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */,
 				23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */,
@@ -449,7 +439,6 @@
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
 				23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */,
 				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,
-				23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */,
 				23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */,
 				23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */,
 				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
@@ -457,7 +446,6 @@
 				23A62D4225A962730037CE1E /* CameraView.swift in Sources */,
 				23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */,
 				23A62CDC25A9596C0037CE1E /* ColorModel.swift in Sources */,
-				23AB73E8244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift in Sources */,
 				23A62CF125A95A1D0037CE1E /* HomeCameraViewDelegate.swift in Sources */,
 				23A62D4125A962730037CE1E /* CameraViewDelegates.swift in Sources */,
 				23A62CB925A9591C0037CE1E /* ColorSubAlert.swift in Sources */,
