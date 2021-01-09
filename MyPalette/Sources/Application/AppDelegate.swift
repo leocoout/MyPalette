@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        let home = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let home = HomeViewController(nibName: .home)
         HomeBuilder.buildModule(using: home)
         window?.rootViewController = home
         

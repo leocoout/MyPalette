@@ -36,6 +36,8 @@
 		23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */; };
 		23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4725A9627A0037CE1E /* SavedColorsEmptyView.swift */; };
 		23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4825A9627A0037CE1E /* SavedColorsView.swift */; };
+		23A62D5225A9661F0037CE1E /* MPNibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D5125A9661F0037CE1E /* MPNibs.swift */; };
+		23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */; };
 		23AB73E5244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */; };
 		23AB73E8244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */; };
 		23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */; };
@@ -85,6 +87,8 @@
 		23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsListView.swift; sourceTree = "<group>"; };
 		23A62D4725A9627A0037CE1E /* SavedColorsEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsEmptyView.swift; sourceTree = "<group>"; };
 		23A62D4825A9627A0037CE1E /* SavedColorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
+		23A62D5125A9661F0037CE1E /* MPNibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPNibs.swift; sourceTree = "<group>"; };
+		23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPalleteServiceAPI.swift; sourceTree = "<group>"; };
 		23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBaseData.swift; sourceTree = "<group>"; };
 		23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerServiceManager.swift; sourceTree = "<group>"; };
@@ -158,7 +162,7 @@
 		23A62CA925A9589E0037CE1E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				23A62CD825A9596C0037CE1E /* BusinessModel */,
+				23A62CD825A9596C0037CE1E /* Models */,
 				23A62CAF25A9591C0037CE1E /* Components */,
 				23A62CAA25A958AE0037CE1E /* Application */,
 				23A62CE025A959800037CE1E /* Modules */,
@@ -195,13 +199,14 @@
 			path = ColorCard;
 			sourceTree = "<group>";
 		};
-		23A62CD825A9596C0037CE1E /* BusinessModel */ = {
+		23A62CD825A9596C0037CE1E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				23A62CD925A9596C0037CE1E /* ColorModel.swift */,
 				23A62CDA25A9596C0037CE1E /* MyPalette.xcdatamodeld */,
+				23A62D5125A9661F0037CE1E /* MPNibs.swift */,
 			);
-			path = BusinessModel;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		23A62CE025A959800037CE1E /* Modules */ = {
@@ -217,6 +222,7 @@
 			children = (
 				23A62CE225A959940037CE1E /* CustomColors.swift */,
 				23A62CE325A959940037CE1E /* UIImageExtension.swift */,
+				23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -419,9 +425,11 @@
 				23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */,
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
 				23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */,
+				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,
 				23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */,
 				23AB73E5244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift in Sources */,
 				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
+				23A62D5225A9661F0037CE1E /* MPNibs.swift in Sources */,
 				23A62D4225A962730037CE1E /* CameraView.swift in Sources */,
 				23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */,
 				23A62CDC25A9596C0037CE1E /* ColorModel.swift in Sources */,
