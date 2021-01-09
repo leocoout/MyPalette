@@ -19,7 +19,6 @@
 		23721D432446B62C00371B08 /* CameraViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23721D422446B62C00371B08 /* CameraViewDelegates.swift */; };
 		238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
-		2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D3240423FE0073AA31 /* SceneDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
 		2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DC240424010073AA31 /* LaunchScreen.storyboard */; };
 		2391C1E9240424010073AA31 /* MyPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1E8240424010073AA31 /* MyPaletteTests.swift */; };
@@ -61,7 +60,6 @@
 		238A2D73244806DE005D1DD5 /* SavedColorsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsEmptyView.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2391C1D3240423FE0073AA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2391C1DA240424010073AA31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2391C1DD240424010073AA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2391C1DF240424010073AA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 				2391C1FF240426A70073AA31 /* Controllers */,
 				23AB73E3244FF77400EF45A8 /* Services */,
 				2391C1D1240423FE0073AA31 /* AppDelegate.swift */,
-				2391C1D3240423FE0073AA31 /* SceneDelegate.swift */,
 				2391C1DC240424010073AA31 /* LaunchScreen.storyboard */,
 				2391C1DF240424010073AA31 /* Info.plist */,
 			);
@@ -385,7 +382,6 @@
 				23956125244547160041E56E /* UIImageExtension.swift in Sources */,
 				23A799CF244E43130024E24D /* ColorSubAlert.swift in Sources */,
 				2329F791244A950200552BB2 /* SavedColorsListView.swift in Sources */,
-				2391C1D4240423FE0073AA31 /* SceneDelegate.swift in Sources */,
 				2391C202240426B90073AA31 /* HomeViewController.swift in Sources */,
 				23AB73BF244FEE7F00EF45A8 /* MyPalette.xcdatamodeld in Sources */,
 				238A2D74244806DE005D1DD5 /* SavedColorsEmptyView.swift in Sources */,
@@ -475,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -529,7 +525,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
