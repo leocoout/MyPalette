@@ -1,25 +1,25 @@
 //
-//  MyPaletteServiceAPI.swift
+//  MPKLocalService.swift
 //  MyPalette
 //
-//  Created by Leonardo Santos on 22/04/20.
-//  Copyright © 2020 Leonardo Santos. All rights reserved.
+//  Created by Leonardo Santos on 09/01/21.
+//  Copyright © 2021 Leonardo Santos. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import CoreData
 
-enum MyPaletteServiceAPIType: String {
+enum MPKLocalServiceType: String {
     case color = "Color"
 }
 
 protocol BaseData {
-    var entity: MyPaletteServiceAPIType { get }
+    var entity: MPKLocalServiceType { get }
     var `data`: [String: Any?] { get }
 }
 
-class MyPaletteServiceAPI {
+class MPKLocalService {
 
     static func saveLocalData(of type: BaseData) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -40,7 +40,7 @@ class MyPaletteServiceAPI {
         }
     }
     
-    static func recoverLocalData(of type: MyPaletteServiceAPIType,
+    static func recoverLocalData(of type: MPKLocalServiceType,
                                  completion: @escaping ([NSManagedObject]) -> ()) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext

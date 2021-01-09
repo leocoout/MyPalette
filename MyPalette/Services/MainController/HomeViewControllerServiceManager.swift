@@ -14,11 +14,11 @@ class HomeViewControllerServiceManager {
     
     static func saveData(model: ColorModel) {
         let data = HomeViewControllerBaseData(model: model)
-        MyPaletteServiceAPI.saveLocalData(of: data)
+        MPKLocalService.saveLocalData(of: data)
     }
     
     static func recoverdata(completion: @escaping ([NSManagedObject]) -> ()) {
-        MyPaletteServiceAPI.recoverLocalData(of: .color) { (recoveredData) in
+        MPKLocalService.recoverLocalData(of: .color) { (recoveredData) in
             completion(recoveredData)
         }
     }

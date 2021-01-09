@@ -117,15 +117,13 @@ extension HomeViewController {
     }
     
     private func requestCameraPermission() {
-        AVCaptureDevice.requestAccess(for: .video) { response in
-            DispatchQueue.main.async {
-                if response {
-                    self.setupSavedColorsView()
-                    self.setupCameraScreen()
-                    self.cameraView.configureCamera()
-                } else {
-                    self.setupDisabledScreen()
-                }
+        MPKPermissions.requestCameraPermission { response in
+            if response {
+                self.setupSavedColorsView()
+                self.setupCameraScreen()
+                self.cameraView.configureCamera()
+            } else {
+                self.setupDisabledScreen()
             }
         }
     }

@@ -1,15 +1,15 @@
 //
-//  MyPaletteColorAPI.swift
+//  MPKColorEngine.swift
 //  MyPalette
 //
-//  Created by Leonardo Santos on 23/04/20.
-//  Copyright © 2020 Leonardo Santos. All rights reserved.
+//  Created by Leonardo Santos on 09/01/21.
+//  Copyright © 2021 Leonardo Santos. All rights reserved.
 //
 
 import Foundation
 import UIKit
-
-class MyPaletteColorAPI {
+    
+public class MPKColorEngine {
     
     static func uiColorToColorSpace(color: UIColor) -> String {
         let strColor = color.description
@@ -24,21 +24,19 @@ class MyPaletteColorAPI {
     }
     
     static func colorSpaceToUIColor(value: String) -> UIColor {
-    
+        
         if let colorSpace = CGColorSpace(name: CGColorSpace.sRGB) {
             let strComponents = value.components(separatedBy: " ")
             var components = [CGFloat]()
             
             strComponents.forEach {
-                 components.append(CGFloat(($0 as NSString).floatValue))
+                components.append(CGFloat(($0 as NSString).floatValue))
             }
-                    
             return UIColor(cgColor: CGColor(colorSpace: colorSpace,
-                                            components: components) ?? UIColor.myPaletteGray.cgColor)
+                                            components: components) ??
+                            UIColor.myPaletteGray.cgColor)
         }
         
         return .myPaletteGray
     }
 }
-
-

@@ -11,7 +11,6 @@
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
 		2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DC240424010073AA31 /* LaunchScreen.storyboard */; };
 		2391C1E9240424010073AA31 /* MyPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1E8240424010073AA31 /* MyPaletteTests.swift */; };
-		2394639624514425003ABA84 /* MyPaletteColorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2394639524514425003ABA84 /* MyPaletteColorAPI.swift */; };
 		23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB025A9591C0037CE1E /* CustomButton.swift */; };
 		23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */; };
 		23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB325A9591C0037CE1E /* ColorAlert.swift */; };
@@ -38,9 +37,11 @@
 		23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4825A9627A0037CE1E /* SavedColorsView.swift */; };
 		23A62D5225A9661F0037CE1E /* MPNibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D5125A9661F0037CE1E /* MPNibs.swift */; };
 		23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */; };
-		23AB73E5244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */; };
 		23AB73E8244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */; };
 		23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */; };
+		23E4760125A96F0400C61417 /* MPKColorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760025A96F0400C61417 /* MPKColorEngine.swift */; };
+		23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760625A96F0E00C61417 /* MPKPermissions.swift */; };
+		23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4760C25A9736200C61417 /* MPKLocalService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,6 @@
 		2391C1E4240424010073AA31 /* MyPaletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPaletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1E8240424010073AA31 /* MyPaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaletteTests.swift; sourceTree = "<group>"; };
 		2391C1EA240424010073AA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2394639524514425003ABA84 /* MyPaletteColorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaletteColorAPI.swift; sourceTree = "<group>"; };
 		23A62CB025A9591C0037CE1E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuList.swift; sourceTree = "<group>"; };
 		23A62CB325A9591C0037CE1E /* ColorAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAlert.swift; sourceTree = "<group>"; };
@@ -89,9 +89,11 @@
 		23A62D4825A9627A0037CE1E /* SavedColorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsView.swift; sourceTree = "<group>"; };
 		23A62D5125A9661F0037CE1E /* MPNibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPNibs.swift; sourceTree = "<group>"; };
 		23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
-		23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPalleteServiceAPI.swift; sourceTree = "<group>"; };
 		23AB73E7244FFC9B00EF45A8 /* HomeViewControllerBaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerBaseData.swift; sourceTree = "<group>"; };
 		23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerServiceManager.swift; sourceTree = "<group>"; };
+		23E4760025A96F0400C61417 /* MPKColorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKColorEngine.swift; sourceTree = "<group>"; };
+		23E4760625A96F0E00C61417 /* MPKPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKPermissions.swift; sourceTree = "<group>"; };
+		23E4760C25A9736200C61417 /* MPKLocalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKLocalService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,9 +294,8 @@
 		23AB73E3244FF77400EF45A8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				23E475F525A96E2400C61417 /* MyPaletteKit */,
 				23AB73E6244FFC8E00EF45A8 /* MainController */,
-				23AB73E4244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift */,
-				2394639524514425003ABA84 /* MyPaletteColorAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -306,6 +307,16 @@
 				23AB73EB244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift */,
 			);
 			path = MainController;
+			sourceTree = "<group>";
+		};
+		23E475F525A96E2400C61417 /* MyPaletteKit */ = {
+			isa = PBXGroup;
+			children = (
+				23E4760025A96F0400C61417 /* MPKColorEngine.swift */,
+				23E4760625A96F0E00C61417 /* MPKPermissions.swift */,
+				23E4760C25A9736200C61417 /* MPKLocalService.swift */,
+			);
+			path = MyPaletteKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,10 +427,10 @@
 				23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */,
 				23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */,
 				23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */,
-				2394639624514425003ABA84 /* MyPaletteColorAPI.swift in Sources */,
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
 				23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */,
 				23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */,
+				23E4760125A96F0400C61417 /* MPKColorEngine.swift in Sources */,
 				23A62D1E25A95B9F0037CE1E /* HomeInteractor.swift in Sources */,
 				23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */,
 				23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */,
@@ -427,7 +438,8 @@
 				23A62D1A25A95B920037CE1E /* HomePresenter.swift in Sources */,
 				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,
 				23AB73EC244FFE4900EF45A8 /* HomeViewControllerServiceManager.swift in Sources */,
-				23AB73E5244FF7AF00EF45A8 /* MyPalleteServiceAPI.swift in Sources */,
+				23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */,
+				23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */,
 				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
 				23A62D5225A9661F0037CE1E /* MPNibs.swift in Sources */,
 				23A62D4225A962730037CE1E /* CameraView.swift in Sources */,

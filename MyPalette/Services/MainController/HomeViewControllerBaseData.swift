@@ -17,9 +17,9 @@ class HomeViewControllerBaseData: BaseData {
         self.color = model.color
     }
     
-    var entity: MyPaletteServiceAPIType = .color
+    var entity: MPKLocalServiceType = .color
     
     var data: [String : Any?] {
-        return ["colorPicked": MyPaletteColorAPI.uiColorToColorSpace(color: self.color)]
+        return ["colorPicked": MPKColorEngine.uiColorToColorSpace(color: self.color)]
     }
 }

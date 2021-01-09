@@ -25,7 +25,7 @@ class SavedColorsListCell: UICollectionViewCell {
     
     private func updateColorView() {
         if let color = colorPicked {
-            backgroundColor = MyPaletteColorAPI.colorSpaceToUIColor(value: color)
+            backgroundColor = MPKColorEngine.colorSpaceToUIColor(value: color)
         }
     }
 }
