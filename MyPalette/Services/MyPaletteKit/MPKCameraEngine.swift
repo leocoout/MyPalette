@@ -11,8 +11,15 @@ import AVKit
 import UIKit
 
 public protocol MPKCameraEngineDelegate: class {
+    /// Called after image capture and processing
+    /// - Parameter color: it will return the color object
     func imageDidProcessed(color: UIColor)
+    
+    /// Called after the preview layer was added to the view
     func configurationCommited()
+    
+    /// Called when the CameraViewState property was updated
+    /// - Parameter state: camera state, for example, loading or loaded
     func cameraStateUpdated(to state: MPKCameraViewState)
 }
 
@@ -52,7 +59,7 @@ public class MPKCameraEngine: NSObject, MPKCameraEngineProtocol {
         }
     }
     
-    // MARK: Private Properties
+    // MARK: - Private Properties
     private var view: UIView?
     private let sessionQueue = DispatchQueue(label: "session queue",
                                              attributes: [],
@@ -62,6 +69,8 @@ public class MPKCameraEngine: NSObject, MPKCameraEngineProtocol {
         self.delegate = delegate
     }
     
+    // MARK: - Protocol Methods Implementation
+    /// Used to capture photo. It creates a AVCapturePhotosettings and defines preview format.
     public func capture() {
         changeCameraViewState(to: .loading)
         
@@ -75,6 +84,8 @@ public class MPKCameraEngine: NSObject, MPKCameraEngineProtocol {
         photoOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
+    /// It will configure the capture session, get available devices  and add photo output to the session
+    /// - Parameter view: view that will be used to add photo preview in the background
     public func configure(at view: UIView) {
         self.view = view
         configureCamera()
@@ -162,7 +173,7 @@ extension MPKCameraEngine {
     }
 }
 
-
+// MARK: - AVCapturePhotoCaptureDelegate
 extension MPKCameraEngine: AVCapturePhotoCaptureDelegate {
     public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
 

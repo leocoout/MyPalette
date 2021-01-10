@@ -21,8 +21,8 @@ protocol MPKBaseData {
 
 class MPKLocalService {
 
-    static func saveLocalData(of type: MPKBaseData) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+    static func saveLocalData(of type: MPKBaseData, appDelegate: AppDelegate?) {
+        guard let appDelegate = appDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         
         if let entity = NSEntityDescription.entity(forEntityName: type.entity.rawValue, in: managedContext) {
@@ -41,8 +41,9 @@ class MPKLocalService {
     }
     
     static func recoverLocalData(of type: MPKLocalServiceType,
+                                 appDelegate: AppDelegate?,
                                  completion: @escaping ([NSManagedObject]) -> ()) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let appDelegate = appDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: type.rawValue)
         

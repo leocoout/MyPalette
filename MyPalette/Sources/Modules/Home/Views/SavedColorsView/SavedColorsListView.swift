@@ -22,6 +22,7 @@ class SavedColorsListView: UIView {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .clear
         collection.showsHorizontalScrollIndicator = false
+        collection.alwaysBounceHorizontal = true
         return collection
     }()
     

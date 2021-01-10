@@ -8,12 +8,6 @@
 
 import Foundation
 import UIKit
-
-
-
-public enum MPKColorEngineConvertionType {
-    case uiColor(to: MPKColorSpace), colorSpace(to: UIColor)
-}
     
 public class MPKColorEngine {
     
@@ -44,13 +38,14 @@ public class MPKColorEngine {
             strComponents.forEach {
                 components.append(CGFloat(($0 as NSString).floatValue))
             }
-            return UIColor(cgColor: CGColor(colorSpace: colorSpace,
-                                            components: components) ??
-                            UIColor.myPaletteGray.cgColor)
+            return UIColor(
+                cgColor: CGColor(
+                    colorSpace: colorSpace,
+                    components: components) ??
+                    UIColor.myPaletteGray.cgColor
+            )
         }
         
         return .myPaletteGray
     }
-    
-    
 }
