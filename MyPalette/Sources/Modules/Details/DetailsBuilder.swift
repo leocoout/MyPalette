@@ -18,7 +18,7 @@ class DetailsBuilder {
     
         view.interactor = interactor
         view.presenter = presenter
-        view.colorData = data
+        view.data = data
         presenter.view = view
         interactor.presenter = presenter
     }

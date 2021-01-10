@@ -28,8 +28,6 @@ class ShadowCard: UIView {
 // MARK: - Private Methods
 extension ShadowCard {
     private func setupLayout() {
-        backgroundColor = .white
-    
         layer.cornerRadius = borderRadius
         layer.shadowColor = UIColor.customBlack.cgColor
         layer.shadowOffset = .zero

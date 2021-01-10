@@ -15,7 +15,7 @@ protocol DetailsViewControllerProtocol: class {
 }
 
 protocol DetailsViewControllerDataStore: class {
-    var colorData: MPKManagedObject? { get set }
+    var data: MPKManagedObject? { get set }
 }
 
 class DetailsViewController: UIViewController, DetailsViewControllerProtocol, DetailsViewControllerDataStore {
@@ -28,15 +28,52 @@ class DetailsViewController: UIViewController, DetailsViewControllerProtocol, De
     var presenter: DetailsPresenterProtocol?
     
     // MARK: DataStore
-    var colorData: MPKManagedObject?
+    var data: MPKManagedObject?
+    
+    // MARK: Properties
+    lazy var viewModel: DetailsViewModelProtocol = DetailsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let backgroundColor = colorData?.getColorPicked() else { return }
-        view.backgroundColor = MPKColorEngine.colorSpaceToUIColor(value: backgroundColor)
+        viewModel.setData(data)
         
-        print()
+        setupBackground()
+        setupTableView()
     }
-  
+}
+
+// MARK: - Private Methods
+extension DetailsViewController {
+    private func setupBackground() {
+        view.backgroundColor = viewModel.getColorAsUIColor()
+    }
+    
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(classForNib: DetailsViewControllerHeaderCell.self)
+    }
+}
+// MARK: - UITableViewDelegate & UITableViewDataSource Methods
+extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.numberOfSections()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfRows(at: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch DetailsTableViewSections(rawValue: indexPath.section) {
+        case .header:
+            let cell: DetailsViewControllerHeaderCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.setup(with: viewModel.getColorAsUIColor(), hexadecimal: viewModel.getColorAsHexadecimalString())
+            return cell
+        case .none: return UITableViewCell()
+        }
+    }
 }
