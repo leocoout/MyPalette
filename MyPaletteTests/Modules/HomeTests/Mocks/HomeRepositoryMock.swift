@@ -14,7 +14,6 @@ class HomeRepositoryMock: HomeRepositoryProtocol {
     // MARK: Properties
     var saveDataCalled = false
     
-    
     func saveData(model: ColorModel) {
         saveDataCalled  = true
     }
