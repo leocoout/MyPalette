@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 class SavedColorsListView: UIView {
     
@@ -23,10 +22,11 @@ class SavedColorsListView: UIView {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .clear
         collection.showsHorizontalScrollIndicator = false
+        collection.alwaysBounceHorizontal = true
         return collection
     }()
     
-    var colorListItens = [NSManagedObject]() {
+    var colorListItens = [MPKManagedObject]() {
         didSet {
             collectionView.reloadData()
         }

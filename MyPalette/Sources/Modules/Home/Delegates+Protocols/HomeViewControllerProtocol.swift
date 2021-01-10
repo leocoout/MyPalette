@@ -20,6 +20,7 @@ extension HomeViewController {
     
     func handleCameraPermissionUnauthorized() {
         self.setupDisabledScreen()
+        self.updateInterfaceState(state: .hide)
     }
     
     func handleDataRecovered(response: [MPKManagedObject]) {
