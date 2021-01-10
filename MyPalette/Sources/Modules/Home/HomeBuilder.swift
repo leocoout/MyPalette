@@ -10,8 +10,10 @@ import Foundation
 
 class HomeBuilder {
     class func buildModule(using view: HomeViewControllerProtocol) {
-        let interactor = HomeInteractor(repository: HomeRepository())
         let presenter = HomePresenter()
+        let interactor = HomeInteractor(
+            repository: HomeRepository(localService: MPKLocalService()),
+            permissions: MPKPermissions())
     
         view.interactor = interactor
         view.presenter = presenter

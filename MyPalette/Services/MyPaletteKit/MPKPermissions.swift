@@ -13,7 +13,7 @@ public class MPKPermissions {
     
     /// Request camera permission for usage to detect colors
     /// - Returns: MPKPermissionResponse same as Bool
-    public static func requestCameraPermission(completion: @escaping (MPKPermissionResponse) -> (Void)) {
+    public func requestCameraPermission(completion: @escaping (MPKPermissionResponse) -> (Void)) {
         AVCaptureDevice.requestAccess(for: .video) { response in
             DispatchQueue.main.async {
                 completion(response)

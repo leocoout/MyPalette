@@ -58,11 +58,6 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         aimView.layer.borderWidth = 1
         aimView.layer.borderColor = UIColor.white.cgColor
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
     
     func animateContentView() {
         viewModel.setSavedColorsViewState(to: viewModel.getContentState() == .disabled)

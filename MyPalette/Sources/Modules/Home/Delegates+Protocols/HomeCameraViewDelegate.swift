@@ -12,11 +12,7 @@ import UIKit
 extension HomeViewController: CameraViewDelegate {
     
     func userSavedColor(color: UIColor?) {
-        
-        guard let modelColor = color else { return }
-        
-        let model = ColorModel(color: modelColor)
-        HomeRepository.saveData(model: model)
+        interactor?.saveData(color: color)
     }
 
     func updateInterfaceState(state: MPKCameraInterfaceState) {
