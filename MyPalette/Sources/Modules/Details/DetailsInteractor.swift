@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol DetailsInteractorProtocol {
+}
+
+class DetailsInteractor: DetailsInteractorProtocol {
+    
+    // MARK: Properties
+    var presenter: DetailsPresenterProtocol?
+}

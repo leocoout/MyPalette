@@ -13,7 +13,7 @@ public class MPKColorEngine {
     
     /// Converts UIColor to ColorSpace String
     /// - Parameter color: color used for convertion
-    /// - Returns: returns the string of the color, for example:
+    /// - Returns: returns the string of the color, for example: `0.862745 0.690196 0.262745 1`
     static func uiColorToColorSpace(color: UIColor) -> String {
         let strColor = color.description
         let components = strColor.components(separatedBy: " ")
@@ -26,7 +26,7 @@ public class MPKColorEngine {
         return String(str.dropLast())
     }
     
-    /// Converts colorSpace, like    , to UIColor
+    /// Converts colorSpace like  `0.862745 0.690196 0.262745 1` to UIColor
     /// - Parameter value: color space string
     /// - Returns: the UIColor object associated to the value
     static func colorSpaceToUIColor(value: MPKColorSpace) -> UIColor {

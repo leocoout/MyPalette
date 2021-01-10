@@ -10,4 +10,5 @@ import Foundation
 
 enum MPNibs: String {
     case home = "HomeViewController"
+    case details = "DetailsViewController"
 }

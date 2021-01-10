@@ -10,6 +10,14 @@
 		23219BE925AA9EC000EB42D7 /* ColorAlertMenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */; };
 		23219BF625AAA41700EB42D7 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BF525AAA41700EB42D7 /* HomeRouter.swift */; };
 		23219BFA25AAA5AB00EB42D7 /* MPKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BF925AAA5AB00EB42D7 /* MPKManagedObject.swift */; };
+		23219BFE25AAA72000EB42D7 /* MyPaletteNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BFD25AAA72000EB42D7 /* MyPaletteNavigation.swift */; };
+		23219C0B25AAAAD800EB42D7 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C0A25AAAAD800EB42D7 /* DetailsViewController.swift */; };
+		23219C1225AAAAE300EB42D7 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23219C1125AAAAE300EB42D7 /* DetailsViewController.xib */; };
+		23219C1625AAAAEF00EB42D7 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C1525AAAAEF00EB42D7 /* DetailsInteractor.swift */; };
+		23219C1A25AAAAF500EB42D7 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C1925AAAAF500EB42D7 /* DetailsPresenter.swift */; };
+		23219C1E25AAAB3100EB42D7 /* DetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C1D25AAAB3100EB42D7 /* DetailsBuilder.swift */; };
+		23219C2225AAB1C500EB42D7 /* ShadowCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C2125AAB1C500EB42D7 /* ShadowCard.swift */; };
+		23219C2625AAB24000EB42D7 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C2525AAB24000EB42D7 /* UIViewExtensions.swift */; };
 		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
@@ -64,6 +72,14 @@
 		23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuListItem.swift; sourceTree = "<group>"; };
 		23219BF525AAA41700EB42D7 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		23219BF925AAA5AB00EB42D7 /* MPKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKManagedObject.swift; sourceTree = "<group>"; };
+		23219BFD25AAA72000EB42D7 /* MyPaletteNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaletteNavigation.swift; sourceTree = "<group>"; };
+		23219C0A25AAAAD800EB42D7 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		23219C1125AAAAE300EB42D7 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		23219C1525AAAAEF00EB42D7 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		23219C1925AAAAF500EB42D7 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		23219C1D25AAAB3100EB42D7 /* DetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBuilder.swift; sourceTree = "<group>"; };
+		23219C2125AAB1C500EB42D7 /* ShadowCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCard.swift; sourceTree = "<group>"; };
+		23219C2525AAB24000EB42D7 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +159,26 @@
 			path = ColorSubAlert;
 			sourceTree = "<group>";
 		};
+		23219C0125AAA7CE00EB42D7 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				23219C0E25AAAADB00EB42D7 /* Views */,
+				23219C0A25AAAAD800EB42D7 /* DetailsViewController.swift */,
+				23219C1525AAAAEF00EB42D7 /* DetailsInteractor.swift */,
+				23219C1925AAAAF500EB42D7 /* DetailsPresenter.swift */,
+				23219C1D25AAAB3100EB42D7 /* DetailsBuilder.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		23219C0E25AAAADB00EB42D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23219C1125AAAAE300EB42D7 /* DetailsViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2391C1C5240423FE0073AA31 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +251,7 @@
 			children = (
 				23A62CB125A9591C0037CE1E /* ColorAlert */,
 				23A62CB025A9591C0037CE1E /* CustomButton.swift */,
+				23219C2125AAB1C500EB42D7 /* ShadowCard.swift */,
 				23A62CB525A9591C0037CE1E /* LoadingView.swift */,
 			);
 			path = Components;
@@ -244,6 +281,7 @@
 		23A62CE025A959800037CE1E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				23219C0125AAA7CE00EB42D7 /* Details */,
 				23A62CE825A959CA0037CE1E /* Home */,
 			);
 			path = Modules;
@@ -255,6 +293,8 @@
 				23A62CE225A959940037CE1E /* CustomColors.swift */,
 				23A62CE325A959940037CE1E /* UIImageExtension.swift */,
 				23A62D5525A9665C0037CE1E /* UIViewControllerExtensions.swift */,
+				23219BFD25AAA72000EB42D7 /* MyPaletteNavigation.swift */,
+				23219C2525AAB24000EB42D7 /* UIViewExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -429,6 +469,7 @@
 				2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */,
 				2391C1DB240424010073AA31 /* Assets.xcassets in Resources */,
 				23A62D2E25A95D520037CE1E /* HomeViewController.xib in Resources */,
+				23219C1225AAAAE300EB42D7 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +490,8 @@
 				23A62CDD25A9596C0037CE1E /* MyPalette.xcdatamodeld in Sources */,
 				23E4761725A9762A00C61417 /* HomeViewModel.swift in Sources */,
 				23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */,
+				23219BFE25AAA72000EB42D7 /* MyPaletteNavigation.swift in Sources */,
+				23219C1E25AAAB3100EB42D7 /* DetailsBuilder.swift in Sources */,
 				23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */,
 				23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */,
 				23219BE925AA9EC000EB42D7 /* ColorAlertMenuListItem.swift in Sources */,
@@ -456,6 +499,7 @@
 				2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */,
 				23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */,
 				23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */,
+				23219C0B25AAAAD800EB42D7 /* DetailsViewController.swift in Sources */,
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
 				23E4762425A9874700C61417 /* HomeBaseData.swift in Sources */,
 				23219BFA25AAA5AB00EB42D7 /* MPKManagedObject.swift in Sources */,
@@ -464,6 +508,8 @@
 				23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */,
 				23E4760125A96F0400C61417 /* MPKColorEngine.swift in Sources */,
 				23A62D1E25A95B9F0037CE1E /* HomeInteractor.swift in Sources */,
+				23219C2225AAB1C500EB42D7 /* ShadowCard.swift in Sources */,
+				23219C2625AAB24000EB42D7 /* UIViewExtensions.swift in Sources */,
 				23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */,
 				23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */,
 				23E4761C25A97FD000C61417 /* MPKModel.swift in Sources */,
@@ -472,6 +518,7 @@
 				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,
 				23E4762E25AA61A600C61417 /* MPKCameraEngine.swift in Sources */,
 				23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */,
+				23219C1A25AAAAF500EB42D7 /* DetailsPresenter.swift in Sources */,
 				23219BF625AAA41700EB42D7 /* HomeRouter.swift in Sources */,
 				23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */,
 				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
@@ -479,6 +526,7 @@
 				23A62D4225A962730037CE1E /* CameraView.swift in Sources */,
 				23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */,
 				23A62CDC25A9596C0037CE1E /* ColorModel.swift in Sources */,
+				23219C1625AAAAEF00EB42D7 /* DetailsInteractor.swift in Sources */,
 				23A62CF125A95A1D0037CE1E /* HomeCameraViewDelegate.swift in Sources */,
 				23A62CB925A9591C0037CE1E /* ColorSubAlert.swift in Sources */,
 				23A62CE425A959940037CE1E /* CustomColors.swift in Sources */,

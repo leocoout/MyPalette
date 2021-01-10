@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol DetailsPresenterProtocol {
+}
+
+class DetailsPresenter: DetailsPresenterProtocol {
+    
+    // MARK: Properties
+    weak var view: DetailsViewControllerProtocol?
+}
