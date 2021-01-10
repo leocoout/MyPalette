@@ -14,6 +14,7 @@ protocol ColorAlertMenuListDelegate: class {
     func didTapSaveItem()
 }
 
+/// This class is responsible for the itens list that shows up with the Color Alert card
 class ColorAlertMenuList: UIView {
     
     private lazy var stackView: UIStackView = {

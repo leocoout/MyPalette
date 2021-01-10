@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// This class is responsable for each item of the menu list
 class ColorAlertListItem: UIView {
     
     lazy var button: UIButton = {

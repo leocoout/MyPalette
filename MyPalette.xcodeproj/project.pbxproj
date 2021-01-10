@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23219BE925AA9EC000EB42D7 /* ColorAlertListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BE825AA9EC000EB42D7 /* ColorAlertListItem.swift */; };
+		23219BE925AA9EC000EB42D7 /* ColorAlertMenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */; };
 		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
@@ -59,7 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		23219BE825AA9EC000EB42D7 /* ColorAlertListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertListItem.swift; sourceTree = "<group>"; };
+		23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuListItem.swift; sourceTree = "<group>"; };
 		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +122,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23219BF125AA9FDE00EB42D7 /* ColorAlertMenuList */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */,
+				23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */,
+			);
+			path = ColorAlertMenuList;
+			sourceTree = "<group>";
+		};
+		23219BF225AA9FEA00EB42D7 /* ColorSubAlert */ = {
+			isa = PBXGroup;
+			children = (
+				23A62CB425A9591C0037CE1E /* ColorSubAlert.swift */,
+			);
+			path = ColorSubAlert;
+			sourceTree = "<group>";
+		};
 		2391C1C5240423FE0073AA31 = {
 			isa = PBXGroup;
 			children = (
@@ -192,23 +209,22 @@
 		23A62CAF25A9591C0037CE1E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				23A62CB125A9591C0037CE1E /* ColorCard */,
+				23A62CB125A9591C0037CE1E /* ColorAlert */,
 				23A62CB025A9591C0037CE1E /* CustomButton.swift */,
 				23A62CB525A9591C0037CE1E /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		23A62CB125A9591C0037CE1E /* ColorCard */ = {
+		23A62CB125A9591C0037CE1E /* ColorAlert */ = {
 			isa = PBXGroup;
 			children = (
-				23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */,
+				23219BF225AA9FEA00EB42D7 /* ColorSubAlert */,
+				23219BF125AA9FDE00EB42D7 /* ColorAlertMenuList */,
 				23A62CB325A9591C0037CE1E /* ColorAlert.swift */,
-				23A62CB425A9591C0037CE1E /* ColorSubAlert.swift */,
 				2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */,
-				23219BE825AA9EC000EB42D7 /* ColorAlertListItem.swift */,
 			);
-			path = ColorCard;
+			path = ColorAlert;
 			sourceTree = "<group>";
 		};
 		23A62CD825A9596C0037CE1E /* Models */ = {
@@ -429,7 +445,7 @@
 				23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */,
 				23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */,
 				23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */,
-				23219BE925AA9EC000EB42D7 /* ColorAlertListItem.swift in Sources */,
+				23219BE925AA9EC000EB42D7 /* ColorAlertMenuListItem.swift in Sources */,
 				23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */,
 				2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */,
 				23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */,

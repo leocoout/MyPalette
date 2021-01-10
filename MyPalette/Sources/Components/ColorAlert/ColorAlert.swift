@@ -20,6 +20,7 @@ enum ColorCardState {
     }
 }
 
+/// This class is responsible for the color alert that shows up when the capture is  completed. Can be used with `ColorAlertBuilder` class
 class ColorAlert: UIView {
     
     // MARK: Configuration
