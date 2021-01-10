@@ -11,6 +11,7 @@ import UIKit
 
 class SavedColorsListCell: UICollectionViewCell {
     
+    // MARK: Properties
     var colorPicked: String? = "0 0 0 1" {
         didSet {
             updateColorView()

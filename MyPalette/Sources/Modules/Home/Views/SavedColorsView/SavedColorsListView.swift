@@ -31,10 +31,12 @@ class SavedColorsListView: UIView {
         return collection
     }()
     
-    // MARK: Private Properties
+    // MARK: Properties
+    lazy var viewModel: SavedColorsViewModelProtocol = SavedColorsListViewModel()
     weak var delegate: SavedColorsListViewDelegate?
     var colorListItens = [MPKManagedObject]() {
         didSet {
+            viewModel.setData(colorListItens)
             collectionView.reloadData()
         }
     }
@@ -59,28 +61,36 @@ class SavedColorsListView: UIView {
     private func setupCollection() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(cellClass: SavedColorsListCell.self)
         
-        collectionView.register(
-            SavedColorsListCell.self,
-            forCellWithReuseIdentifier: "SavedColorsListCell"
-        )
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPress(sender:)))
+        collectionView.addGestureRecognizer(longPress)
+    }
+    
+    @objc func longPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == UIGestureRecognizer.State.began {
+            let touchPoint = sender.location(in: collectionView)
+            if let indexPath = collectionView.indexPathForItem(at: touchPoint) {
+                collectionView.reloadData()
+            }
+        }
     }
 }
 
 extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int { 1 }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorListItens.count
+        return viewModel.numberOfRows(at: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SavedColorsListCell",
-                                                      for: indexPath) as! SavedColorsListCell
-        
-        cell.colorPicked = colorListItens[indexPath.row].getColorPicked()
-        
+        let cell: SavedColorsListCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.colorPicked = viewModel.getItemAt(indexPath: indexPath).getColorPicked()
+
         return cell
     }
     
@@ -88,5 +98,3 @@ extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSou
         delegate?.didSelectItem(with: colorListItens[indexPath.row])
     }
 }
-
-

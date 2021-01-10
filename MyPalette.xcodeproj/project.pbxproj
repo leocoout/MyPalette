@@ -22,6 +22,8 @@
 		23219C3425AAB6C500EB42D7 /* DetailsViewControllerHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23219C3225AAB6C500EB42D7 /* DetailsViewControllerHeaderCell.xib */; };
 		23219C3A25AAB84B00EB42D7 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C3925AAB84B00EB42D7 /* DetailsViewModel.swift */; };
 		23219C3E25AABAAE00EB42D7 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C3D25AABAAE00EB42D7 /* UITableViewExtension.swift */; };
+		23219C4625AAC52C00EB42D7 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C4525AAC52C00EB42D7 /* UICollectionViewExtensions.swift */; };
+		23219C4A25AACA4B00EB42D7 /* SavedColorsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C4925AACA4B00EB42D7 /* SavedColorsListViewModel.swift */; };
 		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		23219C3225AAB6C500EB42D7 /* DetailsViewControllerHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewControllerHeaderCell.xib; sourceTree = "<group>"; };
 		23219C3925AAB84B00EB42D7 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		23219C3D25AABAAE00EB42D7 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		23219C4525AAC52C00EB42D7 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		23219C4925AACA4B00EB42D7 /* SavedColorsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListViewModel.swift; sourceTree = "<group>"; };
 		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 				23219BFD25AAA72000EB42D7 /* MyPaletteNavigation.swift */,
 				23219C2525AAB24000EB42D7 /* UIViewExtensions.swift */,
 				23219C3D25AABAAE00EB42D7 /* UITableViewExtension.swift */,
+				23219C4525AAC52C00EB42D7 /* UICollectionViewExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				23A62D4525A9627A0037CE1E /* SavedColorsListCell.swift */,
 				23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */,
 				23A62D4825A9627A0037CE1E /* SavedColorsView.swift */,
+				23219C4925AACA4B00EB42D7 /* SavedColorsListViewModel.swift */,
 			);
 			path = SavedColorsView;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
 				23E4762425A9874700C61417 /* HomeBaseData.swift in Sources */,
 				23219BFA25AAA5AB00EB42D7 /* MPKManagedObject.swift in Sources */,
+				23219C4625AAC52C00EB42D7 /* UICollectionViewExtensions.swift in Sources */,
 				23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */,
 				23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */,
 				23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */,
@@ -540,6 +547,7 @@
 				23219C2225AAB1C500EB42D7 /* ShadowCard.swift in Sources */,
 				23219C2625AAB24000EB42D7 /* UIViewExtensions.swift in Sources */,
 				23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */,
+				23219C4A25AACA4B00EB42D7 /* SavedColorsListViewModel.swift in Sources */,
 				23A62CEC25A95A040037CE1E /* HomeViewController.swift in Sources */,
 				23E4761C25A97FD000C61417 /* MPKModel.swift in Sources */,
 				2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */,
