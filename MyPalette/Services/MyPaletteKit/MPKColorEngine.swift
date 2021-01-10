@@ -52,16 +52,9 @@ public class MPKColorEngine {
     /// Converts the hexadecimal value of a UIColor object to a string starting with #
     /// - Returns: the string value
     static func convertUIColorToString(using color: UIColor) -> String {
-        guard let colorRef = color.cgColor.components else { return "Não foi possível detectar a cor" }
-        
-        let r:CGFloat = colorRef[0]
-        let g:CGFloat = colorRef[1]
-        let b:CGFloat = colorRef[2]
-        
-        return String(format: "#%02lX%02lX%02lX",
-                      lroundf(Float(r * 255)),
-                      lroundf(Float(g * 255)),
-                      lroundf(Float(b * 255)))
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0
+        color.getRed(&r, green: &g, blue: &b, alpha: nil)
+        return [r, g, b].map { String(format: "%02lX", Int($0 * 255)) }.reduce("#", +)
     }
     
     /// Gets the color of the pixel localized in the center of the image
