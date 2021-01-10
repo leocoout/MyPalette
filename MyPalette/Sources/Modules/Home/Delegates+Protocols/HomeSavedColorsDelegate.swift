@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 extension HomeViewController: SavedColorsDelegate {
     func didTapEmptyStateButton() {
         didTapOpenSavedButton(self)
+    }
+    
+    func didSelectItem(with data: MPKManagedObject) {
+        router.routeToDetails(using: data)
     }
 }

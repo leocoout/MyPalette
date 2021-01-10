@@ -39,6 +39,7 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
     // MARK: Properties
     lazy var cameraView = CameraView()
     lazy var disabledCamera = CameraDisabledView()
+    lazy var router: HomeRouterProtocol = HomeRouter(controller: self)
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

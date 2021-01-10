@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23219BE925AA9EC000EB42D7 /* ColorAlertMenuListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */; };
+		23219BF625AAA41700EB42D7 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BF525AAA41700EB42D7 /* HomeRouter.swift */; };
+		23219BFA25AAA5AB00EB42D7 /* MPKManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BF925AAA5AB00EB42D7 /* MPKManagedObject.swift */; };
 		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		23219BE825AA9EC000EB42D7 /* ColorAlertMenuListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuListItem.swift; sourceTree = "<group>"; };
+		23219BF525AAA41700EB42D7 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		23219BF925AAA5AB00EB42D7 /* MPKManagedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKManagedObject.swift; sourceTree = "<group>"; };
 		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				23A62CEA25A95A040037CE1E /* HomeViewController.swift */,
 				23A62D1D25A95B9F0037CE1E /* HomeInteractor.swift */,
 				23E4761625A9762A00C61417 /* HomeViewModel.swift */,
+				23219BF525AAA41700EB42D7 /* HomeRouter.swift */,
 				23A62D1925A95B920037CE1E /* HomePresenter.swift */,
 				23A62D1525A95B5B0037CE1E /* HomeBuilder.swift */,
 			);
@@ -335,6 +340,7 @@
 				23E4760625A96F0E00C61417 /* MPKPermissions.swift */,
 				23E4760C25A9736200C61417 /* MPKLocalService.swift */,
 				23E4761B25A97FD000C61417 /* MPKModel.swift */,
+				23219BF925AAA5AB00EB42D7 /* MPKManagedObject.swift */,
 			);
 			path = MyPaletteKit;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */,
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
 				23E4762425A9874700C61417 /* HomeBaseData.swift in Sources */,
+				23219BFA25AAA5AB00EB42D7 /* MPKManagedObject.swift in Sources */,
 				23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */,
 				23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */,
 				23E4761325A9746700C61417 /* HomeViewControllerProtocol.swift in Sources */,
@@ -465,6 +472,7 @@
 				23A62D5625A9665C0037CE1E /* UIViewControllerExtensions.swift in Sources */,
 				23E4762E25AA61A600C61417 /* MPKCameraEngine.swift in Sources */,
 				23E4760725A96F0E00C61417 /* MPKPermissions.swift in Sources */,
+				23219BF625AAA41700EB42D7 /* HomeRouter.swift in Sources */,
 				23E4760D25A9736200C61417 /* MPKLocalService.swift in Sources */,
 				23A62CF725A95A350037CE1E /* HomeSavedColorsDelegate.swift in Sources */,
 				23A62D5225A9661F0037CE1E /* MPNibs.swift in Sources */,

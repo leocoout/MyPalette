@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 
+protocol SavedColorsListViewDelegate: class {
+    func didSelectItem(with data: MPKManagedObject)
+}
+
 class SavedColorsListView: UIView {
     
+    // MARK: Private Lazy Properties
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -26,6 +31,8 @@ class SavedColorsListView: UIView {
         return collection
     }()
     
+    // MARK: Private Properties
+    weak var delegate: SavedColorsListViewDelegate?
     var colorListItens = [MPKManagedObject]() {
         didSet {
             collectionView.reloadData()
@@ -53,17 +60,16 @@ class SavedColorsListView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(SavedColorsListCell.self,
-                                forCellWithReuseIdentifier: "SavedColorsListCell")
+        collectionView.register(
+            SavedColorsListCell.self,
+            forCellWithReuseIdentifier: "SavedColorsListCell"
+        )
     }
-    
 }
 
 extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { 1 }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return colorListItens.count
@@ -73,9 +79,13 @@ extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SavedColorsListCell",
                                                       for: indexPath) as! SavedColorsListCell
         
-        cell.colorPicked = colorListItens[indexPath.row].value(forKey: "colorPicked") as? String
+        cell.colorPicked = colorListItens[indexPath.row].getColorPicked()
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.didSelectItem(with: colorListItens[indexPath.row])
     }
 }
 

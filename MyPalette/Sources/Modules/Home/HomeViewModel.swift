@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 // MARK: - HomeViewModelProtocol Methods
 public protocol HomeViewModelProtocol {
