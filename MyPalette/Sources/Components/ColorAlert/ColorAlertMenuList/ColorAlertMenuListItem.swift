@@ -17,7 +17,7 @@ class ColorAlertListItem: UIView {
         button.backgroundColor = .myPaletteGray
         button.layer.cornerRadius = 16
         
-        let image = UIImage(named: "icon_copy_to_clipboard")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "icon_copy_to_clipboard")
         button.setImage(image, for: .normal)
         button.imageView?.tintColor = .myPaletteDarkGray
         button.translatesAutoresizingMaskIntoConstraints = false
