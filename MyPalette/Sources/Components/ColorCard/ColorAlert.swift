@@ -289,7 +289,7 @@ extension ColorAlert {
     
     private func updateColorView() {
         colorPickedView.backgroundColor = colorPicked
-        titleLabel.text = colorPicked.hexString()
+        titleLabel.text = MPKColorEngine.convertUIColorToString(using: colorPicked)
     }
     
     private func animateSubAlert() {

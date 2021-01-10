@@ -48,4 +48,20 @@ public class MPKColorEngine {
         
         return .myPaletteGray
     }
+    
+    /// Converts the hexadecimal value of a UIColor object to a string starting with #
+    /// - Returns: the string value
+    static func convertUIColorToString(using color: UIColor) -> String {
+        guard let colorRef = color.cgColor.components else { return "Não foi possível detectar a cor" }
+        
+        let r:CGFloat = colorRef[0]
+        let g:CGFloat = colorRef[1]
+        let b:CGFloat = colorRef[2]
+        
+        return String(format: "#%02lX%02lX%02lX",
+                      lroundf(Float(r * 255)),
+                      lroundf(Float(g * 255)),
+                      lroundf(Float(b * 255)))
+    }
 }
+
