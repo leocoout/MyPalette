@@ -17,4 +17,8 @@ extension HomeViewController: SavedColorsDelegate {
     func didSelectItem(with data: MPKManagedObject) {
         router.routeToDetails(using: data)
     }
+    
+    func didDeletedItem(_ item: MPKManagedObject) {
+        interactor?.removeObject(item)
+    }
 }

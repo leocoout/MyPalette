@@ -11,6 +11,7 @@ import UIKit
 
 protocol SavedColorsListViewDelegate: class {
     func didSelectItem(with data: MPKManagedObject)
+    func didDeletedItem(_ item: MPKManagedObject)
 }
 
 class SavedColorsListView: UIView {
@@ -69,10 +70,8 @@ class SavedColorsListView: UIView {
     
     @objc func longPress(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizer.State.began {
-            let touchPoint = sender.location(in: collectionView)
-            if let indexPath = collectionView.indexPathForItem(at: touchPoint) {
-                collectionView.reloadData()
-            }
+            viewModel.setDeleteMode(to: true)
+            collectionView.reloadData()
         }
     }
 }
@@ -90,11 +89,22 @@ extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SavedColorsListCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.colorPicked = viewModel.getItemAt(indexPath: indexPath).getColorPicked()
-
+        if viewModel.deleteModeIsEnabled() {
+            cell.shake()
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectItem(with: colorListItens[indexPath.row])
+        if viewModel.deleteModeIsEnabled() {
+            self.collectionView.performBatchUpdates({
+                self.delegate?.didDeletedItem(viewModel.getItemAt(indexPath: indexPath))
+                viewModel.deleteItemAt(indexpath: indexPath)
+                self.collectionView.deleteItems(at: [indexPath])
+            }, completion:nil)
+        } else {
+            delegate?.didSelectItem(with: viewModel.getItemAt(indexPath: indexPath))
+        }
     }
 }

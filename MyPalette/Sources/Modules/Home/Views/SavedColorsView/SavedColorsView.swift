@@ -12,6 +12,7 @@ import UIKit
 protocol SavedColorsDelegate: class {
     func didTapEmptyStateButton()
     func didSelectItem(with data: MPKManagedObject)
+    func didDeletedItem(_ item: MPKManagedObject)
 }
 
 class SavedColorsView: UIView {
@@ -97,5 +98,9 @@ class SavedColorsView: UIView {
 extension SavedColorsView: SavedColorsListViewDelegate {
     func didSelectItem(with data: MPKManagedObject) {
         self.delegate?.didSelectItem(with: data)
+    }
+    
+    func didDeletedItem(_ item: MPKManagedObject) {
+        self.delegate?.didDeletedItem(item)
     }
 }

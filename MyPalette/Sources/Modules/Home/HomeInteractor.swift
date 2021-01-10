@@ -11,6 +11,7 @@ import Foundation
 protocol HomeInteractorProtocol {
     func requestCameraPermission()
     func fetchColorData()
+    func removeObject(_ object: MPKManagedObject)
     func didCapture()
 }
 
@@ -39,6 +40,12 @@ extension HomeInteractor: HomeInteractorProtocol {
         repository?.recoverdata { (response) in
             self.presenter?.presentDataRecovered(response: response)
         }
+    }
+    
+    func removeObject(_ object: MPKManagedObject) {
+        repository?.deleteObject(object, completion: {
+            print("deletado")
+        })
     }
     
     func didCapture() {
