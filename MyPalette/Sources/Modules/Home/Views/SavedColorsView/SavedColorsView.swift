@@ -11,6 +11,7 @@ import UIKit
 
 protocol SavedColorsDelegate: class {
     func didTapEmptyStateButton()
+    func didSelectItem(with data: MPKManagedObject)
 }
 
 class SavedColorsView: UIView {
@@ -78,6 +79,7 @@ class SavedColorsView: UIView {
         emptyView.removeFromSuperview()
         addSubview(listView)
         listView.translatesAutoresizingMaskIntoConstraints = false
+        listView.delegate = self
         
         NSLayoutConstraint.activate([
             listView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0),
@@ -89,5 +91,11 @@ class SavedColorsView: UIView {
     
     private func updateColorList() {
         listView.colorListItens = itens.reversed()
+    }
+}
+
+extension SavedColorsView: SavedColorsListViewDelegate {
+    func didSelectItem(with data: MPKManagedObject) {
+        self.delegate?.didSelectItem(with: data)
     }
 }

@@ -20,7 +20,7 @@ class SavedColorsListCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = 16
-
+        addShadow(offset: CGSize(width: 0, height: 5))
     }
     
     private func updateColorView() {

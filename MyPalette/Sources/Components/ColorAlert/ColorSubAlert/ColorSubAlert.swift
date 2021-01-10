@@ -25,6 +25,7 @@ class ColorSubAlert: UIView {
         let imageView = UIImageView(image: UIImage(named: "icon_copy_to_clipboard"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = .white
         return imageView
     }()
     

@@ -31,3 +31,7 @@ public enum MPKCameraViewState {
         }
     }
 }
+
+public enum MPKManagedObjectKeys: String {
+    case colorPicked
+}

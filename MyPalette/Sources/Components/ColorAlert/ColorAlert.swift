@@ -148,6 +148,7 @@ class ColorAlert: UIView {
         menuList.delegate = self
         background.frame = bounds
         setupSubAlert()
+        updateColorView()
     }
 }
 
