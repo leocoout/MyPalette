@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23219BE925AA9EC000EB42D7 /* ColorAlertListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219BE825AA9EC000EB42D7 /* ColorAlertListItem.swift */; };
+		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DB240424010073AA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DA240424010073AA31 /* Assets.xcassets */; };
 		2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DC240424010073AA31 /* LaunchScreen.storyboard */; };
@@ -29,7 +31,6 @@
 		23A62D2425A95C380037CE1E /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D2325A95C380037CE1E /* HomeRepository.swift */; };
 		23A62D2E25A95D520037CE1E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A62D2D25A95D520037CE1E /* HomeViewController.xib */; };
 		23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D3D25A962730037CE1E /* CameraDisabledView.swift */; };
-		23A62D4125A962730037CE1E /* CameraViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D3E25A962730037CE1E /* CameraViewDelegates.swift */; };
 		23A62D4225A962730037CE1E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D3F25A962730037CE1E /* CameraView.swift */; };
 		23A62D4925A9627A0037CE1E /* SavedColorsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4525A9627A0037CE1E /* SavedColorsListCell.swift */; };
 		23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23219BE825AA9EC000EB42D7 /* ColorAlertListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertListItem.swift; sourceTree = "<group>"; };
+		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2391C1DA240424010073AA31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +87,6 @@
 		23A62D2325A95C380037CE1E /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		23A62D2D25A95D520037CE1E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		23A62D3D25A962730037CE1E /* CameraDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraDisabledView.swift; sourceTree = "<group>"; };
-		23A62D3E25A962730037CE1E /* CameraViewDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewDelegates.swift; sourceTree = "<group>"; };
 		23A62D3F25A962730037CE1E /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		23A62D4525A9627A0037CE1E /* SavedColorsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsListCell.swift; sourceTree = "<group>"; };
 		23A62D4625A9627A0037CE1E /* SavedColorsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedColorsListView.swift; sourceTree = "<group>"; };
@@ -203,6 +205,8 @@
 				23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */,
 				23A62CB325A9591C0037CE1E /* ColorAlert.swift */,
 				23A62CB425A9591C0037CE1E /* ColorSubAlert.swift */,
+				2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */,
+				23219BE825AA9EC000EB42D7 /* ColorAlertListItem.swift */,
 			);
 			path = ColorCard;
 			sourceTree = "<group>";
@@ -295,7 +299,6 @@
 			children = (
 				23A62D3D25A962730037CE1E /* CameraDisabledView.swift */,
 				23A62D3F25A962730037CE1E /* CameraView.swift */,
-				23A62D3E25A962730037CE1E /* CameraViewDelegates.swift */,
 			);
 			path = CameraView;
 			sourceTree = "<group>";
@@ -426,7 +429,9 @@
 				23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */,
 				23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */,
 				23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */,
+				23219BE925AA9EC000EB42D7 /* ColorAlertListItem.swift in Sources */,
 				23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */,
+				2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */,
 				23A62CE525A959940037CE1E /* UIImageExtension.swift in Sources */,
 				23A62D4A25A9627A0037CE1E /* SavedColorsListView.swift in Sources */,
 				23A62D4025A962730037CE1E /* CameraDisabledView.swift in Sources */,
@@ -451,7 +456,6 @@
 				23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */,
 				23A62CDC25A9596C0037CE1E /* ColorModel.swift in Sources */,
 				23A62CF125A95A1D0037CE1E /* HomeCameraViewDelegate.swift in Sources */,
-				23A62D4125A962730037CE1E /* CameraViewDelegates.swift in Sources */,
 				23A62CB925A9591C0037CE1E /* ColorSubAlert.swift in Sources */,
 				23A62CE425A959940037CE1E /* CustomColors.swift in Sources */,
 				23A62CBA25A9591C0037CE1E /* LoadingView.swift in Sources */,

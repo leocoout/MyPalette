@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-protocol ColorAlertDelegate: class {
-    func alertDidClose()
-    func colorDidSave(color: UIColor?)
-}
-
 enum ColorCardState {
     case expand, collapse
     
@@ -27,7 +22,10 @@ enum ColorCardState {
 
 class ColorAlert: UIView {
     
-    // MARK: Properties
+    // MARK: Configuration
+    var config = ColorAlertConfigurator()
+    
+    // MARK: - Lazy Properties
     private lazy var background: UIView = {
         let view = UIView()
         view.backgroundColor = .black
@@ -77,7 +75,7 @@ class ColorAlert: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "#FFFFFF"
+        label.text = "-"
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         label.textColor = .customBlack
         
@@ -122,8 +120,7 @@ class ColorAlert: UIView {
     private lazy var menuList = ColorAlertMenuList()
     private lazy var subAlertView = ColorSubAlert()
     
-    weak var delegate: ColorAlertDelegate?
-    
+    // MARK: - Properties
     private var colorAlertCardHeight: CGFloat = 100
     private var colorSubAlertHeight: CGFloat = 48
     private var colorViewHeight = NSLayoutConstraint()
@@ -132,12 +129,6 @@ class ColorAlert: UIView {
     private var colorCardState: (state: ColorCardState, animated: Bool) = (.collapse, animated: false) {
         didSet {
             updateAlertHeight(animated: colorCardState.animated)
-        }
-    }
-    
-    var colorPicked: UIColor = .black {
-        didSet {
-            updateColorView()
         }
     }
     
@@ -172,8 +163,10 @@ extension ColorAlert {
     private func setupStackView() {
         addSubview(stackView)
         
-        stackViewBottomConstraint = stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                                                      constant: (32 + colorAlertCardHeight + colorSubAlertHeight))
+        stackViewBottomConstraint = stackView.bottomAnchor.constraint(
+            equalTo: safeAreaLayoutGuide.bottomAnchor,
+            constant: (32 + colorAlertCardHeight + colorSubAlertHeight)
+        )
         
         NSLayoutConstraint.activate([
             stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
@@ -234,10 +227,17 @@ extension ColorAlert {
     }
     
     private func animateColorCopiedImage() {
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 50, options: .curveEaseInOut, animations: {
-            self.colorCopiedImage.alpha = 1
-            self.colorCopiedImage.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }) { _ in
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            usingSpringWithDamping: 0.6,
+            initialSpringVelocity: 50,
+            options: .curveEaseInOut,
+            animations: {
+
+                self.colorCopiedImage.alpha = 1
+                self.colorCopiedImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }) { _ in
             UIView.animate(withDuration: 0.3, delay: 2, options: .curveEaseInOut, animations: {
                 self.colorCopiedImage.alpha = 0
             }, completion: nil)
@@ -288,8 +288,8 @@ extension ColorAlert {
     }
     
     private func updateColorView() {
-        colorPickedView.backgroundColor = colorPicked
-        titleLabel.text = MPKColorEngine.convertUIColorToString(using: colorPicked)
+        colorPickedView.backgroundColor = config.color
+        titleLabel.text = MPKColorEngine.convertUIColorToString(using: config.color)
     }
     
     private func animateSubAlert() {
@@ -341,7 +341,7 @@ extension ColorAlert {
 extension ColorAlert {
     
     @objc private func closeAlertGesture(_ gesture: UITapGestureRecognizer) {
-        delegate?.alertDidClose()
+        config.closeAction?()
         hideAlert()
     }
     
@@ -381,6 +381,7 @@ extension ColorAlert {
     }
 }
 
+// MARK: - ColorAlertMenuListDelegate
 extension ColorAlert: ColorAlertMenuListDelegate {
     func didTapCopyItem() {
         copyColorToClipboard(UITapGestureRecognizer())
@@ -388,6 +389,6 @@ extension ColorAlert: ColorAlertMenuListDelegate {
     
     func didTapSaveItem() {
         performSaveAnimation()
-        delegate?.colorDidSave(color: colorPickedView.backgroundColor)
+        config.saveColorAction?(colorPickedView.backgroundColor)
     }
 }

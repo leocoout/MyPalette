@@ -26,7 +26,6 @@ class CameraView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupAlertLayout()
     }
 }
 
@@ -50,21 +49,22 @@ extension CameraView {
         disabledView.frame = bounds
     }
     
-    private func setupAlertLayout() {
+    private func buildAlert(with color: UIColor) {
+        let alert = ColorAlertBuilder()
+            .with(color: color)
+            .close { self.delegate?.updateInterfaceState(state: .show) }
+            .save(action: { savedColor in
+                self.delegate?.userSavedColor(color: savedColor)
+            })
+            .build(with: bounds)
+        
         addSubview(alert)
-        alert.frame = bounds
-        alert.delegate = self
-    }
-    
-    private func removeAlert() {
-        alert.removeFromSuperview()
     }
 }
 
 extension CameraView: MPKCameraEngineDelegate {
     func imageDidProcessed(color: UIColor) {
-        alert.colorPicked = color
-        alert.showAlert()
+        buildAlert(with: color)
     }
     
     func cameraStateUpdated(to state: MPKCameraViewState) {
