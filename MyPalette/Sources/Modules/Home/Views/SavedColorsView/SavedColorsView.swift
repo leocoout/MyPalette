@@ -32,7 +32,7 @@ class SavedColorsView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textColor = .customBlack
-        label.text = "My Colors"
+        label.text = "Minhas cores"
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -93,6 +93,10 @@ class SavedColorsView: UIView {
     private func updateColorList() {
         listView.colorListItens = itens.reversed()
     }
+    
+    private func updateTitle(to title: String) {
+        titleLabel.text = title
+    }
 }
 
 extension SavedColorsView: SavedColorsListViewDelegate {
@@ -102,5 +106,9 @@ extension SavedColorsView: SavedColorsListViewDelegate {
     
     func didDeletedItem(_ item: MPKManagedObject) {
         self.delegate?.didDeletedItem(item)
+    }
+    
+    func didEnteredDeletionMode() {
+        updateTitle(to: "Modo de exclusão")
     }
 }

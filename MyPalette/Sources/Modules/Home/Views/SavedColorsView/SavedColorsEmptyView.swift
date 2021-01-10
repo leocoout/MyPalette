@@ -25,7 +25,7 @@ class SavedColorsEmptyView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.textColor = .customBlack
-        label.text = "You don't have any saved colors yet :("
+        label.text = "Você não salvou nenhuma cor ainda :("
         
         return label
     }()
@@ -33,7 +33,7 @@ class SavedColorsEmptyView: UIView {
     private lazy var startNowButton: CustomButton = {
         let button = CustomButton(type: .system)
         button.style = .inverted
-        button.setTitle("GO BACK", for: .normal)
+        button.setTitle("VOLTAR", for: .normal)
         button.addTarget(self, action: #selector(didTapStartNowButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         

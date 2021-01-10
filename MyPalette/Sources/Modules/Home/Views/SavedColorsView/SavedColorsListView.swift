@@ -12,6 +12,7 @@ import UIKit
 protocol SavedColorsListViewDelegate: class {
     func didSelectItem(with data: MPKManagedObject)
     func didDeletedItem(_ item: MPKManagedObject)
+    func didEnteredDeletionMode()
 }
 
 class SavedColorsListView: UIView {
@@ -71,6 +72,7 @@ class SavedColorsListView: UIView {
     @objc func longPress(sender: UILongPressGestureRecognizer) {
         if sender.state == UIGestureRecognizer.State.began {
             viewModel.setDeleteMode(to: true)
+            self.delegate?.didEnteredDeletionMode()
             collectionView.reloadData()
         }
     }
@@ -91,6 +93,7 @@ extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSou
         cell.colorPicked = viewModel.getItemAt(indexPath: indexPath).getColorPicked()
         if viewModel.deleteModeIsEnabled() {
             cell.shake()
+            cell.showTrashIcon()
         }
         
         return cell

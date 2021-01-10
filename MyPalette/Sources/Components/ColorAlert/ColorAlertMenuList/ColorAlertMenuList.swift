@@ -40,8 +40,8 @@ class ColorAlertMenuList: UIView {
         addSubview(stackView)
         stackView.frame = bounds
         
-        copyButton.titleLabel.text = "Copy"
-        saveButton.titleLabel.text = "Save"
+        copyButton.titleLabel.text = "Copiar"
+        saveButton.titleLabel.text = "Salvar"
         
         copyButton.action = { self.delegate?.didTapCopyItem() }
         saveButton.action = { self.delegate?.didTapSaveItem() }
@@ -51,7 +51,7 @@ class ColorAlertMenuList: UIView {
         stackView.addArrangedSubview(spacing)
         
         [copyButton, saveButton].forEach {
-            NSLayoutConstraint.activate([$0.widthAnchor.constraint(equalToConstant: 32)])
+            NSLayoutConstraint.activate([$0.widthAnchor.constraint(equalToConstant: 42)])
             $0.alpha = 0
             $0.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
         }
