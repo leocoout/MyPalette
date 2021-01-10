@@ -23,17 +23,17 @@ class MPKLocalService {
 
     static func saveLocalData(of type: MPKBaseData, appDelegate: AppDelegate?) {
         guard let appDelegate = appDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
+        let context = appDelegate.persistentContainer.viewContext
         
-        if let entity = NSEntityDescription.entity(forEntityName: type.entity.rawValue, in: managedContext) {
-            let object = NSManagedObject(entity: entity, insertInto: managedContext)
+        if let entity = NSEntityDescription.entity(forEntityName: type.entity.rawValue, in: context) {
+            let object = NSManagedObject(entity: entity, insertInto: context)
             
             type.data.forEach { (key, value) in
                 object.setValue(value, forKey: key)
             }
             
             do {
-                try managedContext.save()
+                try context.save()
             } catch {
                 print(error)
             }
@@ -44,12 +44,25 @@ class MPKLocalService {
                                  appDelegate: AppDelegate?,
                                  completion: @escaping ([NSManagedObject]) -> ()) {
         guard let appDelegate = appDelegate else { return }
-        let managedContext = appDelegate.persistentContainer.viewContext
+        let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: type.rawValue)
         
         do {
-            let object = try managedContext.fetch(fetchRequest)
+            let object = try context.fetch(fetchRequest)
             completion(object)
+        } catch {
+            print(error)
+        }
+    }
+    
+    static func removeObject(_ object: MPKManagedObject, appDelegate: AppDelegate?, completion: () -> Void) {
+        guard let appDelegate = appDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        context.delete(object)
+        
+        do {
+            try context.save()
+            completion()
         } catch {
             print(error)
         }

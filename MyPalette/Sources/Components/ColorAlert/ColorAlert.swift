@@ -85,7 +85,7 @@ class ColorAlert: UIView {
     
     private lazy var bodyLabel: UILabel = {
         let label = UILabel()
-        label.text = "Tap to see more"
+        label.text = "Toque para ver mais"
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.textColor = .customBlack
         

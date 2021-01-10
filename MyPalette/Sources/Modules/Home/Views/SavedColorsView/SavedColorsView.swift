@@ -12,6 +12,7 @@ import UIKit
 protocol SavedColorsDelegate: class {
     func didTapEmptyStateButton()
     func didSelectItem(with data: MPKManagedObject)
+    func didDeletedItem(_ item: MPKManagedObject)
 }
 
 class SavedColorsView: UIView {
@@ -31,10 +32,21 @@ class SavedColorsView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.textColor = .customBlack
-        label.text = "My Colors"
+        label.text = "Minhas cores"
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
+    }()
+    
+    lazy var button: CustomButton = {
+        let button = CustomButton(type: .system)
+        button.style = .inverted
+        button.setTitle("CONCLUÍDO", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
+        button.isHidden = true
+        
+        return button
     }()
     
     override func layoutSubviews() {
@@ -52,13 +64,18 @@ class SavedColorsView: UIView {
     
     private func setupTitleLayout() {
         addSubview(titleLabel)
+        addSubview(button)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16)
+            
+            button.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 24),
+            button.heightAnchor.constraint(equalToConstant: 32),
+            button.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+            button.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
         ])
     }
-    
+
     private func setupAndShowEmptyView() {
         emptyView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emptyView)
@@ -92,10 +109,36 @@ class SavedColorsView: UIView {
     private func updateColorList() {
         listView.colorListItens = itens.reversed()
     }
+    
+    private func updateTitle(to title: String) {
+        titleLabel.text = title
+    }
+    
+    private func setButtonVisibility(hidden: Bool) {
+        button.isHidden = hidden
+    }
+    
+    @objc private func didTapActionButton() {
+        listView.leftDeletionMode()
+    }
 }
 
 extension SavedColorsView: SavedColorsListViewDelegate {
     func didSelectItem(with data: MPKManagedObject) {
         self.delegate?.didSelectItem(with: data)
+    }
+    
+    func didDeletedItem(_ item: MPKManagedObject) {
+        self.delegate?.didDeletedItem(item)
+    }
+    
+    func didEnteredDeletionMode() {
+        updateTitle(to: "Modo de exclusão")
+        setButtonVisibility(hidden: false)
+    }
+    
+    func didLeftDeletionMode() {
+        updateTitle(to: "Minhas cores")
+        setButtonVisibility(hidden: true)
     }
 }

@@ -11,6 +11,7 @@ import UIKit
 
 protocol HomeRepositoryProtocol {
     func recoverdata(completion: @escaping ([MPKManagedObject]) -> ())
+    func deleteObject(_ object: MPKManagedObject, completion: () -> Void)
 }
 
 class HomeRepository: HomeRepositoryProtocol {
@@ -27,6 +28,12 @@ class HomeRepository: HomeRepositoryProtocol {
     func recoverdata(completion: @escaping ([MPKManagedObject]) -> ()) {
         MPKLocalService.recoverLocalData(of: .color, appDelegate: Self.appDelegate) { recoveredData in
             completion(recoveredData)
+        }
+    }
+    
+    func deleteObject(_ object: MPKManagedObject, completion: () -> Void) {
+        MPKLocalService.removeObject(object, appDelegate: Self.appDelegate) {
+            completion()
         }
     }
 }

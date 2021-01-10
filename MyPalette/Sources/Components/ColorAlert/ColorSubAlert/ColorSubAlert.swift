@@ -31,7 +31,7 @@ class ColorSubAlert: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Color successfuly copied!"
+        label.text = "Cor copiada com sucesso!"
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
