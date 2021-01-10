@@ -13,6 +13,7 @@ protocol SavedColorsListViewDelegate: class {
     func didSelectItem(with data: MPKManagedObject)
     func didDeletedItem(_ item: MPKManagedObject)
     func didEnteredDeletionMode()
+    func didLeftDeletionMode()
 }
 
 class SavedColorsListView: UIView {
@@ -48,6 +49,12 @@ class SavedColorsListView: UIView {
         super.layoutSubviews()
         setupLayout()
         setupCollection()
+    }
+    
+    public func leftDeletionMode() {
+        self.delegate?.didLeftDeletionMode()
+        viewModel.setDeleteMode(to: false)
+        collectionView.reloadData()
     }
     
     private func setupLayout() {
@@ -91,9 +98,9 @@ extension SavedColorsListView: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SavedColorsListCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.colorPicked = viewModel.getItemAt(indexPath: indexPath).getColorPicked()
+        cell.trashIconVisibility(hidden: !viewModel.deleteModeIsEnabled())
         if viewModel.deleteModeIsEnabled() {
             cell.shake()
-            cell.showTrashIcon()
         }
         
         return cell

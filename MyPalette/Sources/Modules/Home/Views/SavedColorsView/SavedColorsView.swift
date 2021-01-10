@@ -38,6 +38,17 @@ class SavedColorsView: UIView {
         return label
     }()
     
+    lazy var button: CustomButton = {
+        let button = CustomButton(type: .system)
+        button.style = .inverted
+        button.setTitle("CONCLUÍDO", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapActionButton), for: .touchUpInside)
+        button.isHidden = true
+        
+        return button
+    }()
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupTitleLayout()
@@ -53,13 +64,18 @@ class SavedColorsView: UIView {
     
     private func setupTitleLayout() {
         addSubview(titleLabel)
+        addSubview(button)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16),
-            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16)
+            
+            button.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 24),
+            button.heightAnchor.constraint(equalToConstant: 32),
+            button.rightAnchor.constraint(equalTo: rightAnchor, constant: -16),
+            button.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
         ])
     }
-    
+
     private func setupAndShowEmptyView() {
         emptyView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emptyView)
@@ -97,6 +113,14 @@ class SavedColorsView: UIView {
     private func updateTitle(to title: String) {
         titleLabel.text = title
     }
+    
+    private func setButtonVisibility(hidden: Bool) {
+        button.isHidden = hidden
+    }
+    
+    @objc private func didTapActionButton() {
+        listView.leftDeletionMode()
+    }
 }
 
 extension SavedColorsView: SavedColorsListViewDelegate {
@@ -110,5 +134,11 @@ extension SavedColorsView: SavedColorsListViewDelegate {
     
     func didEnteredDeletionMode() {
         updateTitle(to: "Modo de exclusão")
+        setButtonVisibility(hidden: false)
+    }
+    
+    func didLeftDeletionMode() {
+        updateTitle(to: "Minhas cores")
+        setButtonVisibility(hidden: true)
     }
 }

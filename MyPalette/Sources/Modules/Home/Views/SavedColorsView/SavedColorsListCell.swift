@@ -34,12 +34,8 @@ class SavedColorsListCell: UICollectionViewCell {
         setupIconImageView()
     }
     
-    public func showTrashIcon() {
-        icon.isHidden = false
-    }
-    
-    public func hideTrashIcon() {
-        icon.isHidden = true
+    public func trashIconVisibility(hidden: Bool) {
+        icon.isHidden = hidden
     }
 }
 

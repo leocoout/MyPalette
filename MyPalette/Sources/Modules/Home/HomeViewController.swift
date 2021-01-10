@@ -63,6 +63,22 @@ class HomeViewController: UIViewController, HomeViewControllerProtocol {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    func animateContentView() {
+        viewModel.setSavedColorsViewState(to: viewModel.getContentState() == .disabled)
+        viewModel.toggleContentState()
+        viewModel.getContentState() == .enabled ? showInterface() : hideInterface()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+                self.cameraContent.backgroundColor = self.viewModel.getContentState() == .disabled ? .white : .black
+                self.containerBottomConstraint.constant = self.viewModel.getContentState() == .enabled ? 0 : 200
+                self.cameraView.frame.origin.y = self.viewModel.getContentState() == .enabled ? 0 : -200
+                self.disabledMaskView.alpha = self.viewModel.getContentStateMask()
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
 }
 
 // MARK: - Actions
@@ -77,26 +93,6 @@ extension HomeViewController {
         
         if !viewModel.getSavedColorsViewIsOpen() {
             interactor?.fetchColorData()
-        }
-    }
-}
-
-// MARK: - Private methods
-extension HomeViewController {
-    
-    private func animateContentView() {
-        viewModel.setSavedColorsViewState(to: viewModel.getContentState() == .disabled)
-        viewModel.toggleContentState()
-        viewModel.getContentState() == .enabled ? showInterface() : hideInterface()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                self.cameraContent.backgroundColor = self.viewModel.getContentState() == .disabled ? .white : .black
-                self.containerBottomConstraint.constant = self.viewModel.getContentState() == .enabled ? 0 : 200
-                self.cameraView.frame.origin.y = self.viewModel.getContentState() == .enabled ? 0 : -200
-                self.disabledMaskView.alpha = self.viewModel.getContentStateMask()
-                self.view.layoutIfNeeded()
-            })
         }
     }
 }
