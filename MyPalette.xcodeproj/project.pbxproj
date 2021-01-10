@@ -25,10 +25,18 @@
 		23219C4625AAC52C00EB42D7 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C4525AAC52C00EB42D7 /* UICollectionViewExtensions.swift */; };
 		23219C4A25AACA4B00EB42D7 /* SavedColorsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C4925AACA4B00EB42D7 /* SavedColorsListViewModel.swift */; };
 		23219C5225AADB7F00EB42D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23219C5125AADB7F00EB42D7 /* Assets.xcassets */; };
+		23219C6025AB750D00EB42D7 /* HomeViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C5F25AB750D00EB42D7 /* HomeViewControllerMock.swift */; };
+		23219C6625AB751800EB42D7 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C6525AB751800EB42D7 /* HomeInteractorMock.swift */; };
+		23219C6A25AB758700EB42D7 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C6925AB758700EB42D7 /* HomePresenterMock.swift */; };
+		23219C6F25AB76C800EB42D7 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C6E25AB76C800EB42D7 /* HomeViewControllerTests.swift */; };
+		23219C7925AB7AB500EB42D7 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C7825AB7AB500EB42D7 /* HomeInteractorTests.swift */; };
+		23219C7F25AB7B2D00EB42D7 /* HomeRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C7E25AB7B2D00EB42D7 /* HomeRepositoryMock.swift */; };
+		23219C8325AB7EEB00EB42D7 /* MPKPermissionsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C8225AB7EEB00EB42D7 /* MPKPermissionsMock.swift */; };
+		23219C8825AB80A100EB42D7 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C8725AB80A100EB42D7 /* HomePresenterTests.swift */; };
+		23219C8F25AB81CD00EB42D7 /* HomeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219C8E25AB81CD00EB42D7 /* HomeBuilderTests.swift */; };
 		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DC240424010073AA31 /* LaunchScreen.storyboard */; };
-		2391C1E9240424010073AA31 /* MyPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1E8240424010073AA31 /* MyPaletteTests.swift */; };
 		23A62CB625A9591C0037CE1E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB025A9591C0037CE1E /* CustomButton.swift */; };
 		23A62CB725A9591C0037CE1E /* ColorAlertMenuList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */; };
 		23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A62CB325A9591C0037CE1E /* ColorAlert.swift */; };
@@ -93,13 +101,21 @@
 		23219C4525AAC52C00EB42D7 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		23219C4925AACA4B00EB42D7 /* SavedColorsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedColorsListViewModel.swift; sourceTree = "<group>"; };
 		23219C5125AADB7F00EB42D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23219C5F25AB750D00EB42D7 /* HomeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerMock.swift; sourceTree = "<group>"; };
+		23219C6525AB751800EB42D7 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
+		23219C6925AB758700EB42D7 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		23219C6E25AB76C800EB42D7 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		23219C7825AB7AB500EB42D7 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		23219C7E25AB7B2D00EB42D7 /* HomeRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryMock.swift; sourceTree = "<group>"; };
+		23219C8225AB7EEB00EB42D7 /* MPKPermissionsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKPermissionsMock.swift; sourceTree = "<group>"; };
+		23219C8725AB80A100EB42D7 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		23219C8E25AB81CD00EB42D7 /* HomeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilderTests.swift; sourceTree = "<group>"; };
 		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2391C1DD240424010073AA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2391C1DF240424010073AA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2391C1E4240424010073AA31 /* MyPaletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPaletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2391C1E8240424010073AA31 /* MyPaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPaletteTests.swift; sourceTree = "<group>"; };
 		2391C1EA240424010073AA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23A62CB025A9591C0037CE1E /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		23A62CB225A9591C0037CE1E /* ColorAlertMenuList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorAlertMenuList.swift; sourceTree = "<group>"; };
@@ -210,6 +226,85 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		23219C5B25AB745C00EB42D7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				23219C5F25AB750D00EB42D7 /* HomeViewControllerMock.swift */,
+				23219C6525AB751800EB42D7 /* HomeInteractorMock.swift */,
+				23219C6925AB758700EB42D7 /* HomePresenterMock.swift */,
+				23219C7E25AB7B2D00EB42D7 /* HomeRepositoryMock.swift */,
+				23219C8225AB7EEB00EB42D7 /* MPKPermissionsMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		23219C5C25AB746800EB42D7 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				23219C5E25AB747900EB42D7 /* DetailsTests */,
+				23219C5D25AB747400EB42D7 /* HomeTests */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		23219C5D25AB747400EB42D7 /* HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				23219C8D25AB81B500EB42D7 /* HomeBuilderTests */,
+				23219C8625AB808F00EB42D7 /* PresenterTests */,
+				23219C7725AB7AA400EB42D7 /* InteractorTests */,
+				23219C6D25AB76B600EB42D7 /* ViewControllerTests */,
+				23219C5B25AB745C00EB42D7 /* Mocks */,
+			);
+			name = HomeTests;
+			sourceTree = "<group>";
+		};
+		23219C5E25AB747900EB42D7 /* DetailsTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DetailsTests;
+			sourceTree = "<group>";
+		};
+		23219C6D25AB76B600EB42D7 /* ViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				23219C6E25AB76C800EB42D7 /* HomeViewControllerTests.swift */,
+			);
+			path = ViewControllerTests;
+			sourceTree = "<group>";
+		};
+		23219C7425AB771800EB42D7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		23219C7725AB7AA400EB42D7 /* InteractorTests */ = {
+			isa = PBXGroup;
+			children = (
+				23219C7825AB7AB500EB42D7 /* HomeInteractorTests.swift */,
+			);
+			path = InteractorTests;
+			sourceTree = "<group>";
+		};
+		23219C8625AB808F00EB42D7 /* PresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				23219C8725AB80A100EB42D7 /* HomePresenterTests.swift */,
+			);
+			path = PresenterTests;
+			sourceTree = "<group>";
+		};
+		23219C8D25AB81B500EB42D7 /* HomeBuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				23219C8E25AB81CD00EB42D7 /* HomeBuilderTests.swift */,
+			);
+			path = HomeBuilderTests;
+			sourceTree = "<group>";
+		};
 		2391C1C5240423FE0073AA31 = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +336,8 @@
 		2391C1E7240424010073AA31 /* MyPaletteTests */ = {
 			isa = PBXGroup;
 			children = (
-				2391C1E8240424010073AA31 /* MyPaletteTests.swift */,
+				23219C7425AB771800EB42D7 /* Application */,
+				23219C5C25AB746800EB42D7 /* Modules */,
 				2391C1EA240424010073AA31 /* Info.plist */,
 			);
 			path = MyPaletteTests;
@@ -472,6 +568,7 @@
 					};
 					2391C1E3240424010073AA31 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1200;
 						TestTargetID = 2391C1CD240423FE0073AA31;
 					};
 				};
@@ -578,7 +675,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2391C1E9240424010073AA31 /* MyPaletteTests.swift in Sources */,
+				23219C7F25AB7B2D00EB42D7 /* HomeRepositoryMock.swift in Sources */,
+				23219C8325AB7EEB00EB42D7 /* MPKPermissionsMock.swift in Sources */,
+				23219C8F25AB81CD00EB42D7 /* HomeBuilderTests.swift in Sources */,
+				23219C6A25AB758700EB42D7 /* HomePresenterMock.swift in Sources */,
+				23219C7925AB7AB500EB42D7 /* HomeInteractorTests.swift in Sources */,
+				23219C6025AB750D00EB42D7 /* HomeViewControllerMock.swift in Sources */,
+				23219C6625AB751800EB42D7 /* HomeInteractorMock.swift in Sources */,
+				23219C6F25AB76C800EB42D7 /* HomeViewControllerTests.swift in Sources */,
+				23219C8825AB80A100EB42D7 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +866,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34HR7YPNJ4;
 				INFOPLIST_FILE = MyPaletteTests/Info.plist;
@@ -772,6 +878,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = leocoout.dev.MyPaletteTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyPalette.app/MyPalette";
@@ -783,6 +890,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34HR7YPNJ4;
 				INFOPLIST_FILE = MyPaletteTests/Info.plist;

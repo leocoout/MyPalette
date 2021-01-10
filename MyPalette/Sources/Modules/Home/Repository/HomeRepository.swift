@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol HomeRepositoryProtocol {
+    func saveData(model: ColorModel)
     func recoverdata(completion: @escaping ([MPKManagedObject]) -> ())
     func deleteObject(_ object: MPKManagedObject, completion: () -> Void)
 }
@@ -20,9 +21,9 @@ class HomeRepository: HomeRepositoryProtocol {
         return UIApplication.shared.delegate as? AppDelegate
     }
     
-    static func saveData(model: ColorModel) {
+    func saveData(model: ColorModel) {
         let data = HomeViewControllerBaseData(model: model)
-        MPKLocalService.saveLocalData(of: data, appDelegate: appDelegate)
+        MPKLocalService.saveLocalData(of: data, appDelegate: Self.appDelegate)
     }
     
     func recoverdata(completion: @escaping ([MPKManagedObject]) -> ()) {

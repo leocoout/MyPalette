@@ -63,5 +63,24 @@ public class MPKColorEngine {
                       lroundf(Float(g * 255)),
                       lroundf(Float(b * 255)))
     }
+    
+    /// Gets the color of the pixel localized in the center of the image
+    /// - Parameter image: the image that will be used to get the pixel color
+    /// - Returns: the UIColor of the middle mixel
+    static func getMiddlePixelColor(for image: UIImage) -> UIColor {
+
+        let pixelData = image.cgImage?.dataProvider?.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+
+        let pos = image.size
+        let pixelInfo: Int = ((Int(pos.width) * Int(pos.height / 2)) + Int(pos.width / 2)) * 4
+
+        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+    }
 }
 

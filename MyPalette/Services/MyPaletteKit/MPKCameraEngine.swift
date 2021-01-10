@@ -181,13 +181,12 @@ extension MPKCameraEngine: AVCapturePhotoCaptureDelegate {
         
         setupImageView()
         
-        if let png = image.pngData() {
+        if let png = image.pngData(), let pngImage = UIImage(data: png) {
             changeCameraViewState(to: .loaded)
-
-            let pngImage = UIImage(data: png)
+            
             photoImageView.image = image
             
-            let color = pngImage?.getPixelColor() ?? .black
+            let color = MPKColorEngine.getMiddlePixelColor(for: pngImage)
             delegate.imageDidProcessed(color:color)
         }
 

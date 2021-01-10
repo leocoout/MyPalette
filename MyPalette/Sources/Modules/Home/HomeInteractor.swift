@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol HomeInteractorProtocol {
     func requestCameraPermission()
+    func saveData(color: UIColor?)
     func fetchColorData()
     func removeObject(_ object: MPKManagedObject)
     func didCapture()
@@ -19,17 +21,19 @@ class HomeInteractor {
     
     // MARK: Properties
     var presenter: HomePresenterProtocol?
+    var permissions: MPKPermissions
     var repository: HomeRepositoryProtocol? = HomeRepository()
     
-    init(repository: HomeRepositoryProtocol?) {
+    init(repository: HomeRepositoryProtocol?, permissions: MPKPermissions) {
         self.repository = repository
+        self.permissions = permissions
     }
 }
 
 extension HomeInteractor: HomeInteractorProtocol {
     
     func requestCameraPermission() {
-        MPKPermissions.requestCameraPermission { response in
+        permissions.requestCameraPermission { response in
             response ?
                 self.presenter?.presentRequestAuthorized() :
                 self.presenter?.presentRequestUnauthorized()
@@ -46,6 +50,12 @@ extension HomeInteractor: HomeInteractorProtocol {
         repository?.deleteObject(object, completion: {
             print("deletado")
         })
+    }
+    
+    func saveData(color: UIColor?) {
+        guard let modelColor = color else { return }
+        let model = ColorModel(color: modelColor)
+        repository?.saveData(model: model)
     }
     
     func didCapture() {
