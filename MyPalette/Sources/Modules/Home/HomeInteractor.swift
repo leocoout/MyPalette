@@ -22,7 +22,7 @@ class HomeInteractor {
     // MARK: Properties
     var presenter: HomePresenterProtocol?
     var permissions: MPKPermissions
-    var repository: HomeRepositoryProtocol? = HomeRepository()
+    var repository: HomeRepositoryProtocol?
     
     init(repository: HomeRepositoryProtocol?, permissions: MPKPermissions) {
         self.repository = repository

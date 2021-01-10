@@ -7,27 +7,56 @@
 //
 
 import XCTest
+import UIKit
+@testable import MyPalette
 
 class MPKColorEngineTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func test_convert_uiColorToColorSpace() {
+        var converted = MPKColorEngine.uiColorToColorSpace(color: .black)
+        XCTAssert(converted == "0 1")
+    
+        converted = MPKColorEngine.uiColorToColorSpace(color: .red)
+        XCTAssert(converted == "1 0 0 1")
+        
+        converted = MPKColorEngine.uiColorToColorSpace(color: .white)
+        XCTAssert(converted == "1 1")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_convert_colorSpaceToUIColor() {}
+    
+    func test_convert_UIColorToString() {
+        var converted = MPKColorEngine.convertUIColorToString(using: .black)
+        XCTAssert(converted == "#000000")
+        
+        converted = MPKColorEngine.convertUIColorToString(using: .red)
+        XCTAssert(converted == "#FF0000")
+        
+        converted = MPKColorEngine.convertUIColorToString(using: .white)
+        XCTAssert(converted == "#FFFFFF")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_getMiddlePixelColor_correct() {
+        // This image contains a red #FF0000 color
+        guard let image = UIImage(named: "test_image") else { return XCTFail() }
+        let color = MPKColorEngine.getMiddlePixelColor(for: image)
+        let r: CGFloat = 1.0, g: CGFloat = 0.0, b: CGFloat = 0.0, a: CGFloat = 1.0
+            
+        XCTAssert(color.cgColor.components?[0] == r)
+        XCTAssert(color.cgColor.components?[1] == g)
+        XCTAssert(color.cgColor.components?[2] == b)
+        XCTAssert(color.cgColor.components?[3] == a)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_getMiddlePixelColor_wrong() {
+        // This image contains a red #FF0000 color
+        guard let image = UIImage(named: "test_image") else { return XCTFail() }
+        let color = MPKColorEngine.getMiddlePixelColor(for: image)
+        let r: CGFloat = 0.0, g: CGFloat = 1.0, b: CGFloat = 0.0, a: CGFloat = 0.0
+            
+        XCTAssertFalse(color.cgColor.components?[0] == r)
+        XCTAssertFalse(color.cgColor.components?[1] == g)
+        XCTAssertTrue(color.cgColor.components?[2] == b)
+        XCTAssertFalse(color.cgColor.components?[3] == a)
     }
-
 }

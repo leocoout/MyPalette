@@ -17,23 +17,29 @@ protocol HomeRepositoryProtocol {
 
 class HomeRepository: HomeRepositoryProtocol {
     
+    var localService: MPKLocalService
+    
+    public init(localService: MPKLocalService) {
+        self.localService = localService
+    }
+    
     private static var appDelegate: AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate
     }
     
     func saveData(model: ColorModel) {
         let data = HomeViewControllerBaseData(model: model)
-        MPKLocalService.saveLocalData(of: data, appDelegate: Self.appDelegate)
+        localService.saveLocalData(of: data, appDelegate: Self.appDelegate)
     }
     
     func recoverdata(completion: @escaping ([MPKManagedObject]) -> ()) {
-        MPKLocalService.recoverLocalData(of: .color, appDelegate: Self.appDelegate) { recoveredData in
+        localService.recoverLocalData(of: .color, appDelegate: Self.appDelegate) { recoveredData in
             completion(recoveredData)
         }
     }
     
     func deleteObject(_ object: MPKManagedObject, completion: () -> Void) {
-        MPKLocalService.removeObject(object, appDelegate: Self.appDelegate) {
+        localService.removeObject(object, appDelegate: Self.appDelegate) {
             completion()
         }
     }

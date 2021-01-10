@@ -12,7 +12,7 @@ class HomeBuilder {
     class func buildModule(using view: HomeViewControllerProtocol) {
         let presenter = HomePresenter()
         let interactor = HomeInteractor(
-            repository: HomeRepository(),
+            repository: HomeRepository(localService: MPKLocalService()),
             permissions: MPKPermissions())
     
         view.interactor = interactor

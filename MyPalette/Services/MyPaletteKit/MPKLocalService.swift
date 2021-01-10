@@ -21,7 +21,7 @@ protocol MPKBaseData {
 
 class MPKLocalService {
 
-    static func saveLocalData(of type: MPKBaseData, appDelegate: AppDelegate?) {
+    func saveLocalData(of type: MPKBaseData, appDelegate: AppDelegate?) {
         guard let appDelegate = appDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
@@ -40,7 +40,7 @@ class MPKLocalService {
         }
     }
     
-    static func recoverLocalData(of type: MPKLocalServiceType,
+    func recoverLocalData(of type: MPKLocalServiceType,
                                  appDelegate: AppDelegate?,
                                  completion: @escaping ([NSManagedObject]) -> ()) {
         guard let appDelegate = appDelegate else { return }
@@ -55,7 +55,7 @@ class MPKLocalService {
         }
     }
     
-    static func removeObject(_ object: MPKManagedObject, appDelegate: AppDelegate?, completion: () -> Void) {
+    func removeObject(_ object: MPKManagedObject, appDelegate: AppDelegate?, completion: () -> Void) {
         guard let appDelegate = appDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         context.delete(object)
@@ -66,5 +66,11 @@ class MPKLocalService {
         } catch {
             print(error)
         }
+    }
+    
+    private func getContext(using appDelegate: AppDelegate?) -> NSManagedObjectContext {
+        guard let appDelegate = appDelegate else { return NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)}
+        let context = appDelegate.persistentContainer.viewContext
+        return context
     }
 }
