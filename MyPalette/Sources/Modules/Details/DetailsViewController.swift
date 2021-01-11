@@ -37,18 +37,12 @@ class DetailsViewController: UIViewController, DetailsViewControllerProtocol, De
         super.viewDidLoad()
         
         viewModel.setData(data)
-        
-        setupBackground()
         setupTableView()
     }
 }
 
 // MARK: - Private Methods
 extension DetailsViewController {
-    private func setupBackground() {
-        view.backgroundColor = viewModel.getColorAsUIColor()
-    }
-    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
