@@ -63,7 +63,7 @@ Acompanhe o roadmap das próximas features do app.
 | 🕒 | Navegaçao por deeplinking e compartilhamento de cores | | |
 | 🕒 | Navegaçao no app por abas | | |
 | 🕒 | Mais variedades de conversão de cor além de hexadecimal | | |
-| 🕒 | Compras via in app purchase para mais funcionalidades liberar mais variações de conversão de cor | | |
+| 🕒 | Compras via in app purchase para liberar mais variações de conversão de cor | | |
 | 🕒 | Login para salvar as cores no Firebase | | |
 | 🕒 | Feed de cores | | |
 | 🕒 | Melhorias de interface 3.0 | | |
