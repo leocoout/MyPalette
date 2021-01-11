@@ -55,15 +55,15 @@ Acompanhe o roadmap das próximas features do app.
 | ✔ | Animações de splashscreen e interface | `Concluído`| <a href=https://github.com/leocoout/MyPalette/releases/tag/alpha_1.0>alpha_1.0</a> |
 | 🕒 | Melhorias de interface 1.0 | | |
 | 🕒 | Onboarding customizado | | |
-| 🕒 | **Acessibilidade** para daltônicos | | |
+| 🕒 | Acessibilidade para daltônicos | | |
 | 🕒 | Suporte para lingua inglesa | | |
-| 🕒 | Paleta de cores baseadas em uma cor escolhida na tela de detalhes| | |
+| 🕒 | Mais para uma mesma cor na tela de detalhes, como variações mais claras e mais escuras | | |
 | 🕒 | Tela de ajustes | | |
 | 🕒 | Melhorias de interface 2.0 | | |
 | 🕒 | Navegaçao por deeplinking e compartilhamento de cores | | |
 | 🕒 | Navegaçao no app por abas | | |
-| 🕒 | Mais variedades de código de cor como RGBA, CMYK | | |
-| 🕒 | Compras via in app purchase para mais funcionalidades, como código de cor | | |
+| 🕒 | Mais variedades de conversão de cor além de hexadecimal | | |
+| 🕒 | Compras via in app purchase para mais funcionalidades liberar mais variações de conversão de cor | | |
 | 🕒 | Login para salvar as cores no Firebase | | |
 | 🕒 | Feed de cores | | |
 | 🕒 | Melhorias de interface 3.0 | | |
