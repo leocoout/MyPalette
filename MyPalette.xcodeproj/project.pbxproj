@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,10 @@
 		23219CD325AB87BD00EB42D7 /* DetailsInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219CD225AB87BD00EB42D7 /* DetailsInteractorMock.swift */; };
 		23219CD725AB8B0100EB42D7 /* HomeBaseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219CD625AB8B0100EB42D7 /* HomeBaseDataTests.swift */; };
 		23219CDE25AB8F6200EB42D7 /* MPKColorEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23219CDD25AB8F6200EB42D7 /* MPKColorEngineTests.swift */; };
+		23323AE025ABFB0200586412 /* SplashscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23323ADE25ABFB0200586412 /* SplashscreenViewController.swift */; };
+		23323AE125ABFB0200586412 /* SplashscreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23323ADF25ABFB0200586412 /* SplashscreenViewController.xib */; };
+		23323B4F25ABFC9600586412 /* splash_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 23323B4E25ABFC9600586412 /* splash_animation.json */; };
+		23323B5325AC02EC00586412 /* SplashscreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23323B5225AC02EC00586412 /* SplashscreenRouter.swift */; };
 		2341C81925AA9417000D1E0C /* ColorAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */; };
 		2391C1D2240423FE0073AA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2391C1D1240423FE0073AA31 /* AppDelegate.swift */; };
 		2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2391C1DC240424010073AA31 /* LaunchScreen.storyboard */; };
@@ -129,6 +133,10 @@
 		23219CD225AB87BD00EB42D7 /* DetailsInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractorMock.swift; sourceTree = "<group>"; };
 		23219CD625AB8B0100EB42D7 /* HomeBaseDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseDataTests.swift; sourceTree = "<group>"; };
 		23219CDD25AB8F6200EB42D7 /* MPKColorEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPKColorEngineTests.swift; sourceTree = "<group>"; };
+		23323ADE25ABFB0200586412 /* SplashscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenViewController.swift; sourceTree = "<group>"; };
+		23323ADF25ABFB0200586412 /* SplashscreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashscreenViewController.xib; sourceTree = "<group>"; };
+		23323B4E25ABFC9600586412 /* splash_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash_animation.json; sourceTree = "<group>"; };
+		23323B5225AC02EC00586412 /* SplashscreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenRouter.swift; sourceTree = "<group>"; };
 		2341C81825AA9417000D1E0C /* ColorAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAlertBuilder.swift; sourceTree = "<group>"; };
 		2391C1CE240423FE0073AA31 /* MyPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391C1D1240423FE0073AA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -308,6 +316,32 @@
 			path = MyPaletteKitTests;
 			sourceTree = "<group>";
 		};
+		23323ADD25ABFADE00586412 /* Splashscreen */ = {
+			isa = PBXGroup;
+			children = (
+				23323AE425ABFB0800586412 /* Views */,
+				23323ADE25ABFB0200586412 /* SplashscreenViewController.swift */,
+				23323B5225AC02EC00586412 /* SplashscreenRouter.swift */,
+			);
+			path = Splashscreen;
+			sourceTree = "<group>";
+		};
+		23323AE425ABFB0800586412 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23323ADF25ABFB0200586412 /* SplashscreenViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23323B4D25ABFC8500586412 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				23323B4E25ABFC9600586412 /* splash_animation.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		2391C1C5240423FE0073AA31 = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +385,7 @@
 		23A62CA025A957FE0037CE1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				23323B4D25ABFC8500586412 /* Animations */,
 				23219C5125AADB7F00EB42D7 /* Assets.xcassets */,
 				2391C1DC240424010073AA31 /* LaunchScreen.storyboard */,
 				2391C1DF240424010073AA31 /* Info.plist */,
@@ -413,6 +448,7 @@
 		23A62CE025A959800037CE1E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				23323ADD25ABFADE00586412 /* Splashscreen */,
 				23219C0125AAA7CE00EB42D7 /* Details */,
 				23A62CE825A959CA0037CE1E /* Home */,
 			);
@@ -527,7 +563,6 @@
 				D3EE95D14D76EB4184C10527 /* Pods-MyPaletteTests.debug.xcconfig */,
 				A5FF94725BD3476E5DC52C5A /* Pods-MyPaletteTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -625,7 +660,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23323B4F25ABFC9600586412 /* splash_animation.json in Resources */,
 				2391C1DE240424010073AA31 /* LaunchScreen.storyboard in Resources */,
+				23323AE125ABFB0200586412 /* SplashscreenViewController.xib in Resources */,
 				23A62D2E25A95D520037CE1E /* HomeViewController.xib in Resources */,
 				23219C1225AAAAE300EB42D7 /* DetailsViewController.xib in Resources */,
 				23219C3425AAB6C500EB42D7 /* DetailsViewControllerHeaderCell.xib in Resources */,
@@ -713,10 +750,12 @@
 			files = (
 				23A62CDD25A9596C0037CE1E /* MyPalette.xcdatamodeld in Sources */,
 				23E4761725A9762A00C61417 /* HomeViewModel.swift in Sources */,
+				23323AE025ABFB0200586412 /* SplashscreenViewController.swift in Sources */,
 				23A62D4B25A9627A0037CE1E /* SavedColorsEmptyView.swift in Sources */,
 				23219BFE25AAA72000EB42D7 /* MyPaletteNavigation.swift in Sources */,
 				23219C1E25AAAB3100EB42D7 /* DetailsBuilder.swift in Sources */,
 				23A62CB825A9591C0037CE1E /* ColorAlert.swift in Sources */,
+				23323B5325AC02EC00586412 /* SplashscreenRouter.swift in Sources */,
 				23A62D1625A95B5B0037CE1E /* HomeBuilder.swift in Sources */,
 				23219BE925AA9EC000EB42D7 /* ColorAlertMenuListItem.swift in Sources */,
 				23A62D4C25A9627A0037CE1E /* SavedColorsView.swift in Sources */,

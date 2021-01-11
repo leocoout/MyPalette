@@ -9,6 +9,7 @@
 import Foundation
 
 enum MPNibs: String {
+    case splashscreen = "SplashscreenViewController"
     case home = "HomeViewController"
     case details = "DetailsViewController"
 }

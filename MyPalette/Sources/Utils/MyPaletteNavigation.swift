@@ -20,12 +20,13 @@ class MyPaletteNavigation {
     /// // 1. let flow = MyPaletteNavigation.createFlow(using: customView)
     /// // 2. present(flow, animated: true, completion: nil)
     /// ```
-    static func createFlow(using controller: UIViewController?, title: String? = nil) -> UINavigationController {
+    static func createFlow(using controller: UIViewController?, title: String? = nil, navigationBarHidden: Bool = false) -> UINavigationController {
         
         guard let controller = controller else { return UINavigationController() }
         
         let nav = UINavigationController.init(rootViewController: controller)
         nav.navigationBar.topItem?.title = title
+        nav.setNavigationBarHidden(navigationBarHidden, animated: true)
         
         return nav
     }
