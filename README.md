@@ -57,7 +57,7 @@ Acompanhe o roadmap das próximas features do app.
 | 🕒 | Onboarding customizado | | |
 | 🕒 | Acessibilidade para daltônicos | | |
 | 🕒 | Suporte para lingua inglesa | | |
-| 🕒 | Mais para uma mesma cor na tela de detalhes, como variações mais claras e mais escuras | | |
+| 🕒 | Paleta de cores com variações de uma mesma cor na tela de detalhes, como variações mais claras e mais escuras | | |
 | 🕒 | Tela de ajustes | | |
 | 🕒 | Melhorias de interface 2.0 | | |
 | 🕒 | Navegaçao por deeplinking e compartilhamento de cores | | |
